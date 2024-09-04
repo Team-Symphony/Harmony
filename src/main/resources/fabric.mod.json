@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "harmony",
+	"version": "${version}",
+
+	"name": "Harmony",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [ "Me!" ],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"icon": "assets/harmony/icon.png",
+
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.symphony.harmony.Harmony"
+		]
+	},
+	"mixins": [
+		"harmony.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
