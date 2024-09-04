@@ -5,12 +5,27 @@
 
 	"name": "Harmony",
 	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [ "Me!" ],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Team-Symphony/Harmony",
+		"sources": "https://github.com/Team-Symphony/Harmony",
+		"issues": "https://github.com/Team-Symphony/Harmony/issues"
 	},
 	"icon": "assets/harmony/icon.png",
+
+	"authors": [ "Team Symphony" ],
+	"contributors": [
+		"Trigam"
+	],
+
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/hTTPbbnRGG",
+				"modmenu.github_releases": "https://github.com/Team-Symphony/Harmony/releases",
+				"symphony.feature_tracker": "https://docs.google.com/spreadsheets/d/196sVDUJELCznO_RF7vib9-2uMkRaHFwVG9ogDHR1CBU/edit"
+			}
+		}
+	},
 
 	"license": "CC0-1.0",
 	"environment": "*",
@@ -24,7 +39,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.3",
-		"minecraft": "~1.21.1",
+		"minecraft": ">=1.21",
 		"java": ">=21",
 		"fabric-api": "*"
 	}
