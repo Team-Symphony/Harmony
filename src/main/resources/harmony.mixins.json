@@ -3,7 +3,7 @@
 	"package": "dev.symphony.harmony.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-
+		"transportation.VehiclesMoveThroughLeaves"
 	],
 	"injectors": {
 		"defaultRequire": 1
