@@ -2,9 +2,12 @@
 	"required": true,
 	"package": "dev.symphony.harmony.mixin",
 	"compatibilityLevel": "JAVA_21",
+
 	"mixins": [
+		"food.StewStack",
 		"transportation.VehiclesMoveThroughLeaves"
 	],
+
 	"injectors": {
 		"defaultRequire": 1
 	}
