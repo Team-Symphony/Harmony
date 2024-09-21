@@ -1,5 +1,7 @@
 package dev.symphony.harmony;
 
+import dev.symphony.harmony.config.HarmonyConfig;
+import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.util.Identifier;
@@ -17,5 +19,7 @@ public class Harmony implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		// be gay, do crime
+		MidnightConfig.init("harmony", HarmonyConfig.class);
+
 	}
 }
