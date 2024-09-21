@@ -32,6 +32,9 @@
 	"entrypoints": {
 		"main": [
 			"dev.symphony.harmony.Harmony"
+		],
+		"preLaunch": [
+			"dev.symphony.harmony.PreLaunch"
 		]
 	},
 	"mixins": [
