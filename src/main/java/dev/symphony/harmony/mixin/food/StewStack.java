@@ -1,7 +1,10 @@
 package dev.symphony.harmony.mixin.food;
 
 
+
 import dev.symphony.harmony.config.HarmonyConfig;
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.FoodComponents;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -17,12 +20,22 @@ import org.spongepowered.asm.mixin.injection.Slice;
 public class StewStack {
 
     // Would be nice if this was applied to all items with a specific custom item tag to facilitate mod compat.
-    @Redirect(method = "<clinit>", slice = @Slice(from = @At(value = "CONSTANT", args = {
-            "stringValue=mushroom_stew"}, ordinal = 0)), at = @At(
-            value = "NEW", target = "(Lnet/minecraft/item/Item$Settings;)Lnet/minecraft/item/Item;", ordinal = 0))
-    private static Item stacked_mushroom_stew(Item.Settings settings) {
-        return new Item((new Item.Settings()).maxCount(HarmonyConfig.StewStackSize).food(FoodComponents.MUSHROOM_STEW));
+    //@Redirect(method = "<clinit>", slice = @Slice(from = @At(value = "CONSTANT", args = {
+    //        "stringValue=mushroom_stew"}, ordinal = 0)), at = @At(
+    //        value = "NEW", target = "(Lnet/minecraft/item/Item$Settings;)Lnet/minecraft/item/Item;", ordinal = 0))
+    //private static Item stacked_mushroom_stew(Item.Settings settings) {
+    //    return new Item((new Item.Settings()).maxCount(HarmonyConfig.StewStackSize).food(FoodComponents.MUSHROOM_STEW));
+    //}
+    private static void StewStackMethod(){
+    if(HarmonyConfig.StewStackBool){
+        DefaultItemComponentEvents.MODIFY.register(context -> {
+            context.modify(Items.MUSHROOM_STEW, builder -> {
+                builder.add(DataComponentTypes.MAX_STACK_SIZE, HarmonyConfig.StewStackSize);
+            });
+        });
     }
+}
+
 
     @Redirect(method = "<clinit>", slice = @Slice(from = @At(value = "CONSTANT", args = {
             "stringValue=beetroot_soup"}, ordinal = 0)), at = @At(
