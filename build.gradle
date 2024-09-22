@@ -12,6 +12,9 @@ base {
 
 repositories {
 	mavenCentral()
+	maven {
+		url = "https://api.modrinth.com/maven"
+	}
 }
 
 dependencies {
@@ -25,6 +28,8 @@ dependencies {
 
 	// Dependencies
 	modImplementation "com.ptsmods:devlogin:3.5"
+
+	modImplementation include ("maven.modrinth:midnightlib:${project.midnightlib_version}")
 }
 
 processResources {
