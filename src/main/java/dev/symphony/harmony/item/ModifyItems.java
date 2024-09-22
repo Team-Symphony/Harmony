@@ -1,19 +1,9 @@
 package dev.symphony.harmony.item;
 
-import dev.symphony.harmony.Harmony;
 import dev.symphony.harmony.config.HarmonyConfig;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.entry.RegistryEntryList;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 public class ModifyItems {
 
