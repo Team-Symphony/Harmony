@@ -9,6 +9,8 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static dev.symphony.harmony.food.StewStack.StewStackMethod;
+
 public class Harmony implements ModInitializer {
 	public static final String MOD_ID = "harmony";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
