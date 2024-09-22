@@ -1,12 +1,13 @@
 package dev.symphony.harmony;
 
+import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.item.ModifyItems;
+import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static dev.symphony.harmony.food.StewStack.StewStackMethod;
 
 public class Harmony implements ModInitializer {
 	public static final String MOD_ID = "harmony";
@@ -18,7 +19,10 @@ public class Harmony implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// be gay, do crime
-		StewStackMethod();
+		// Config
+		MidnightConfig.init(MOD_ID, HarmonyConfig.class);
+
+		// gay shit
+		ModifyItems.init();
 	}
 }

@@ -1,3 +1,14 @@
 {
-    "symphony.feature_tracker": "Feature Tracker"
+    "symphony.feature_tracker": "Feature Tracker",
+
+    "harmony.midnightconfig.title": "Harmony Config",
+    "harmony.midnightconfig.reloadWarning": "Most config options will require a game restart to take affect!",
+    "harmony.midnightconfig.category.harmony": "Harmony",
+
+    "harmony.midnightconfig.category.transportation": "Transportation",
+    "harmony.midnightconfig.vehiclesMoveThroughLeaves": "Rideable mobs can move through leaves when ridden",
+    "harmony.midnightconfig.leafSpeedFactor": "Rideable mob speed percentage while inside leaves",
+
+    "harmony.midnightconfig.category.food": "Food",
+    "harmony.midnightconfig.stewStackSize": "Stew/soup stack size"
 }
