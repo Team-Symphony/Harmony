@@ -14,7 +14,8 @@
 
 	"authors": [ "Team Symphony" ],
 	"contributors": [
-		"Trigam"
+		"Trigam",
+		"Flatkat"
 	],
 
 	"custom": {
@@ -32,9 +33,6 @@
 	"entrypoints": {
 		"main": [
 			"dev.symphony.harmony.Harmony"
-		],
-		"preLaunch": [
-			"dev.symphony.harmony.PreLaunch"
 		]
 	},
 	"mixins": [
