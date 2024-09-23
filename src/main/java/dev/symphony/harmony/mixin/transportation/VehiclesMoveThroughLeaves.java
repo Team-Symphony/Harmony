@@ -12,6 +12,8 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
+// FEATURE: Vehicles can move through leaves when ridden
+// AUTHORS: Trigam
 @Mixin(LeavesBlock.class)
 public class VehiclesMoveThroughLeaves extends Block {
 
