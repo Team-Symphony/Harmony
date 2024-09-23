@@ -8,7 +8,8 @@ import net.minecraft.item.Items;
 public class ModifyItems {
 
     public static void init() {
-        // Change stack sizes
+        // FEATURE: Change stew/soup stack sizes
+        // AUTHORS: Flatkat, Trigam
         if (HarmonyConfig.stewStackSize != 1) {
             DefaultItemComponentEvents.MODIFY.register(context -> {
                 // Ok so, can't use an item tag since tags only exist
@@ -17,13 +18,13 @@ public class ModifyItems {
                     builder.add(DataComponentTypes.MAX_STACK_SIZE, HarmonyConfig.stewStackSize)
                 );
                 context.modify(Items.RABBIT_STEW, builder ->
-                        builder.add(DataComponentTypes.MAX_STACK_SIZE, HarmonyConfig.stewStackSize)
+                    builder.add(DataComponentTypes.MAX_STACK_SIZE, HarmonyConfig.stewStackSize)
                 );
                 context.modify(Items.BEETROOT_SOUP, builder ->
-                        builder.add(DataComponentTypes.MAX_STACK_SIZE, HarmonyConfig.stewStackSize)
+                    builder.add(DataComponentTypes.MAX_STACK_SIZE, HarmonyConfig.stewStackSize)
                 );
                 context.modify(Items.SUSPICIOUS_STEW, builder ->
-                        builder.add(DataComponentTypes.MAX_STACK_SIZE, HarmonyConfig.stewStackSize)
+                    builder.add(DataComponentTypes.MAX_STACK_SIZE, HarmonyConfig.stewStackSize)
                 );
             });
         }
