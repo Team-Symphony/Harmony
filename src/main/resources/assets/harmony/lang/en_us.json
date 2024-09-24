@@ -6,6 +6,7 @@
     "harmony.midnightconfig.category.harmony": "Harmony",
 
     "harmony.midnightconfig.category.transportation": "Transportation",
+    "harmony.midnightconfig.exitVehicleOnDamage": "Mobs exit vehicles when taking damage",
     "harmony.midnightconfig.vehiclesMoveThroughLeaves": "Rideable mobs can move through leaves when ridden",
     "harmony.midnightconfig.leafSpeedFactor": "Rideable mob speed percentage while inside leaves",
 

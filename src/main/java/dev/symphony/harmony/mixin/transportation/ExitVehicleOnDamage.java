@@ -1,6 +1,7 @@
 package dev.symphony.harmony.mixin.transportation;
 
 import dev.symphony.harmony.ModTags;
+import dev.symphony.harmony.config.HarmonyConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -17,18 +18,19 @@ public class ExitVehicleOnDamage {
             at = @At( value = "TAIL" )
     )
     private void exitVehicleOnDamage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        LivingEntity entity = ((LivingEntity) (Object) this);
-        if (amount <= 0) return;
-        if (entity.isPlayer()) return;
+        if(HarmonyConfig.exitVehicleOnDamage) {
+            LivingEntity entity = ((LivingEntity) (Object) this);
+            if (amount <= 0) return;
+            if (entity.isPlayer()) return;
 
-        Entity vehicle = entity.getVehicle();
-        if (vehicle == null) return;
-        EntityType<?> vehicleType = vehicle.getType();
+            Entity vehicle = entity.getVehicle();
+            if (vehicle == null) return;
+            EntityType<?> vehicleType = vehicle.getType();
 
-        if (vehicleType.isIn(ModTags.VEHICLES)) {
-            entity.stopRiding();
+            if (vehicleType.isIn(ModTags.VEHICLES)) {
+                entity.stopRiding();
+            }
         }
-
 
     }
 }
