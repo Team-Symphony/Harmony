@@ -11,6 +11,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+// FEATURE: Mobs exit (some) vehicles when damaged
+// AUTHORS: Trigam, Flatkat
 @Mixin(LivingEntity.class)
 public class ExitVehicleOnDamage {
     @Inject(
