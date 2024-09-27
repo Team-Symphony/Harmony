@@ -1,6 +1,9 @@
 package dev.symphony.harmony.config;
 
+import com.google.common.collect.Lists;
 import eu.midnightdust.lib.config.MidnightConfig;
+
+import java.util.List;
 
 public class HarmonyConfig extends MidnightConfig {
     @Comment(category = "harmony", centered = true) public static Comment reloadWarning;
@@ -14,4 +17,8 @@ public class HarmonyConfig extends MidnightConfig {
     // Food
     public static final String FOOD = "food";
     @Entry(category = FOOD) public static int stewStackSize = 16;
+
+    // Recipe
+    public static final String RECIPE = "recipe";
+    @Entry(category = RECIPE) public static List<String> recipeList = Lists.newArrayList("item");
 }

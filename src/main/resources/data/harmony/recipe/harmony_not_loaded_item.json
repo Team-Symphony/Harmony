@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        " X ",
+        "  X"
+    ],
+    "key": {
+        "X": {
+            "item": "minecraft:dirt"
+        }
+    },
+    "result": {
+        "id": "minecraft:stick",
+        "count": 4
+    },
+    "fabric:load_conditions": [
+      {
+        "condition": "harmony:config",
+        "config_name": ""
+      }
+    ]
+}
