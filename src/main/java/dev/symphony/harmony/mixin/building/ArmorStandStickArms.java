@@ -48,24 +48,6 @@ public abstract class ArmorStandStickArms {
 
             callback.setReturnValue(ActionResult.SUCCESS);
         }
-
-//        if (stack.getItem().equals(Registries.ITEM.get(Identifier.ofVanilla("shears"))) &&
-//                shouldShowArms() &&
-//                getHandItems().iterator().next().isEmpty()) {
-//
-//            setShowArms(false);
-//            stack.damage(1, player, LivingEntity.getSlotForHand(hand));
-//            player.getWorld().playSoundFromEntity(null, (ArmorStandEntity) (Object) this, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.PLAYERS, 1.0F, 1.0F);
-//            player.giveItemStack(new ItemStack(Registries.ITEM.get(Identifier.ofVanilla("stick")), 2));
-//            callback.setReturnValue(ActionResult.SUCCESS);
-//        } else if (stack.getItem().equals(Registries.ITEM.get(Identifier.ofVanilla("stick"))) &&
-//                !shouldShowArms() &&
-//                stack.getCount() > 1) {
-//
-//            setShowArms(true);
-//            stack.decrement(2);
-//            callback.setReturnValue(ActionResult.SUCCESS);
-//        }
     }
 
     @Unique
