@@ -18,4 +18,5 @@ public class HarmonyConfig extends MidnightConfig {
     // Building
     public static final String BUILD = "building";
     @Entry(category = BUILD) public static boolean armorStandStickArms = true;
+    @Entry(category = BUILD) public static int armorStandSticks = 1;
 }
