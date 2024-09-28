@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "transportation.ExitVehicleOnDamage",
-    "transportation.VehiclesMoveThroughLeaves"
+    "transportation.VehiclesMoveThroughLeaves",
+    "building.ArmorStandStickArms"
   ],
   "injectors": {
     "defaultRequire": 1
