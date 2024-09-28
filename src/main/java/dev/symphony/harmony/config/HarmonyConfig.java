@@ -10,6 +10,7 @@ public class HarmonyConfig extends MidnightConfig {
     @Entry(category = TRANS) public static boolean exitVehicleOnDamage = true;
     @Entry(category = TRANS) public static boolean vehiclesMoveThroughLeaves = true;
     @Entry(category = TRANS, isSlider = true, min = 0f, max = 1f) public static float leafSpeedFactor = 0.85f;
+    @Entry(category = TRANS) public static boolean vehiclesRideInBoats = true;
 
     // Food
     public static final String FOOD = "food";
