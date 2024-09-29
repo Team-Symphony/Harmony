@@ -1,12 +1,13 @@
 {
-  "required": true,
-  "package": "dev.symphony.harmony.mixin",
-  "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "transportation.ExitVehicleOnDamage",
-    "transportation.VehiclesMoveThroughLeaves"
-  ],
-  "injectors": {
-    "defaultRequire": 1
+    "required": true,
+    "package": "dev.symphony.harmony.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "transportation.SmallerVehicleHitboxInBoat",
+        "transportation.VehiclesMoveThroughLeaves",
+        "transportation.VehiclesRideInBoats"
+    ],
+    "injectors": {
+        "defaultRequire": 1
 	}
 }
