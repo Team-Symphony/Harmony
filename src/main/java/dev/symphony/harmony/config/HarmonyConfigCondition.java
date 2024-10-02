@@ -10,7 +10,14 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Map;
+
 public record HarmonyConfigCondition(String config_name) implements ResourceCondition {
+
+    public static Map<String, Boolean> resourceMap = Map.of(
+            "stick", HarmonyConfig.enableStickRecipe,
+            "stone_stick", HarmonyConfig.enableStoneStickRecipe
+    );
 
     public static final MapCodec<HarmonyConfigCondition> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
             Codec.STRING.fieldOf("config_name").forGetter(condition -> condition.config_name)
@@ -27,6 +34,6 @@ public record HarmonyConfigCondition(String config_name) implements ResourceCond
 
     @Override
     public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup) {
-        return HarmonyConfig.recipeList.contains(config_name);
+        return resourceMap.getOrDefault(config_name, false);
     }
 }

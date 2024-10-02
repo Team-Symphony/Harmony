@@ -17,7 +17,7 @@
     "fabric:load_conditions": [
       {
         "condition": "harmony:config",
-        "config_name": "item"
+        "config_name": "stone_stick"
       }
     ]
 }

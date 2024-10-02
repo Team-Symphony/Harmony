@@ -1,9 +1,7 @@
 package dev.symphony.harmony.config;
 
-import com.google.common.collect.Lists;
 import eu.midnightdust.lib.config.MidnightConfig;
 
-import java.util.List;
 
 public class HarmonyConfig extends MidnightConfig {
     @Comment(category = "harmony", centered = true) public static Comment reloadWarning;
@@ -20,5 +18,6 @@ public class HarmonyConfig extends MidnightConfig {
 
     // Recipe
     public static final String RECIPE = "recipe";
-    @Entry(category = RECIPE) public static List<String> recipeList = Lists.newArrayList("item");
+    @Entry(category = RECIPE) public static Boolean enableStickRecipe = false;
+    @Entry(category = RECIPE) public static Boolean enableStoneStickRecipe = true;
 }
