@@ -18,6 +18,8 @@ public class HarmonyConfig extends MidnightConfig {
 
     // Recipe
     public static final String RECIPE = "recipe";
+    @HarmonyConfigCondition.ResourceConfigName(config_name = "stick")
     @Entry(category = RECIPE) public static Boolean enableStickRecipe = false;
+    @HarmonyConfigCondition.ResourceConfigName(config_name = "stone_stick")
     @Entry(category = RECIPE) public static Boolean enableStoneStickRecipe = true;
 }

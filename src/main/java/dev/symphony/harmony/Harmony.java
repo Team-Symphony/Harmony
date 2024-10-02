@@ -24,7 +24,7 @@ public class Harmony implements ModInitializer {
 	public void onInitialize() {
 		// Config
 		MidnightConfig.init(MOD_ID, HarmonyConfig.class);
-
+		HarmonyConfigCondition.init();
 
 		ResourceConditionType<HarmonyConfigCondition> conditionType = ResourceConditionType.create(Identifier.of(Harmony.MOD_ID, "config"), HarmonyConfigCondition.CODEC);
 		ResourceConditions.register(conditionType);
