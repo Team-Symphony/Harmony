@@ -20,6 +20,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+// FEATURE: Configurable Data-Driven Resources
+// AUTHORS: Flatkat, WheatFlour 
 public record HarmonyConfigCondition(String config_name) implements ResourceCondition {
 
     @Retention(RetentionPolicy.RUNTIME)
