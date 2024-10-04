@@ -5,6 +5,7 @@
   "mixins": [
     "transportation.ExitVehicleOnDamage",
     "transportation.VehiclesMoveThroughLeaves",
+    "transportation.HorseArmorBucking",
     "building.ArmorStandStickArms"
   ],
   "injectors": {
