@@ -26,7 +26,7 @@ public class AddCopperBulbDelay extends Block {
     //Replaced calling update with calling scheduleBlockTick
     @Inject(method = "neighborUpdate",at = @At("HEAD"), cancellable = true)
     protected void addDelay(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify, CallbackInfo ci) {
-        if(!HarmonyConfig.copperBulbDelay)
+        if(!HarmonyConfig.oneTickCopperBulbDelay)
             return;
         if (!world.isClient) {
             world.scheduleBlockTick(pos, this, 1);
