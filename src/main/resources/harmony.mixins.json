@@ -5,7 +5,8 @@
   "mixins": [
     "transportation.ExitVehicleOnDamage",
     "transportation.VehiclesMoveThroughLeaves",
-    "building.ArmorStandStickArms"
+    "building.ArmorStandStickArms",
+    "redstone.AddCopperBulbDelay"
   ],
   "injectors": {
     "defaultRequire": 1
