@@ -5,6 +5,7 @@
   "mixins": [
     "building.ArmorStandStickArms",
     "redstone.AddCopperBulbDelay",
+    "redstone.RemoveRedstoneLampDelay",
     "transportation.ExitVehicleOnDamage",
     "transportation.VehiclesMoveThroughLeaves"
   ],
