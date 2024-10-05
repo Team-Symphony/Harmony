@@ -1,5 +1,6 @@
 package dev.symphony.harmony.mixin.transportation;
 
+import dev.symphony.harmony.config.HarmonyConfig;
 import it.unimi.dsi.fastutil.objects.Object2FloatArrayMap;
 import net.minecraft.entity.passive.AbstractHorseEntity;
 import net.minecraft.inventory.Inventory;
@@ -33,8 +34,10 @@ public class HorseArmorPreventsBucking {
 
     @Inject(method = "updateAnger", at = @At("HEAD"), cancellable = true)
     private void rejectAngryWhenDrip(CallbackInfo ci) {
-        ItemStack armor = this.inventory.getStack(0);
-        float chance = preventRageChance.getOrDefault(armor.getItem(), 0F);
-        if (chance > 0 && chance < 1 || Math.random() <= chance) ci.cancel();
+        if(HarmonyConfig.horseArmorPreventsBucking){
+            ItemStack armor = this.inventory.getStack(0);
+            float chance = preventRageChance.getOrDefault(armor.getItem(), 0F);
+            if (chance > 0 && chance < 1 || Math.random() <= chance) ci.cancel();
+        }
     }
 }
