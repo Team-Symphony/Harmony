@@ -3,9 +3,11 @@
   "package": "dev.symphony.harmony.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "building.ArmorStandStickArms",
+    "redstone.AddCopperBulbDelay",
+    "redstone.RemoveRedstoneLampDelay",
     "transportation.ExitVehicleOnDamage",
-    "transportation.VehiclesMoveThroughLeaves",
-    "building.ArmorStandStickArms"
+    "transportation.VehiclesMoveThroughLeaves"
   ],
   "injectors": {
     "defaultRequire": 1
