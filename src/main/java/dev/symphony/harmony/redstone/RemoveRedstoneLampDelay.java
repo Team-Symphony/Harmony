@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.redstone;
+package dev.symphony.harmony.redstone;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -13,15 +13,17 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+// FEATURE: Removed Redstone Lamp delay
+// AUTHORS: Randomvideos
 @Mixin(RedstoneLampBlock.class)
 public abstract class RemoveRedstoneLampDelay extends Block {
 
-    @Final
-    @Shadow public static BooleanProperty LIT;
-    public RemoveRedstoneLampDelay(Settings settings) {
-        super(settings);
-    }
+    @Final @Shadow
+    public static BooleanProperty LIT;
 
+    public RemoveRedstoneLampDelay(Settings settings) {super(settings);}
+
+    //Set the delay to 0 in scheduleBlockTick
     @Inject(method = "neighborUpdate",at = @At("HEAD"), cancellable = true)
     protected void zeroDelay(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify, CallbackInfo ci) {
         if (!world.isClient) {
