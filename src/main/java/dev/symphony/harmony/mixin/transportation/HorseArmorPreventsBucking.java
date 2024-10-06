@@ -25,7 +25,8 @@ public class HorseArmorPreventsBucking {
     @Shadow @Final private Inventory inventory;
 
     static {
-        // TODO: Add netherite horse armor if melody is loaded with a value of 1F
+        // TODO: Make preventBuckingChance for every type of armor configurable
+        // TODO: Add netherite horse armor if melody is loaded with a default value of 1F
         preventBuckingChance.put(Items.DIAMOND_HORSE_ARMOR, 0.9F);
         preventBuckingChance.put(Items.IRON_HORSE_ARMOR, 0.75F);
         preventBuckingChance.put(Items.GOLDEN_HORSE_ARMOR, 0.6F);
