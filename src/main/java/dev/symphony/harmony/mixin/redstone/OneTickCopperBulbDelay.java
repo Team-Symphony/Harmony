@@ -17,11 +17,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 // FEATURE: Added back 1 tick Copper Bulb delay
 // AUTHORS: Randomvideos
 @Mixin(BulbBlock.class)
-public class AddCopperBulbDelay extends Block {
+public class OneTickCopperBulbDelay extends Block {
     @Shadow
     public void update(BlockState state, ServerWorld world, BlockPos pos) {}
 
-    public AddCopperBulbDelay(Settings settings) {super(settings);}
+    public OneTickCopperBulbDelay(Settings settings) {super(settings);}
 
     //Replaced calling update with calling scheduleBlockTick
     @Inject(method = "neighborUpdate",at = @At("HEAD"), cancellable = true)
