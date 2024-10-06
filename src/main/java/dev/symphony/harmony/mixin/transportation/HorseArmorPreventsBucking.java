@@ -19,13 +19,14 @@ import java.util.Map;
 
 @Mixin (AbstractHorseEntity.class)
 public class HorseArmorPreventsBucking {
+
+    // FEATURE:
+    // AUTHORS: KikuGie, Flatkat
     @Unique
     private static final Map<Item, Float> preventBuckingChance = new Object2FloatArrayMap<>();
 
     @Shadow @Final private Inventory inventory;
 
-    // FEATURE:
-    // AUTHORS: KikuGie, Flatkat
     static {
         // TODO: Make preventBuckingChance for every type of armor configurable
         // TODO: Add netherite horse armor if melody is loaded with a default value of 1F
