@@ -30,6 +30,8 @@ public class HorseArmorPreventsBucking {
 
     @Shadow @Final private Inventory inventory;
 
+    // FEATURE:
+    // AUTHORS: KikuGie, Flatkat
     static {
         // TODO: Make preventBuckingChance for every type of armor configurable
         // TODO: Make this data-driven or configurable via config screen with a custom map config screen
