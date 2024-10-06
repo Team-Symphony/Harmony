@@ -24,6 +24,8 @@ public class HorseArmorPreventsBucking {
 
     @Shadow @Final private Inventory inventory;
 
+    // FEATURE:
+    // AUTHORS: KikuGie, Flatkat
     static {
         // TODO: Make preventBuckingChance for every type of armor configurable
         // TODO: Add netherite horse armor if melody is loaded with a default value of 1F
