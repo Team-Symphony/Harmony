@@ -20,23 +20,23 @@ import java.util.Map;
 @Mixin (AbstractHorseEntity.class)
 public class HorseArmorPreventsBucking {
     @Unique
-    private static final Map<Item, Float> preventRageChance = new Object2FloatArrayMap<>();
+    private static final Map<Item, Float> preventBuckingChance = new Object2FloatArrayMap<>();
 
     @Shadow @Final private Inventory inventory;
 
     static {
         // TODO: Add netherite horse armor if melody is loaded with a value of 1F
-        preventRageChance.put(Items.DIAMOND_HORSE_ARMOR, 0.9F);
-        preventRageChance.put(Items.IRON_HORSE_ARMOR, 0.75F);
-        preventRageChance.put(Items.GOLDEN_HORSE_ARMOR, 0.6F);
-        preventRageChance.put(Items.LEATHER_HORSE_ARMOR, 0.45F);
+        preventBuckingChance.put(Items.DIAMOND_HORSE_ARMOR, 0.9F);
+        preventBuckingChance.put(Items.IRON_HORSE_ARMOR, 0.75F);
+        preventBuckingChance.put(Items.GOLDEN_HORSE_ARMOR, 0.6F);
+        preventBuckingChance.put(Items.LEATHER_HORSE_ARMOR, 0.45F);
     }
 
     @Inject(method = "updateAnger", at = @At("HEAD"), cancellable = true)
     private void rejectAngryWhenDrip(CallbackInfo ci) {
         if(HarmonyConfig.horseArmorPreventsBucking){
             ItemStack armor = this.inventory.getStack(0);
-            float chance = preventRageChance.getOrDefault(armor.getItem(), 0F);
+            float chance = preventBuckingChance.getOrDefault(armor.getItem(), 0F);
             if (chance > 0 && chance < 1 || Math.random() <= chance) ci.cancel();
         }
     }
