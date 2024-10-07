@@ -1,20 +1,22 @@
 {
     "symphony.feature_tracker": "Feature Tracker",
 
-    "harmony.midnightconfig.title": "Harmony Config",
-    "harmony.midnightconfig.reloadWarning": "Some config options will require a game restart to take affect!",
-    "harmony.midnightconfig.category.harmony": "Harmony",
+    "yacl3.config.harmony:config.title": "Harmony Config",
+    "yacl3.config.harmony:config.reloadWarning": "Some config options will require a game restart to take affect!",
+    "yacl3.config.harmony:config.category.harmony": "Harmony",
 
-    "harmony.midnightconfig.category.transportation": "Transportation",
-    "harmony.midnightconfig.exitVehicleOnDamage": "Mobs exit vehicles when taking damage",
-    "harmony.midnightconfig.vehiclesMoveThroughLeaves": "Rideable mobs can move through leaves when ridden",
-    "harmony.midnightconfig.leafSpeedFactor": "Rideable mob speed percentage while inside leaves",
-    "harmony.midnightconfig.saddleRecipe": "Craftable Saddle",
+    "yacl3.config.harmony:config.category.transportation": "Transportation",
+    "yacl3.config.harmony:config.exitVehicleOnDamage": "Mobs exit vehicles when taking damage",
+    "yacl3.config.harmony:config.category.transportation.group.vehicleleaves": "Leaves",
+    "yacl3.config.harmony:config.vehiclesMoveThroughLeaves": "Rideable mobs can move through leaves when ridden",
+    "yacl3.config.harmony:config.leafSpeedFactor": "Rideable mob speed percentage while inside leaves",
+    "yacl3.config.harmony:config.saddleRecipe": "Craftable Saddle",
 
-    "harmony.midnightconfig.category.food": "Food",
-    "harmony.midnightconfig.stewStackSize": "Stew/soup stack size",
+    "yacl3.config.harmony:config.category.food": "Food",
+    "yacl3.config.harmony:config.stewStackSize": "Stew/soup stack size",
 
-    "harmony.midnightconfig.category.building": "Building",
-    "harmony.midnightconfig.armorStandStickArms": "Armor Stands can be equipped with arms using a Stick",
-    "harmony.midnightconfig.armorStandSticks": "Number of sticks required to equip Armor Stands with arms"
+    "yacl3.config.harmony:config.category.building": "Building",
+    "yacl3.config.harmony:config.category.building.group.armorstand": "Armor Stand",
+    "yacl3.config.harmony:config.armorStandStickArms": "Armor Stands can be equipped with arms using a Stick",
+    "yacl3.config.harmony:config.armorStandSticks": "Number of sticks required to equip Armor Stands with arms"
 }

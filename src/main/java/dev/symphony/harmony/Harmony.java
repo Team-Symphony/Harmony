@@ -3,11 +3,8 @@ package dev.symphony.harmony;
 import dev.symphony.harmony.config.HarmonyConfig;
 import dev.symphony.harmony.config.HarmonyConfigCondition;
 import dev.symphony.harmony.item.ModifyItems;
-import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditionType;
-import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,12 +20,8 @@ public class Harmony implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		// Config
-		MidnightConfig.init(MOD_ID, HarmonyConfig.class);
+		HarmonyConfig.initialize();
 		HarmonyConfigCondition.init();
-
-		ResourceConditionType<HarmonyConfigCondition> conditionType = ResourceConditionType.create(Identifier.of(Harmony.MOD_ID, "config"), HarmonyConfigCondition.CODEC);
-		ResourceConditions.register(conditionType);
-
 
 		// gay shit
 		ModifyItems.init();

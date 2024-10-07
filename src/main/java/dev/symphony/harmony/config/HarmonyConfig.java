@@ -1,24 +1,57 @@
 package dev.symphony.harmony.config;
 
-import eu.midnightdust.lib.config.MidnightConfig;
+import com.google.gson.GsonBuilder;
+import dev.isxander.yacl3.api.*;
+import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
+import dev.isxander.yacl3.config.v2.api.SerialEntry;
+import dev.isxander.yacl3.config.v2.api.autogen.*;
+import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.util.Identifier;
 
 
-public class HarmonyConfig extends MidnightConfig {
-    @Comment(category = "harmony", centered = true) public static Comment reloadWarning;
+public class HarmonyConfig {
 
     // Transportation
-    public static final String TRANS = "transportation";
-    @Entry(category = TRANS) public static boolean exitVehicleOnDamage = true;
-    @Entry(category = TRANS) public static boolean vehiclesMoveThroughLeaves = true;
-    @Entry(category = TRANS, isSlider = true, min = 0f, max = 1f) public static float leafSpeedFactor = 0.85f;
-    @HarmonyConfigCondition.ResourceConfigName(config_name = "recipe/saddle") @Entry(category = TRANS) public static boolean saddleRecipe = true;
+    public static final String TRANSPORTATION = "transportation";
+    @SerialEntry @TickBox @AutoGen(category = TRANSPORTATION)
+    public static boolean exitVehicleOnDamage = true;
+    @SerialEntry @TickBox @AutoGen(category = TRANSPORTATION, group = "vehicleleaves")
+    public static boolean vehiclesMoveThroughLeaves = true;
+    @SerialEntry @FloatSlider(min = 0f, max = 1f, step = 0.1f) @AutoGen(category = TRANSPORTATION, group = "vehicleleaves")
+    public static float leafSpeedFactor = 0.85f;
+    @SerialEntry @TickBox @AutoGen(category = TRANSPORTATION)
+    @HarmonyConfigCondition.ResourceConfigName(config_name = "recipe/saddle") public static boolean saddleRecipe = true;
 
     // Food
     public static final String FOOD = "food";
-    @Entry(category = FOOD) public static int stewStackSize = 16;
+    @SerialEntry @IntSlider(min = 1, max = 64, step = 1) @AutoGen(category = FOOD)
+    public static int stewStackSize = 16;
 
     // Building
-    public static final String BUILD = "building";
-    @Entry(category = BUILD) public static boolean armorStandStickArms = true;
-    @Entry(category = BUILD) public static int armorStandSticks = 1;
+    public static final String BUILDING = "building";
+    @SerialEntry @TickBox @AutoGen(category = BUILDING, group = "armorstand")
+    public static boolean armorStandStickArms = true;
+    @SerialEntry @IntSlider(min = 0, max = 64, step = 1) @AutoGen(category = BUILDING,  group = "armorstand")
+    public static int armorStandSticks = 1;
+
+
+
+    public static void initialize() {
+        HANDLER.load();
+    }
+    public static YetAnotherConfigLib getConfig() {
+        return HANDLER.generateGui();
+    }
+
+    public static ConfigClassHandler<HarmonyConfig> HANDLER = ConfigClassHandler.createBuilder(HarmonyConfig.class)
+            .id(Identifier.of("harmony", "config"))
+            .serializer(config -> GsonConfigSerializerBuilder.create(config)
+                    .setPath(FabricLoader.getInstance().getConfigDir().resolve("harmony.json"))
+                    .appendGsonBuilder(GsonBuilder::setPrettyPrinting)
+                    .setJson5(true)
+                    .build())
+            .build();
+
+
 }
