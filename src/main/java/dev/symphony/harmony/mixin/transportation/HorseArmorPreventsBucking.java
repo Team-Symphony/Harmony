@@ -44,6 +44,8 @@ public class HorseArmorPreventsBucking {
         if(HarmonyConfig.horseArmorPreventsBucking){
             if(FabricLoader.getInstance().isModLoaded("melody") && preventBuckingChance.get(Registries.ITEM.get(Identifier.of("melody:netherite_horse_armor"))) == null) {
                 // Temporary solution until we move this to a better, configurable system
+                // This is inside rejectAngryWhenDrip because if not it gets called too early, so it cant detect Melody nor is the armor item registered yet, so it doesnt work.
+                // Yes, this is kind of a crappy workaround, but as stated earlier, its temporary
                 preventBuckingChance.put(Registries.ITEM.get(Identifier.of("melody:netherite_horse_armor")), 1F);
             }
             ItemStack armor = this.inventory.getStack(0);
