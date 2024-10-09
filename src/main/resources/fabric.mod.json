@@ -12,12 +12,13 @@
 	},
 	"icon": "assets/harmony/icon.png",
 
-	"authors": [ "Team Symphony" ],
-	"contributors": [
+	"authors": [
+		"Team Symphony",
 		"Trigam",
 		"Flatkat",
-		"WheatFlour",
-
+		"WheatFlour"
+	],
+	"contributors": [
 		"Randomvideos"
 	],
 
