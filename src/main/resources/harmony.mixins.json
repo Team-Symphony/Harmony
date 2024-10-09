@@ -6,7 +6,8 @@
     "transportation.ExitVehicleOnDamage",
     "transportation.VehiclesMoveThroughLeaves",
     "transportation.HorseArmorPreventsBucking",
-    "building.ArmorStandStickArms"
+    "building.ArmorStandStickArms",
+    "redstone.OneTickCopperBulbDelay"
   ],
   "injectors": {
     "defaultRequire": 1
