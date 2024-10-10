@@ -6,7 +6,8 @@
     "transportation.ExitVehicleOnDamage",
     "transportation.VehiclesMoveThroughLeaves",
     "building.ArmorStandStickArms",
-    "redstone.OneTickCopperBulbDelay"
+    "redstone.OneTickCopperBulbDelay",
+    "redstone.ChangeRedstoneLampDelay"
   ],
   "injectors": {
     "defaultRequire": 1

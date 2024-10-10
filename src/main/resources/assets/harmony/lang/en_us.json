@@ -19,5 +19,6 @@
     "harmony.midnightconfig.armorStandSticks": "Number of sticks required to equip Armor Stands with arms",
 
     "harmony.midnightconfig.category.redstone": "Redstone",
-    "harmony.midnightconfig.oneTickCopperBulbDelay": "Copper bulbs have a 1 tick delay"
+    "harmony.midnightconfig.oneTickCopperBulbDelay": "Copper Bulbs have a 1 tick delay",
+    "harmony.midnightconfig.redstoneBulbDelay": "Tick delay for Redstone Lamps to turn off"
 }
