@@ -4,7 +4,7 @@
 	"version": "${version}",
 
 	"name": "Harmony",
-	"description": "Harmony, a server side mod which adds a bunch of QoL fixes.",
+	"description": "This is an example description! Tell everyone what your mod is about!",
 	"contact": {
 		"homepage": "https://github.com/Team-Symphony/Harmony",
 		"sources": "https://github.com/Team-Symphony/Harmony",
@@ -16,11 +16,11 @@
 		"Team Symphony",
 		"Trigam",
 		"Flatkat",
-		"WheatFlour",
-		"michiel1106"
+		"WheatFlour"
 	],
 	"contributors": [
-		"Randomvideos"
+		"Randomvideos",
+		"michiel1106"
 	],
 
 	"custom": {
