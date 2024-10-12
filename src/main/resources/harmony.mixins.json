@@ -4,7 +4,6 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "transportation.ExitVehicleOnDamage",
-    "transportation.VehiclesMoveThroughLeaves",
     "building.ArmorStandStickArms",
     "redstone.OneTickCopperBulbDelay",
     "food.GlowBerryMixin"
