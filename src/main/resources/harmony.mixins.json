@@ -3,10 +3,11 @@
   "package": "dev.symphony.harmony.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "transportation.ExitVehicleOnDamage",
-    "transportation.VehiclesMoveThroughLeaves",
     "building.ArmorStandStickArms",
-    "redstone.OneTickCopperBulbDelay"
+    "food.GlowBerryMixin",
+    "redstone.OneTickCopperBulbDelay",
+    "transportation.ExitVehicleOnDamage",
+    "transportation.VehiclesMoveThroughLeaves"
   ],
   "injectors": {
     "defaultRequire": 1
