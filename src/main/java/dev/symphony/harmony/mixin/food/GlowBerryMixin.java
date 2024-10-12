@@ -1,5 +1,6 @@
 package dev.symphony.harmony.mixin.food;
 
+import dev.symphony.harmony.config.HarmonyConfig;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -14,11 +15,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Item.class)
 public class GlowBerryMixin {
+
+    int glowduration = HarmonyConfig.glowBerryEffect * 20;
     @Inject(method = "finishUsing", at = @At("HEAD"))
+
     private void glowBerryGlowEffect(ItemStack stack, World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir) {
-        if(!world.isClient) {
+        if(!world.isClient && HarmonyConfig.glowBerryEffect != 0) {
             if (stack.getItem() == Items.GLOW_BERRIES) {
-                user.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 200, 0, true, true));
+                user.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, glowduration, 0, true, true));
             }
         }
     }

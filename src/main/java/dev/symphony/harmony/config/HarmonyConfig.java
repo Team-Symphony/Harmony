@@ -16,6 +16,7 @@ public class HarmonyConfig extends MidnightConfig {
     // Food
     public static final String FOOD = "food";
     @Entry(category = FOOD) public static int stewStackSize = 16;
+    @Entry(category = FOOD) public static int glowBerryEffect = 10;
 
     // Building
     public static final String BUILD = "building";
