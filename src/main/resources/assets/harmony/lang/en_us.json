@@ -13,8 +13,13 @@
 
     "harmony.midnightconfig.category.food": "Food",
     "harmony.midnightconfig.stewStackSize": "Stew/soup stack size",
+    "harmony.midnightconfig.glowBerryEffect":"Glowberry effect",
+    "harmony.midnightconfig.glowBerryEffect.tooltip":"How long the effect should last in seconds, 0 disables it",
 
     "harmony.midnightconfig.category.building": "Building",
     "harmony.midnightconfig.armorStandStickArms": "Armor Stands can be equipped with arms using a Stick",
-    "harmony.midnightconfig.armorStandSticks": "Number of sticks required to equip Armor Stands with arms"
+    "harmony.midnightconfig.armorStandSticks": "Number of sticks required to equip Armor Stands with arms",
+
+    "harmony.midnightconfig.category.redstone": "Redstone",
+    "harmony.midnightconfig.oneTickCopperBulbDelay": "Copper bulbs have a 1 tick delay"
 }

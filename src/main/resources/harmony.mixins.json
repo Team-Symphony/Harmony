@@ -4,7 +4,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "transportation.ExitVehicleOnDamage",
-    "building.ArmorStandStickArms"
+    "building.ArmorStandStickArms",
+    "redstone.OneTickCopperBulbDelay",
+    "food.GlowBerryMixin"
   ],
   "injectors": {
     "defaultRequire": 1

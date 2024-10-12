@@ -14,9 +14,14 @@ public class HarmonyConfig extends MidnightConfig {
     // Food
     public static final String FOOD = "food";
     @Entry(category = FOOD) public static int stewStackSize = 16;
+    @Entry(category = FOOD) public static int glowBerryEffect = 10;
 
     // Building
     public static final String BUILD = "building";
     @Entry(category = BUILD) public static boolean armorStandStickArms = true;
     @Entry(category = BUILD) public static int armorStandSticks = 1;
+
+    // Redstone
+    public static final String REDSTONE = "redstone";
+    @Entry(category = REDSTONE) public static boolean oneTickCopperBulbDelay = true;
 }
