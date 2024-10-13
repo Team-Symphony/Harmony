@@ -7,7 +7,8 @@
     "transportation.HorseArmorPreventsBucking",
     "building.ArmorStandStickArms",
     "redstone.OneTickCopperBulbDelay",
-    "food.GlowBerryMixin"
+    "food.GlowBerryMixin",
+    "food.ProportionalFoodTime"
   ],
   "injectors": {
     "defaultRequire": 1
