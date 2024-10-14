@@ -7,8 +7,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
-// AUTHOR michiel1106
-// FEATURE change how long it takes to eat fooditems based on how much nutrition it gives
+// FEATURE: Change how long it takes to eat fooditems based on how much nutrition it gives.
+// AUTHORs: Michiel1106
 
 // mixin into the foodcomponent class, changing every single food item
 @Mixin(FoodComponent.class)
