@@ -9,13 +9,13 @@ public class HarmonyConfig extends MidnightConfig {
     // Transportation
     public static final String TRANS = "transportation";
     @Entry(category = TRANS) public static boolean exitVehicleOnDamage = true;
-    @Entry(category = TRANS) public static boolean vehiclesMoveThroughLeaves = true;
-    @Entry(category = TRANS, isSlider = true, min = 0f, max = 1f) public static float leafSpeedFactor = 0.85f;
     @HarmonyConfigCondition.ResourceConfigName(config_name = "recipe/saddle") @Entry(category = TRANS) public static boolean saddleRecipe = true;
+    @Entry(category = TRANS) public static boolean horseArmorPreventsBucking = true;
 
     // Food
     public static final String FOOD = "food";
     @Entry(category = FOOD) public static int stewStackSize = 16;
+    @Entry(category = FOOD) public static int glowBerryEffect = 10;
 
     // Building
     public static final String BUILD = "building";
