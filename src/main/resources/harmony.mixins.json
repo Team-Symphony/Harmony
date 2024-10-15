@@ -5,6 +5,7 @@
   "mixins": [
     "transportation.ExitVehicleOnDamage",
     "transportation.HorseArmorPreventsBucking",
+    "transportation.TridentItemMixin",
     "building.ArmorStandStickArms",
     "redstone.OneTickCopperBulbDelay",
     "food.GlowBerryMixin"
