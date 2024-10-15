@@ -25,5 +25,5 @@
     "harmony.midnightconfig.oneTickCopperBulbDelay": "Copper bulbs have a 1 tick delay",
 
     "harmony.midnightconfig.category.potions": "Potions",
-    "harmony.midnightconfig.beaconsAffectTamedMobs": "Beacon effects apply to tamed animals as well as players."
+    "harmony.midnightconfig.beaconsAffectTamedMobs": "Beacon effects apply to tamed animals."
 }
