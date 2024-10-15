@@ -26,4 +26,5 @@ public class HarmonyConfig extends MidnightConfig {
     public static final String REDSTONE = "redstone";
     @Entry(category = REDSTONE) public static boolean oneTickCopperBulbDelay = true;
     @Entry(category = REDSTONE) public static int redstoneBulbDelay = 0;
+    @Comment(category = REDSTONE) public static Comment redstoneBulbDelayVanilla;
 }

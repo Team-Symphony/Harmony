@@ -20,5 +20,6 @@
 
     "harmony.midnightconfig.category.redstone": "Redstone",
     "harmony.midnightconfig.oneTickCopperBulbDelay": "Copper Bulbs have a 1 tick delay",
-    "harmony.midnightconfig.redstoneBulbDelay": "Tick delay for Redstone Lamps to turn off"
+    "harmony.midnightconfig.redstoneBulbDelay": "Tick delay for Redstone Lamps to turn off",
+    "harmony.midnightconfig.redstoneBulbDelayVanilla": "the vanilla delay is 4 ticks; 1 redstone tick = 2 ticks"
 }
