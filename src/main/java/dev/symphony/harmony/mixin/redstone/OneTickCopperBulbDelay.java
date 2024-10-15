@@ -37,7 +37,9 @@ public class OneTickCopperBulbDelay extends Block {
     //Calling update
     @Override
     protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        this.update(state, world, pos);
+        if (world instanceof ServerWorld) {
+            this.update(state, world, pos);
+        }
     }
 
 }
