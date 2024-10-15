@@ -27,6 +27,6 @@
     "harmony.midnightconfig.category.potions": "Potions",
     "harmony.midnightconfig.beaconsAffectTamedMobs": "Beacon effects apply to tamed animals as well as players.",
 
-    "harmony.midnightconfig.category.mobs": "Potions",
+    "harmony.midnightconfig.category.mobs": "Mobs",
     "harmony.midnightconfig.peacefulMonsterSpawning": "Hostile mobs are able to spawn in peaceful."
 }
