@@ -24,5 +24,8 @@
     "harmony.midnightconfig.category.redstone": "Redstone",
     "harmony.midnightconfig.oneTickCopperBulbDelay": "Copper Bulbs have a 1 tick delay",
     "harmony.midnightconfig.redstoneBulbDelay": "Tick delay for Redstone Lamps to turn off",
-    "harmony.midnightconfig.redstoneBulbDelay.tooltip": "The vanilla delay is 4 ticks"
+    "harmony.midnightconfig.redstoneBulbDelay.tooltip": "The vanilla delay is 4 ticks",
+  
+    "harmony.midnightconfig.category.potions": "Potions",
+    "harmony.midnightconfig.beaconsAffectTamedMobs": "Beacon effects apply to tamed animals as well as players."
 }
