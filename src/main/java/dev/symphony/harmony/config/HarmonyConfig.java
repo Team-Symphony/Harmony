@@ -29,4 +29,8 @@ public class HarmonyConfig extends MidnightConfig {
     // Potions
     public static final String POTIONS = "potions";
     @Entry(category = POTIONS) public static boolean beaconsAffectTamedMobs = true;
+
+    // Mobs
+    public static final String MOBS = "mobs";
+    @Entry(category = MOBS) public static boolean peacefulMonsterSpawning = true;
 }
