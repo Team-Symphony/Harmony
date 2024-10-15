@@ -3,12 +3,13 @@
   "package": "dev.symphony.harmony.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "transportation.ExitVehicleOnDamage",
-    "transportation.HorseArmorPreventsBucking",
     "building.ArmorStandStickArms",
+    "food.GlowBerryMixin",
     "potions.BeaconBlockEntityMixin",
+    "redstone.AbstractBlockImplMixin",
     "redstone.OneTickCopperBulbDelay",
-    "food.GlowBerryMixin"
+    "transportation.ExitVehicleOnDamage",
+    "transportation.HorseArmorPreventsBucking"
   ],
   "injectors": {
     "defaultRequire": 1

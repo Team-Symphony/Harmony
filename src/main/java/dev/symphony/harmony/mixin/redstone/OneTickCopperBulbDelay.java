@@ -3,7 +3,6 @@ package dev.symphony.harmony.mixin.redstone;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import dev.symphony.harmony.config.HarmonyConfig;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BulbBlock;
 import net.minecraft.server.world.ServerWorld;
@@ -16,11 +15,9 @@ import org.spongepowered.asm.mixin.injection.At;
 // FEATURE: Added back 1 tick Copper Bulb delay
 // AUTHORS: Randomvideos, axialeaa
 @Mixin(BulbBlock.class)
-public class OneTickCopperBulbDelay extends Block {
-    @Shadow
-    public void update(BlockState state, ServerWorld world, BlockPos pos) {}
+public class OneTickCopperBulbDelay extends AbstractBlockImplMixin {
 
-    public OneTickCopperBulbDelay(Settings settings) {super(settings);}
+    @Shadow public void update(BlockState state, ServerWorld world, BlockPos pos) {}
 
     //Replaced calling update with calling scheduleBlockTick
     @WrapOperation(method = "neighborUpdate",at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BulbBlock;update(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)V"))
@@ -30,13 +27,14 @@ public class OneTickCopperBulbDelay extends Block {
             return;
         }
 
-        world.scheduleBlockTick(pos, this, 1);
+        world.scheduleBlockTick(pos, instance, 1);
     }
 
     //Calling update
     @Override
-    protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+    public void scheduledTickImpl(BlockState state, ServerWorld world, BlockPos pos, Random random, Operation<Void> original) {
         this.update(state, world, pos);
+        super.scheduledTickImpl(state, world, pos, random, original);
     }
 
 }
