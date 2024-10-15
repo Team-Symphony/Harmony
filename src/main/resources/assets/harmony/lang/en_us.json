@@ -22,5 +22,8 @@
     "harmony.midnightconfig.armorStandSticks": "Number of sticks required to equip Armor Stands with arms",
 
     "harmony.midnightconfig.category.redstone": "Redstone",
-    "harmony.midnightconfig.oneTickCopperBulbDelay": "Copper bulbs have a 1 tick delay"
+    "harmony.midnightconfig.oneTickCopperBulbDelay": "Copper bulbs have a 1 tick delay",
+
+    "harmony.midnightconfig.category.potions": "Potions",
+    "harmony.midnightconfig.beaconsAffectTamedMobs": "Beacon effects apply to tamed animals as well as players."
 }
