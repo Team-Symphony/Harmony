@@ -1,5 +1,6 @@
 package dev.symphony.harmony.mixin.transportation;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import dev.symphony.harmony.config.HarmonyConfig;
 import it.unimi.dsi.fastutil.objects.Object2FloatArrayMap;
 import net.fabricmc.loader.api.FabricLoader;
@@ -15,8 +16,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Map;
 
@@ -39,8 +38,8 @@ public class HorseArmorPreventsBucking {
         preventBuckingChance.put(Items.LEATHER_HORSE_ARMOR, 0.45F);
     }
 
-    @Inject(method = "updateAnger", at = @At("HEAD"), cancellable = true)
-    private void rejectAngryWhenDrip(CallbackInfo ci) {
+    @ModifyExpressionValue(method = "updateAnger", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;shouldAmbientStand()Z"))
+    private boolean rejectAngryWhenDrip(boolean original) {
         if(HarmonyConfig.horseArmorPreventsBucking){
             if(FabricLoader.getInstance().isModLoaded("melody") && preventBuckingChance.get(Registries.ITEM.get(Identifier.of("melody:netherite_horse_armor"))) == null) {
                 // Temporary solution until we move this to a better, configurable system
@@ -51,7 +50,8 @@ public class HorseArmorPreventsBucking {
             ItemStack armor = this.inventory.getStack(0);
             float chance = preventBuckingChance.getOrDefault(armor.getItem(), 0F);
             System.out.println(preventBuckingChance);
-            if (chance > 0 && chance < 1 || Math.random() <= chance) ci.cancel();
+            if (chance > 0 && chance < 1 || Math.random() <= chance) return false;
         }
+        return original;
     }
 }
