@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "building.ArmorStandStickArms",
+    "combat.ItemEntityMixin",
     "food.GlowBerryMixin",
     "potions.BeaconBlockEntityMixin",
     "redstone.AbstractBlockImplMixin",
