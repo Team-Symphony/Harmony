@@ -14,8 +14,11 @@
 
     "harmony.midnightconfig.category.food": "Food",
     "harmony.midnightconfig.stewStackSize": "Stew/soup stack size",
-    "harmony.midnightconfig.glowBerryEffect":"Glowberry effect",
-    "harmony.midnightconfig.glowBerryEffect.tooltip":"How long the effect should last in seconds, 0 disables it",
+    "harmony.midnightconfig.glowBerryEffect": "Glowberry effect",
+    "harmony.midnightconfig.glowBerryEffect.tooltip": "How long the effect should last in seconds, 0 disables it",
+    "harmony.midnightconfig.foodEatTime": "Food delay",
+    "harmony.midnightconfig.foodEatTime.tooltip": "Eat Time Multiplier: Adjusts eating duration based on nutrition. Higher nutrition foods take longer. Set to 0 to disable.",
+
 
     "harmony.midnightconfig.category.building": "Building",
     "harmony.midnightconfig.armorStandStickArms": "Armor Stands can be equipped with arms using a Stick",

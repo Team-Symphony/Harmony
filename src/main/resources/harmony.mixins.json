@@ -8,7 +8,8 @@
     "building.ArmorStandStickArms",
     "potions.BeaconBlockEntityMixin",
     "redstone.OneTickCopperBulbDelay",
-    "food.GlowBerryMixin"
+    "food.GlowBerryMixin",
+    "food.ProportionalFoodTime"
   ],
   "injectors": {
     "defaultRequire": 1
