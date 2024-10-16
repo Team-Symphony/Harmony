@@ -2,11 +2,13 @@ package dev.symphony.harmony.config;
 
 import eu.midnightdust.lib.config.MidnightConfig;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class HarmonyConfig extends MidnightConfig {
     @Comment(category = "harmony", centered = true) public static Comment reloadWarning;
 
-    // Transportation
+    // Transportation 🏳️‍⚧️
     public static final String TRANS = "transportation";
     @Entry(category = TRANS) public static boolean exitVehicleOnDamage = true;
     @HarmonyConfigCondition.ResourceConfigName(config_name = "recipe/saddle") @Entry(category = TRANS) public static boolean saddleRecipe = true;
@@ -30,4 +32,13 @@ public class HarmonyConfig extends MidnightConfig {
     // Potions
     public static final String POTIONS = "potions";
     @Entry(category = POTIONS) public static boolean beaconsAffectTamedMobs = true;
+
+    // Combat
+    public static final String COMBAT = "combat";
+    private static final int ONE_HOUR = 60 * 60;
+
+    @Entry(category = COMBAT, isSlider = true, min = 0, max = ONE_HOUR) public static int
+        itemDespawnTimeEasy = (int) TimeUnit.MINUTES.toSeconds(20),
+        itemDespawnTimeNormal = (int) TimeUnit.MINUTES.toSeconds(10),
+        itemDespawnTimeHard = (int) TimeUnit.MINUTES.toSeconds(5);
 }
