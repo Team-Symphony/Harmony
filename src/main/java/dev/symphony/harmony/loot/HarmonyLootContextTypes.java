@@ -14,15 +14,9 @@ public class HarmonyLootContextTypes {
         .build()
     );
 
-    @SuppressWarnings("UnreachableCode")
     private static LootContextType register(String name, LootContextType type) {
         Identifier id = Harmony.id(name);
-        LootContextType lootContextType = LootContextTypesAccessor.getMap().put(id, type);
-
-        if (lootContextType == null)
-            return type;
-
-        throw new IllegalStateException("Loot table parameter set %s is already registered".formatted(id));
+        return LootContextTypesAccessor.getMap().put(id, type);
     }
 
     public static void noop() {}
