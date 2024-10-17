@@ -40,4 +40,8 @@ public class HarmonyConfig extends MidnightConfig {
         itemDespawnTimeEasy = (int) TimeUnit.MINUTES.toSeconds(20),
         itemDespawnTimeNormal = (int) TimeUnit.MINUTES.toSeconds(10),
         itemDespawnTimeHard = (int) TimeUnit.MINUTES.toSeconds(5);
+
+    // Mobs
+    public static final String MOBS = "mobs";
+    @Entry(category = MOBS) public static boolean wolvesGrowlAtMonsters = true;
 }

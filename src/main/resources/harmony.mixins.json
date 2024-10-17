@@ -6,6 +6,7 @@
     "building.ArmorStandStickArms",
     "combat.ItemEntityMixin",
     "food.GlowBerryMixin",
+    "mobs.WolfEntityMixin",
     "potions.BeaconBlockEntityMixin",
     "redstone.AbstractBlockImplMixin",
     "redstone.OneTickCopperBulbDelay",

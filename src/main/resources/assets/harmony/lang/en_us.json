@@ -30,5 +30,8 @@
     "harmony.midnightconfig.category.combat": "Combat",
     "harmony.midnightconfig.itemDespawnTimeEasy": "Time for dropped items to despawn in easy/peaceful.",
     "harmony.midnightconfig.itemDespawnTimeNormal": "Time for dropped items to despawn in normal.",
-    "harmony.midnightconfig.itemDespawnTimeHard": "Time for dropped items to despawn in hard."
+    "harmony.midnightconfig.itemDespawnTimeHard": "Time for dropped items to despawn in hard.",
+
+    "harmony.midnightconfig.category.mobs": "Mobs",
+    "harmony.midnightconfig.wolvesGrowlAtMonsters": "Tamed wolves growl at nearby monsters."
 }
