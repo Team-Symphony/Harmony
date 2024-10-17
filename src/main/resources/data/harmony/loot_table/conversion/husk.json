@@ -2,6 +2,7 @@
   "type": "harmony:conversion",
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",

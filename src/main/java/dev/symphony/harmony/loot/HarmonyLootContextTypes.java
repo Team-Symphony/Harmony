@@ -14,9 +14,12 @@ public class HarmonyLootContextTypes {
         .build()
     );
 
+    @SuppressWarnings("UnreachableCode")
     private static LootContextType register(String name, LootContextType type) {
         Identifier id = Harmony.id(name);
-        return LootContextTypesAccessor.getMap().put(id, type);
+        LootContextTypesAccessor.getMap().put(id, type);
+
+        return type;
     }
 
     public static void noop() {}
