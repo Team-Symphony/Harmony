@@ -27,21 +27,9 @@ public abstract class ChangeRedstoneLampDelay extends Block {
     //Set the delay to redstoneBulbDelay(default 0) in scheduleBlockTick
     @Inject(method = "neighborUpdate",at = @At("HEAD"), cancellable = true)
     protected void changeDelay(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify, CallbackInfo ci) {
-        if(HarmonyConfig.redstoneBulbDelay == 4)
-            return;
-        if(HarmonyConfig.redstoneBulbDelay != 0) {
-            if (!world.isClient) {
-                boolean bl = state.get(LIT);
-                if (bl != world.isReceivingRedstonePower(pos)) {
-                    if (bl) {
-                        world.scheduleBlockTick(pos, this, HarmonyConfig.redstoneBulbDelay);
-                    } else {
-                        world.setBlockState(pos, state.cycle(LIT), Block.NOTIFY_LISTENERS);
-                    }
-                }
-            }
-        }//if the delay is 0, instead of sending it through scheduleBlockTick, which takes at least 1 tick, directly do it so its faster
-        else{
+        
+    //if the delay is 0, instead of sending it through scheduleBlockTick, which takes at least 1 tick, directly do it so its faster    
+        if(HarmonyConfig.removeRedstoneLampDelay){
             if (!world.isClient) {
                 boolean bl = state.get(LIT);
                 if (bl != world.isReceivingRedstonePower(pos)) {
