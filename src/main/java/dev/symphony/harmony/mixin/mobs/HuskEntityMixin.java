@@ -45,13 +45,13 @@ public class HuskEntityMixin extends ZombieEntity {
     }
 
     @Unique
-    private void dropLoot(ServerWorld serverWorld) {
-        MinecraftServer server = serverWorld.getServer();
+    private void dropLoot(ServerWorld world) {
+        MinecraftServer server = world.getServer();
         ReloadableRegistries.Lookup registries = server.getReloadableRegistries();
 
         LootTable lootTable = registries.getLootTable(HarmonyLootTables.HUSK_CONVERSION);
 
-        LootContextParameterSet lootContextParameterSet = new LootContextParameterSet.Builder(serverWorld)
+        LootContextParameterSet lootContextParameterSet = new LootContextParameterSet.Builder(world)
             .add(LootContextParameters.ORIGIN, this.getPos())
             .add(LootContextParameters.THIS_ENTITY, this)
             .build(HarmonyLootContextTypes.CONVERSION);
