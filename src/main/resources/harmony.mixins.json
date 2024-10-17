@@ -3,9 +3,12 @@
   "package": "dev.symphony.harmony.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "accessor.LootContextTypesAccessor",
+    "accessor.LootTablesAccessor",
     "building.ArmorStandStickArms",
     "combat.ItemEntityMixin",
     "food.GlowBerryMixin",
+    "mobs.HuskEntityMixin",
     "potions.BeaconBlockEntityMixin",
     "redstone.AbstractBlockImplMixin",
     "redstone.OneTickCopperBulbDelay",
