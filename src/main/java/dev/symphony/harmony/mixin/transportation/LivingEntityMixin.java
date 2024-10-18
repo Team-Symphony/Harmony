@@ -6,7 +6,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -71,7 +73,7 @@ abstract public class LivingEntityMixin extends Entity {
     private boolean cancelElytraInLiquid(LivingEntity instance, RegistryEntry<StatusEffect> effect) {
         if(HarmonyConfig.liquidsDeactivateElytra){
             // TODO: Make it automatically go to swim mode
-            return !(!instance.hasStatusEffect(effect) && !instance.isWet() && !instance.isInLava());
+            return !(!instance.hasStatusEffect(effect) && !instance.isSubmergedIn(FluidTags.WATER) && !instance.isInLava());
         }
         return false;
     }
