@@ -27,6 +27,7 @@ public class HarmonyConfig extends MidnightConfig {
     // Redstone
     public static final String REDSTONE = "redstone";
     @Entry(category = REDSTONE) public static boolean oneTickCopperBulbDelay = true;
+    @Entry(category = REDSTONE) public static boolean removeRedstoneLampDelay = true;
 
     // Potions
     public static final String POTIONS = "potions";
