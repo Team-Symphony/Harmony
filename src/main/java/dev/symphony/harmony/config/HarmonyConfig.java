@@ -13,7 +13,7 @@ public class HarmonyConfig extends MidnightConfig {
     @HarmonyConfigCondition.ResourceConfigName(config_name = "recipe/saddle") @Entry(category = TRANS) public static boolean saddleRecipe = true;
     @Entry(category = TRANS) public static boolean horseArmorPreventsBucking = true;
     @Entry(category = TRANS) public static boolean riptideAcceleratesOnWater = true;
-
+    @Entry(category = TRANS) public static int riptideTimeMultiplier = 5;
 
     // Food
     public static final String FOOD = "food";

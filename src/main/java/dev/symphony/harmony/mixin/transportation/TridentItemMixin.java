@@ -1,6 +1,7 @@
 package dev.symphony.harmony.mixin.transportation;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.symphony.harmony.config.HarmonyConfig;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
@@ -18,12 +19,15 @@ public class TridentItemMixin {
     @ModifyArg(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"), index = 0)
     private int modifyRiptideTicks(int riptideTicks, @Local(argsOnly = true) ItemStack stack) {
 
-        RegistryEntry<Enchantment> entry = stack.getEnchantments().getEnchantments().stream()
-                .filter(act -> act.matchesId(Identifier.ofVanilla("riptide")))
-                .findFirst()
-                .orElse(null);
-        int level = EnchantmentHelper.getLevel(entry, stack);
+        if(HarmonyConfig.riptideTimeMultiplier != 0){
+            RegistryEntry<Enchantment> entry = stack.getEnchantments().getEnchantments().stream()
+                    .filter(act -> act.matchesId(Identifier.ofVanilla("riptide")))
+                    .findFirst()
+                    .orElse(null);
+            int level = EnchantmentHelper.getLevel(entry, stack);
 
-        return 15 + level*5;
+            return 15 + level*HarmonyConfig.riptideTimeMultiplier;
+        }
+        return riptideTicks;
     }
 }
