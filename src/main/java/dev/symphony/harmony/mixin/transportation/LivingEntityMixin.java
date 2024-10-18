@@ -5,7 +5,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -30,17 +29,6 @@ abstract public class LivingEntityMixin extends Entity {
     public LivingEntityMixin(EntityType<?> type, World world) {
         super(type, world);
     }
-
-    @Override
-    protected void readCustomDataFromNbt(NbtCompound nbt) {
-
-    }
-
-    @Override
-    protected void writeCustomDataToNbt(NbtCompound nbt) {
-
-    }
-
 
     //Reduces water drag when using riptide.
     @ModifyExpressionValue(
