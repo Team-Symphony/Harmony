@@ -52,17 +52,19 @@ abstract public class LivingEntityMixin extends Entity {
     )
     )
     private void accelerateWhenRiptide(CallbackInfo ci) {
-        if (!this.isTouchingWater() && HarmonyConfig.riptideAcceleratesOnWater) return;
-        float f = getYaw();
-        float g = getPitch();
-        float h = -MathHelper.sin(f * DEG) * MathHelper.cos(g * DEG);
-        float k = -MathHelper.sin(g * DEG);
-        float l = MathHelper.cos(f * DEG) * MathHelper.cos(g * DEG);
-        float m = MathHelper.sqrt(h * h + k * k + l * l);
-        h *= MODIFIER / m;
-        k *= MODIFIER / m;
-        l *= MODIFIER / m;
-        addVelocity(h, k, l);
+        if(HarmonyConfig.riptideAcceleratesOnWater){
+            if (!this.isTouchingWater()) return;
+            float f = getYaw();
+            float g = getPitch();
+            float h = -MathHelper.sin(f * DEG) * MathHelper.cos(g * DEG);
+            float k = -MathHelper.sin(g * DEG);
+            float l = MathHelper.cos(f * DEG) * MathHelper.cos(g * DEG);
+            float m = MathHelper.sqrt(h * h + k * k + l * l);
+            h *= MODIFIER / m;
+            k *= MODIFIER / m;
+            l *= MODIFIER / m;
+            addVelocity(h, k, l);
+        }
     }
 
     @Redirect(method = "tickFallFlying", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"))
