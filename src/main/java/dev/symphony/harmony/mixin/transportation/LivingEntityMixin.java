@@ -42,7 +42,10 @@ abstract public class LivingEntityMixin extends Entity {
     )
     )
     private boolean boostWhenRiptide(boolean original) {
-        return original || this.riptideTicks>0;
+        if(HarmonyConfig.riptideAcceleratesOnWater){
+            return original || this.riptideTicks>0;
+        }
+        return original;
     }
 
 
