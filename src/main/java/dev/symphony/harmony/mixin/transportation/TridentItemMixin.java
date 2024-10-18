@@ -12,6 +12,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
+// FEATURE: Trident accelerates on water
+// AUTHORS: Kiku, Flatkat
+// ALSO SEE: mixin.transportation.LivingEntityMixin
 @Mixin(TridentItem.class)
 public class TridentItemMixin {
 
