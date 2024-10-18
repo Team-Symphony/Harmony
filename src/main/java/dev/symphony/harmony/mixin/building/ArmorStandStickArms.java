@@ -3,6 +3,8 @@ package dev.symphony.harmony.mixin.building;
 
 import dev.symphony.harmony.config.HarmonyConfig;
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,7 +14,9 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -24,7 +28,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 // FEATURE: Allow Armor stands to be given arms using a Stick, and removed using Shears
 // AUTHORS: WheatFlour, Trigam
 @Mixin(ArmorStandEntity.class)
-public abstract class ArmorStandStickArms {
+public abstract class ArmorStandStickArms extends Entity {
+
+    public ArmorStandStickArms(EntityType<?> type, World world) {
+        super(type, world);
+    }
 
     @Shadow public abstract void setShowArms(boolean showArms);
     @Shadow public abstract boolean isMarker();
@@ -60,20 +68,22 @@ public abstract class ArmorStandStickArms {
 
     @Unique
     public void shearArms(PlayerEntity player, ItemStack shearStack, Hand hand) {
-        ArmorStandEntity thisStand = (ArmorStandEntity) (Object) this;
-
         setShowArms(false);
         shearStack.damage(1, player, LivingEntity.getSlotForHand(hand));
 
         ItemStack sticksDrop = Items.STICK.getDefaultStack();
         sticksDrop.setCount(HarmonyConfig.armorStandSticks);
-        Block.dropStack(thisStand.getWorld(), thisStand.getBlockPos().up(), sticksDrop);
+
+        World world = this.getWorld();
+        BlockPos blockPos = this.getBlockPos().up();
+
+        Block.dropStack(world, blockPos, sticksDrop);
 
         // Drop hand items
         for (int i = 0; i < heldItems.size(); i++) {
             ItemStack handItem = heldItems.get(i);
             if (!handItem.isEmpty()) {
-                Block.dropStack(thisStand.getWorld(), thisStand.getBlockPos().up(), handItem);
+                Block.dropStack(world, blockPos, handItem);
                 heldItems.set(i, ItemStack.EMPTY);
             }
         }

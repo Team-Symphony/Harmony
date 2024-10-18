@@ -22,5 +22,16 @@
     "harmony.midnightconfig.armorStandSticks": "Number of sticks required to equip Armor Stands with arms",
 
     "harmony.midnightconfig.category.redstone": "Redstone",
-    "harmony.midnightconfig.oneTickCopperBulbDelay": "Copper bulbs have a 1 tick delay"
+    "harmony.midnightconfig.oneTickCopperBulbDelay": "Copper bulbs have a 1 tick delay",
+
+    "harmony.midnightconfig.category.potions": "Potions",
+    "harmony.midnightconfig.beaconsAffectTamedMobs": "Beacon effects apply to tamed animals as well as players.",
+
+    "harmony.midnightconfig.category.combat": "Combat",
+    "harmony.midnightconfig.itemDespawnTimeEasy": "Time for dropped items to despawn in easy/peaceful.",
+    "harmony.midnightconfig.itemDespawnTimeNormal": "Time for dropped items to despawn in normal.",
+    "harmony.midnightconfig.itemDespawnTimeHard": "Time for dropped items to despawn in hard.",
+
+    "harmony.midnightconfig.category.mobs": "Mobs",
+    "harmony.midnightconfig.husksDropSandOnConvert": "Husks drop sand when converting into zombies."
 }
