@@ -24,7 +24,7 @@ abstract public class LivingEntityMixin extends Entity {
     // AUTHORS: Kiku, Flatkat
     // ALSO SEE: mixin.transportation.TridentItemMixin
     @Unique
-    private static final float MODIFIER = 0.1F;
+    private static final float MODIFIER = HarmonyConfig.riptideAccelerationOnWater;
     @Unique
     private static final float DEG = (float) (Math.PI / 180F);
 
@@ -44,7 +44,7 @@ abstract public class LivingEntityMixin extends Entity {
     )
     )
     private boolean boostWhenRiptide(boolean original) {
-        if(HarmonyConfig.riptideAcceleratesOnWater){
+        if(HarmonyConfig.riptideAccelerationOnWater != 0){
             return original || this.riptideTicks>0;
         }
         return original;
@@ -59,7 +59,7 @@ abstract public class LivingEntityMixin extends Entity {
     )
     )
     private void accelerateWhenRiptide(CallbackInfo ci) {
-        if(HarmonyConfig.riptideAcceleratesOnWater){
+        if(HarmonyConfig.riptideAccelerationOnWater != 0){
             if (!this.isTouchingWater()) return;
             float f = getYaw();
             float g = getPitch();
