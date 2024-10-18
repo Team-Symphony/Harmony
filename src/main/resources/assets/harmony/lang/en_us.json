@@ -6,16 +6,23 @@
     "harmony.midnightconfig.category.harmony": "Harmony",
 
     "harmony.midnightconfig.category.transportation": "Transportation",
+    "harmony.midnightconfig.liquidsDeactivateElytra": "Flying through liquids deactivates the Elytra",
     "harmony.midnightconfig.exitVehicleOnDamage": "Mobs exit vehicles when taking damage",
     "harmony.midnightconfig.vehiclesMoveThroughLeaves": "Rideable mobs can move through leaves when ridden",
     "harmony.midnightconfig.leafSpeedFactor": "Rideable mob speed percentage while inside leaves",
     "harmony.midnightconfig.saddleRecipe": "Craftable Saddle",
     "harmony.midnightconfig.horseArmorPreventsBucking": "Horse armor decreases bucking chance on damage",
+    "harmony.midnightconfig.riptideAccelerationOnWater": "Riptide acceleration on water",
+    "harmony.midnightconfig.riptideTimeMultiplier": "Riptide effect time multiplier",
+        "harmony.midnightconfig.riptideTimeMultiplier.tooltip": "Increases the time for the riptide animation, during which you will gain acceleration as long as the \"Riptide Acceleration on water\" feature is enabled. \n\nThe time is calculated the following way: 15+level*multiplier \n\nSet it to 0 to disable the feature.",
+
+
+
 
     "harmony.midnightconfig.category.food": "Food",
     "harmony.midnightconfig.stewStackSize": "Stew/soup stack size",
     "harmony.midnightconfig.glowBerryEffect":"Glowberry effect",
-    "harmony.midnightconfig.glowBerryEffect.tooltip":"How long the effect should last in seconds, 0 disables it",
+        "harmony.midnightconfig.glowBerryEffect.tooltip":"How long the effect should last in seconds, 0 disables it",
 
     "harmony.midnightconfig.category.building": "Building",
     "harmony.midnightconfig.armorStandStickArms": "Armor Stands can be equipped with arms using a Stick",
