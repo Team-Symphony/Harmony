@@ -10,9 +10,12 @@ public class HarmonyConfig extends MidnightConfig {
 
     // Transportation 🏳️‍⚧️
     public static final String TRANS = "transportation";
+    @Entry(category = TRANS) public static boolean liquidsDeactivateElytra = true;
     @Entry(category = TRANS) public static boolean exitVehicleOnDamage = true;
     @HarmonyConfigCondition.ResourceConfigName(config_name = "recipe/saddle") @Entry(category = TRANS) public static boolean saddleRecipe = true;
     @Entry(category = TRANS) public static boolean horseArmorPreventsBucking = true;
+    @Entry(category = TRANS) public static float riptideAccelerationOnWater = 0.1F;
+    @Entry(category = TRANS) public static int riptideTimeMultiplier = 5;
 
     // Food
     public static final String FOOD = "food";

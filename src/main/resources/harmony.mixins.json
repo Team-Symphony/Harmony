@@ -13,7 +13,9 @@
     "redstone.AbstractBlockImplMixin",
     "redstone.OneTickCopperBulbDelay",
     "transportation.ExitVehicleOnDamage",
-    "transportation.HorseArmorPreventsBucking"
+    "transportation.HorseArmorPreventsBucking",
+    "transportation.TridentItemMixin",
+    "transportation.LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
