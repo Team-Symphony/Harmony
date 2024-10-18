@@ -1,6 +1,7 @@
 package dev.symphony.harmony.mixin.transportation;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import dev.symphony.harmony.config.HarmonyConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -51,7 +52,7 @@ abstract public class LivingEntityMixin extends Entity {
     )
     )
     private void accelerateWhenRiptide(CallbackInfo ci) {
-        if (!this.isTouchingWater()) return;
+        if (!this.isTouchingWater() && HarmonyConfig.riptideAcceleratesOnWater) return;
         float f = getYaw();
         float g = getPitch();
         float h = -MathHelper.sin(f * DEG) * MathHelper.cos(g * DEG);
@@ -66,7 +67,11 @@ abstract public class LivingEntityMixin extends Entity {
 
     @Redirect(method = "tickFallFlying", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"))
     private boolean cancelElytraInLiquid(LivingEntity instance, RegistryEntry<StatusEffect> effect) {
-        return !(!instance.hasStatusEffect(effect) && !instance.isWet() && !instance.isInLava());
+        if(HarmonyConfig.liquidsDeactivateElytra){
+            // TODO: Make it automatically go to swim mode
+            return !(!instance.hasStatusEffect(effect) && !instance.isWet() && !instance.isInLava());
+        }
+        return false;
     }
 
 }
