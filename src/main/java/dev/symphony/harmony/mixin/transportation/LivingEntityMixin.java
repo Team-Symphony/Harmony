@@ -81,7 +81,7 @@ abstract public class LivingEntityMixin extends Entity {
     private boolean cancelElytraInLiquid(LivingEntity instance, RegistryEntry<StatusEffect> effect) {
         if(HarmonyConfig.liquidsDeactivateElytra){
             // TODO: Make it automatically go to swim mode
-            return !(!instance.hasStatusEffect(effect) && !instance.isSubmergedIn(FluidTags.WATER) && !instance.isInLava());
+            return !(!instance.hasStatusEffect(effect) && !instance.isSubmergedInWater() && !instance.isInLava());
         }
         return false;
     }
