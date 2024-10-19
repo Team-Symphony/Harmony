@@ -30,6 +30,8 @@ abstract public class LivingEntityMixin extends Entity {
     @Shadow
     protected int riptideTicks;
 
+    @Shadow public abstract void setSprinting(boolean sprinting);
+
     public LivingEntityMixin(EntityType<?> type, World world) {
         super(type, world);
     }
@@ -80,9 +82,13 @@ abstract public class LivingEntityMixin extends Entity {
     private boolean cancelElytraInLiquid(LivingEntity instance, RegistryEntry<StatusEffect> effect) {
         if(HarmonyConfig.liquidsDeactivateElytra){
             // TODO: Make it automatically go to swim mode
-            return !(!instance.hasStatusEffect(effect) && !instance.isSubmergedInWater() && !instance.isInLava());
+            if (instance.hasStatusEffect(effect) || instance.isSubmergedInWater() || instance.isInLava()){
+                setSprinting(true);
+                return true;
+            }
         }
         return false;
     }
+
 
 }
