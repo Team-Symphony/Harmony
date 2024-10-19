@@ -33,5 +33,6 @@
     "harmony.midnightconfig.itemDespawnTimeHard": "Time for dropped items to despawn in hard.",
 
     "harmony.midnightconfig.category.mobs": "Mobs",
-    "harmony.midnightconfig.wolvesGrowlAtMonsters": "Tamed wolves growl at nearby monsters."
+    "harmony.midnightconfig.wolvesGrowlAtMonsters": "Tamed wolves growl at nearby monsters.",
+    "harmony.midnightconfig.permissiveParrotPerching": "Parrots dismount under fewer restrictions."
 }

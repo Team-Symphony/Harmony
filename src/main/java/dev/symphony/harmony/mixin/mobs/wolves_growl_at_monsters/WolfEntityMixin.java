@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.mobs;
+package dev.symphony.harmony.mixin.mobs.wolves_growl_at_monsters;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import dev.symphony.harmony.config.HarmonyConfig;
@@ -14,10 +14,6 @@ import org.spongepowered.asm.mixin.injection.At;
 
 import java.util.List;
 
-/**
- * Tamed wolves growl when there is a hostile mob nearby, regardless of whether that mob has made them "angry".
- * @author axialeaa
- */
 @Mixin(WolfEntity.class)
 public abstract class WolfEntityMixin extends TameableEntity {
 

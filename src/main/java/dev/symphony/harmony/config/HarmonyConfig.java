@@ -44,4 +44,5 @@ public class HarmonyConfig extends MidnightConfig {
     // Mobs
     public static final String MOBS = "mobs";
     @Entry(category = MOBS) public static boolean wolvesGrowlAtMonsters = true;
+    @Entry(category = MOBS) public static boolean permissiveParrotPerching = true;
 }
