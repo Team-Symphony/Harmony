@@ -19,9 +19,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntity.class)
 abstract public class LivingEntityMixin extends Entity {
-    // FEATURE: Trident accelerates on water
-    // AUTHORS: Kiku, Flatkat
-    // ALSO SEE: mixin.transportation.TridentItemMixin
+    /**
+     * FEATURE: Trident riptide animation is longer (depending on enchant level)
+     * @author Kiku
+     * @author Flatkat
+     **/
     @Unique
     private static final float MODIFIER = HarmonyConfig.riptideAccelerationOnWater;
     @Unique
@@ -76,8 +78,14 @@ abstract public class LivingEntityMixin extends Entity {
     }
 
 
-    // FEATURE: Elytra doesnt work underwater
+    // FEATURE:
     // AUTHORS: Kiku, Flatkat
+
+    /**
+     * FEATURE: Flying through liquids deactivates the Elytra
+     * @author Kiku
+     * @author Flatkat
+     */
     @Redirect(method = "tickFallFlying", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"))
     private boolean cancelElytraInLiquid(LivingEntity instance, RegistryEntry<StatusEffect> effect) {
         if(HarmonyConfig.liquidsDeactivateElytra){

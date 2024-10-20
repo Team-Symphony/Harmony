@@ -21,9 +21,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-// FEATURE: Trident accelerates on water
-// AUTHORS: Kiku, Flatkat
-// ALSO SEE: mixin.transportation.LivingEntityMixin
+
 @Mixin(TridentItem.class)
 public abstract class TridentItemMixin extends Item {
 
@@ -33,6 +31,11 @@ public abstract class TridentItemMixin extends Item {
         super(settings);
     }
 
+    /**
+    * FEATURE: Trident riptide animation is longer (depending on enchant level)
+    * @author Kiku
+    * @author Flatkat
+    **/
     // Extends the duration of the riptide effect based on the enchantment level, similar to rocket boosts.
     @ModifyArg(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"), index = 0)
     private int modifyRiptideTicks(int riptideTicks, @Local(argsOnly = true) ItemStack stack) {
@@ -49,6 +52,11 @@ public abstract class TridentItemMixin extends Item {
         return riptideTicks;
     }
 
+    /**
+     * FEATURE: Trident riptide animation is longer (depending on enchant level)
+     * @author Kiku
+     * @author Flatkat
+     **/
     // Adds a cooldown to tridents with riptide, to avoid acceleration stacking
     @Inject(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"))
     public void addCooldown(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo ci) {
