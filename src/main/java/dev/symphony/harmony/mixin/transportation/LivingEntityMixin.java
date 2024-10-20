@@ -38,6 +38,8 @@ abstract public class LivingEntityMixin extends Entity {
         super(type, world);
     }
 
+
+
     //Reduces water drag when using riptide.
     @ModifyExpressionValue(
             method = "travel", at = @At(

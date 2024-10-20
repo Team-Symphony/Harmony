@@ -15,7 +15,8 @@
     "transportation.ExitVehicleOnDamage",
     "transportation.HorseArmorPreventsBucking",
     "transportation.TridentItemMixin",
-    "transportation.LivingEntityMixin"
+    "transportation.LivingEntityMixin",
+    "transportation.LivingEntityAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

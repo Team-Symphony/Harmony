@@ -67,8 +67,10 @@ public abstract class TridentItemMixin extends Item {
                     .orElse(null);
             int level = EnchantmentHelper.getLevel(entry, stack);
 
+
             if(user instanceof PlayerEntity && level > 0){
-                ((PlayerEntity) user).getItemCooldownManager().set(this, 20);
+                System.out.println(((LivingEntityAccessor) user).getRiptideTicks());
+                ((PlayerEntity) user).getItemCooldownManager().set(this, ((LivingEntityAccessor) user).getRiptideTicks());
             }
         }
     }
