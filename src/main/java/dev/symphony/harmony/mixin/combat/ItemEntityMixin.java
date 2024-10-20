@@ -24,17 +24,18 @@ public abstract class ItemEntityMixin extends Entity {
 
     @ModifyConstant(method = "tick", constant = @Constant(intValue = 6000))
     private int modifyDespawnTime(int constant) {
-        if(HarmonyConfig.changeItemDespawnTime){
-            int time = 20 * switch (this.getWorld().getDifficulty()) {
-                case PEACEFUL, EASY -> HarmonyConfig.itemDespawnTimeEasy;
-                case NORMAL -> HarmonyConfig.itemDespawnTimeNormal;
-                case HARD -> HarmonyConfig.itemDespawnTimeHard;
-            };
-
-            return time == 0 ? NEVER_DESPAWN_AGE : time;
+        if(!HarmonyConfig.changeItemDespawnTime){
+            return constant;
         }
 
-        return constant;
+
+        int time = 20 * switch (this.getWorld().getDifficulty()) {
+            case PEACEFUL, EASY -> HarmonyConfig.itemDespawnTimeEasy;
+            case NORMAL -> HarmonyConfig.itemDespawnTimeNormal;
+            case HARD -> HarmonyConfig.itemDespawnTimeHard;
+        };
+
+        return time == 0 ? NEVER_DESPAWN_AGE : time;
     }
 
 }
