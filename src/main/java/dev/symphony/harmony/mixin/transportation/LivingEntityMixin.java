@@ -38,25 +38,7 @@ abstract public class LivingEntityMixin extends Entity {
         super(type, world);
     }
 
-
-
-    //Reduces water drag when using riptide.
-    @ModifyExpressionValue(
-            method = "travel", at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z",
-            ordinal = 1
-    )
-    )
-    private boolean boostWhenRiptide(boolean original) {
-        if(HarmonyConfig.riptideAccelerationOnWater != 0){
-            return original || this.riptideTicks>0;
-        }
-        return original;
-    }
-
-
-    //Applies constant acceleration when using riptide and touching water.
+        //Applies constant acceleration when using riptide and touching water.
     @Inject(
             method = "tickMovement", at = @At(
             value = "INVOKE",
@@ -79,6 +61,27 @@ abstract public class LivingEntityMixin extends Entity {
         }
     }
 
+    
+     /**
+     * FEATURE: Reduced water drag when using riptide
+     * @author Kiku
+     * @author Flatkat
+     **/
+    @ModifyExpressionValue(
+            method = "travel", at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z",
+            ordinal = 1
+    )
+    )
+    private boolean boostWhenRiptide(boolean original) {
+        if(HarmonyConfig.riptideAccelerationOnWater != 0){
+            return original || this.riptideTicks>0;
+        }
+        return original;
+    }
+
+
 
     /**
      * FEATURE: Flying through liquids deactivates the Elytra
@@ -88,7 +91,6 @@ abstract public class LivingEntityMixin extends Entity {
     @Redirect(method = "tickFallFlying", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"))
     private boolean cancelElytraInLiquid(LivingEntity instance, RegistryEntry<StatusEffect> effect) {
         if(HarmonyConfig.liquidsDeactivateElytra){
-            // TODO: Make it automatically go to swim mode
             if (instance.hasStatusEffect(effect) || instance.isSubmergedInWater() || instance.isInLava()){
                 setSprinting(true);
                 return true;
