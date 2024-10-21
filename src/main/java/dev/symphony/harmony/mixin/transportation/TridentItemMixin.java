@@ -53,9 +53,10 @@ public abstract class TridentItemMixin extends Item {
     }
 
     /**
-     * FEATURE: Trident riptide animation is longer (depending on enchant level)
-     * @author Kiku
+     * FEATURE: Tridents with riptide have a cooldown of the length of the riptide effect
+     * (This prevents acceleration stacking)
      * @author Flatkat
+     * @author WheatFlour
      **/
     // Adds a cooldown to tridents with riptide, to avoid acceleration stacking
     @Inject(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"))
