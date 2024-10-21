@@ -75,7 +75,7 @@ abstract public class LivingEntityMixin extends Entity {
     )
     )
     private boolean boostWhenRiptide(boolean original) {
-        if(HarmonyConfig.riptideAccelerationOnWater != 0){
+        if(HarmonyConfig.reduceRiptideWaterDrag){
             return original || this.riptideTicks>0;
         }
         return original;

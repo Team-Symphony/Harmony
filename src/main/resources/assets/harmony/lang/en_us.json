@@ -15,12 +15,10 @@
     "harmony.midnightconfig.horseArmorPreventsBucking": "Horse armor decreases bucking chance on damage",
     "harmony.midnightconfig.riptideAccelerationOnWater": "Riptide acceleration on water",
     "harmony.midnightconfig.riptideCooldown": "Tridents with riptide cant be used until its animation has finished.",
-    "harmony.midnightconfig.riptideCooldown.tooltip": "Tridents with riptide cant be used until riptide animation has finished. \nThis prevents the player from accumulating acceleration when using the \"Riptide Acceleration on Water\" feature.",
+        "harmony.midnightconfig.riptideCooldown.tooltip": "Tridents with riptide cant be used until riptide animation has finished. \nThis prevents the player from accumulating acceleration when using the \"Riptide Acceleration on Water\" feature.",
     "harmony.midnightconfig.riptideTimeMultiplier": "Riptide effect time multiplier",
         "harmony.midnightconfig.riptideTimeMultiplier.tooltip": "Increases the time for the riptide animation, during which you will gain acceleration as long as the \"Riptide Acceleration on water\" feature is enabled. \n\nThe time is calculated the following way: 15+level*multiplier \n\nSet it to 0 to disable the feature.",
-
-
-
+    "harmony.midnightconfig.reduceRiptideWaterDrag": "Reduce water drag while using a Trident with Riptide",
 
     "harmony.midnightconfig.category.food": "Food",
     "harmony.midnightconfig.stewStackSize": "Stew/soup stack size",

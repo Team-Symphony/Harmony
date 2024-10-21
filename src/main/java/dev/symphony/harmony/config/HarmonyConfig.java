@@ -17,6 +17,8 @@ public class HarmonyConfig extends MidnightConfig {
     @Entry(category = TRANS) public static float riptideAccelerationOnWater = 0.1F;
     @Entry(category = TRANS) public static boolean riptideCooldown = true;
     @Entry(category = TRANS) public static int riptideTimeMultiplier = 5;
+    @Entry(category = TRANS) public static boolean reduceRiptideWaterDrag = true;
+
 
     // Food
     public static final String FOOD = "food";
