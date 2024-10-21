@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(LivingEntity.class)
 abstract public class LivingEntityMixin extends Entity {
     /**
-     * FEATURE: Trident riptide animation is longer (depending on enchant level)
+     * FEATURE: Using riptide trident enchant underwater makes the player gain acceleration during its effect.
      * @author Kiku
      * @author Flatkat
      **/
@@ -79,9 +79,6 @@ abstract public class LivingEntityMixin extends Entity {
         }
     }
 
-
-    // FEATURE:
-    // AUTHORS: Kiku, Flatkat
 
     /**
      * FEATURE: Flying through liquids deactivates the Elytra
