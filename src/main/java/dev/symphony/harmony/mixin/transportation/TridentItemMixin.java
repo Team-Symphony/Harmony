@@ -53,12 +53,12 @@ public abstract class TridentItemMixin extends Item {
     }
 
     /**
-     * FEATURE: Tridents with riptide have a cooldown of the length of the riptide effect
+     * FEATURE: Tridents with riptide cant be used until riptide animation has finished.
      * (This prevents acceleration stacking)
      * @author Flatkat
      * @author WheatFlour
      **/
-    // Adds a cooldown to tridents with riptide, to avoid acceleration stacking
+    // Adds a cooldown to tridents with riptide of the length of the riptide effect, to avoid acceleration stacking
     @Inject(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"))
     public void addCooldown(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo ci) {
         if(HarmonyConfig.riptideAccelerationOnWater!=0){
