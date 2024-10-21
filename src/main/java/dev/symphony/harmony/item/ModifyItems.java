@@ -7,13 +7,15 @@ import net.minecraft.item.Items;
 
 public class ModifyItems {
 
+    /**
+     * FEATURE: Change stew/soup stack sizes
+     * @author Flatkat
+     * @author Trigam
+     **/
     public static void init() {
-        // FEATURE: Change stew/soup stack sizes
-        // AUTHORS: Flatkat, Trigam
         if (HarmonyConfig.stewStackSize != 1) {
             DefaultItemComponentEvents.MODIFY.register(context -> {
-                // Ok so, can't use an item tag since tags only exist
-                // on world load, while this is run on mod init
+                // Ok so, can't use an item tag since tags only exist on world load, while this is run on mod init
                 context.modify(Items.MUSHROOM_STEW, builder ->
                     builder.add(DataComponentTypes.MAX_STACK_SIZE, HarmonyConfig.stewStackSize)
                 );

@@ -11,8 +11,13 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
-// FEATURE: Make items despawn slower on lower difficulties
+//
 // AUTHOR: axialeaa
+
+/**
+ * FEATURE: Make items despawn slower on lower difficulties
+ * @author axialeaa
+ */
 @Mixin(ItemEntity.class)
 public abstract class ItemEntityMixin extends Entity {
 

@@ -19,8 +19,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 import java.util.Objects;
 
-// FEATURE: Gives the beacon's effect to tamed entities as well as players.
-// AUTHOR: axialeaa
+/**
+ * FEATURE: Gives the beacon's effect to tamed entities as well as players.
+ * @author axialeaa
+ */
 @Mixin(BeaconBlockEntity.class)
 public class BeaconBlockEntityMixin {
 

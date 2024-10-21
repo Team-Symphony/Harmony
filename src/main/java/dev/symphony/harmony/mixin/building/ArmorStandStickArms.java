@@ -25,8 +25,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-// FEATURE: Allow Armor stands to be given arms using a Stick, and removed using Shears
-// AUTHORS: WheatFlour, Trigam
+/**
+ * FEATURE: Allow Armor stands to be given arms using a Stick, and removed using Shears
+ * @author WheatFlour
+ * @author Trigam
+ */
 @Mixin(ArmorStandEntity.class)
 public abstract class ArmorStandStickArms extends Entity {
 

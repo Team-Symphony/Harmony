@@ -13,8 +13,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-// FEATURE: When Glowberries are eaten, they give the glowing effect for a configurable amount of time
-// AUTHORS: Michiel1106
+/**
+ * FEATURE: When Glowberries are eaten, they give the glowing effect for a configurable amount of time
+ * @author Michiel1106
+ */
 @Mixin(Item.class)
 public class GlowBerryMixin {
 
