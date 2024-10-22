@@ -3,6 +3,8 @@ package dev.symphony.harmony;
 import dev.symphony.harmony.config.HarmonyConfig;
 import dev.symphony.harmony.config.HarmonyConfigCondition;
 import dev.symphony.harmony.item.ModifyItems;
+import dev.symphony.harmony.loot.HarmonyLootContextTypes;
+import dev.symphony.harmony.loot.HarmonyLootTables;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
 
@@ -32,5 +34,8 @@ public class Harmony implements ModInitializer {
 
 		// gay shit
 		ModifyItems.init();
+
+		HarmonyLootTables.noop();
+		HarmonyLootContextTypes.noop();
 	}
 }

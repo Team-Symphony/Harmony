@@ -3,6 +3,8 @@
   "package": "dev.symphony.harmony.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "accessor.LootContextTypesAccessor",
+    "accessor.LootTablesAccessor",
     "building.ArmorStandStickArms",
     "combat.ItemEntityMixin",
     "food.GlowBerryMixin",
@@ -11,6 +13,7 @@
     "mobs.permissive_parrot_perching.SitOnOwnerShoulderGoalMixin",
     "mobs.mismatched_mob_armor.MobEntityMixin",
     "mobs.wolves_growl_at_monsters.WolfEntityMixin",
+    "mobs.HuskEntityMixin",
     "potions.BeaconBlockEntityMixin",
     "redstone.AbstractBlockImplMixin",
     "redstone.OneTickCopperBulbDelay",

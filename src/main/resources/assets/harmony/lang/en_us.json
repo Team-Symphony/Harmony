@@ -28,6 +28,7 @@
     "harmony.midnightconfig.beaconsAffectTamedMobs": "Beacon effects apply to tamed animals as well as players.",
 
     "harmony.midnightconfig.category.combat": "Combat",
+    "harmony.midnightconfig.changeItemDespawnTime": "Change items despawn time depending on difficulty",
     "harmony.midnightconfig.itemDespawnTimeEasy": "Time for dropped items to despawn in easy/peaceful.",
     "harmony.midnightconfig.itemDespawnTimeNormal": "Time for dropped items to despawn in normal.",
     "harmony.midnightconfig.itemDespawnTimeHard": "Time for dropped items to despawn in hard.",
@@ -36,4 +37,5 @@
     "harmony.midnightconfig.wolvesGrowlAtMonsters": "Tamed wolves growl at nearby monsters.",
     "harmony.midnightconfig.permissiveParrotPerching": "Parrots dismount under fewer restrictions.",
     "harmony.midnightconfig.mismatchedMobArmor": "Mobs can spawn with mismatched armor materials."
+    "harmony.midnightconfig.husksDropSandOnConvert": "Husks drop sand when converting into zombies."
 }
