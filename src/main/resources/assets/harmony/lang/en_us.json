@@ -34,5 +34,6 @@
 
     "harmony.midnightconfig.category.mobs": "Mobs",
     "harmony.midnightconfig.wolvesGrowlAtMonsters": "Tamed wolves growl at nearby monsters.",
-    "harmony.midnightconfig.permissiveParrotPerching": "Parrots dismount under fewer restrictions."
+    "harmony.midnightconfig.permissiveParrotPerching": "Parrots dismount under fewer restrictions.",
+    "harmony.midnightconfig.mismatchedMobArmor": "Mobs can spawn with mismatched armor materials."
 }
