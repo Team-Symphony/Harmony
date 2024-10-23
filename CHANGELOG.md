@@ -16,8 +16,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - FEATURE: Tridents with riptide cant be used until riptide animation has finished
 - FEATURE: Reduced water drag while using Riptide underwater
 
+#### Exploration
+
 - FEATURE: Eye of Ender can locate end cities
-- FEATURE:
+
+#### Redstone
+
+- FEATURE: Removed turning off Redstone Lamp delay
 
 ### Deprecated
 
