@@ -18,6 +18,7 @@
 
     "harmony.midnightconfig.category.building": "Building",
     "harmony.midnightconfig.armorStandStickArms": "Armor Stands can be equipped with arms using a Stick",
+        "harmony.midnightconfig.armorStandStickArms.tooltip": "Arms can be removed with shears",
     "harmony.midnightconfig.armorStandSticks": "Number of sticks required to equip Armor Stands with arms",
 
     "harmony.midnightconfig.category.redstone": "Redstone",
