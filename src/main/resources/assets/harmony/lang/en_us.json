@@ -34,5 +34,9 @@
     "harmony.midnightconfig.itemDespawnTimeHard": "Time for dropped items to despawn in hard.",
 
     "harmony.midnightconfig.category.mobs": "Mobs",
+    "harmony.midnightconfig.wolvesGrowlAtMonsters": "Tamed wolves growl at nearby monsters.",
+    "harmony.midnightconfig.permissiveParrotPerching": "Parrots dismount under fewer restrictions.",
+        "harmony.midnightconfig.permissiveParrotPerching.tooltip": "Sneak and unsneak quickly for your parrot to fly off of you.",
+    "harmony.midnightconfig.mismatchedMobArmor": "Mobs can spawn with mismatched armor materials.",
     "harmony.midnightconfig.husksDropSandOnConvert": "Husks drop sand when converting into zombies."
 }
