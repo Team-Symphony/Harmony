@@ -25,7 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - MidnightLib will be replaced by a different config lib
 
-## [0.0.1-alpha+mc1.21] - 2023-03-05
+## [0.0.1-alpha+mc1.21] - 2024-10-23
 
 ### Added
 
