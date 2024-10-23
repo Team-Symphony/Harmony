@@ -1,7 +1,7 @@
 package dev.symphony.harmony.mixin.accessor;
 
 import com.google.common.collect.BiMap;
-import net.minecraft.loot.context.LootContextTypes
+import net.minecraft.loot.context.LootContextType;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 public interface LootContextTypesAccessor {
 
     @Accessor("MAP")
-    static BiMap<Identifier, LootContextTypes> getMap() {
+    static BiMap<Identifier, LootContextType> getMap() {
         throw new AssertionError();
     }
 
