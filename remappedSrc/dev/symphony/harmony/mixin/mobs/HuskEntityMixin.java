@@ -7,7 +7,7 @@ import net.minecraft.entity.mob.HuskEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.LootTable;
-import net.minecraft.loot.context.LootContextParameterSet;
+import net.minecraft.util.context.ContextParameterSet;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.registry.ReloadableRegistries;
 import net.minecraft.server.MinecraftServer;
