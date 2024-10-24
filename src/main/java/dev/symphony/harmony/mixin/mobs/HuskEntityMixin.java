@@ -60,4 +60,8 @@ public class HuskEntityMixin extends ZombieEntity {
             this.dropStack(itemStack, this.getHeight());
     }
 
+    @Unique
+    private void dropStack(ItemStack itemStack, float height) {
+    }
+
 }
