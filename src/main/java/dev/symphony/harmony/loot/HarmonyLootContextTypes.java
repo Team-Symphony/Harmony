@@ -4,19 +4,21 @@ import dev.symphony.harmony.Harmony;
 import dev.symphony.harmony.mixin.accessor.LootContextTypesAccessor;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.context.ContextParameter;
 import net.minecraft.util.context.ContextType;
 
 public class HarmonyLootContextTypes {
 
-    public static final ContextType CONVERSION = register("conversion", ContextType.create()
-        .require(LootContextParameters.ORIGIN)
-        .allow(LootContextParameters.THIS_ENTITY)
-        .build()
+    public static final ContextType CONVERSION = register("conversion",
+            LootContextParameters.ORIGIN,
+            LootContextParameters.THIS_ENTITY
     );
 
-    @SuppressWarnings("UnreachableCode")
-    private static ContextType register(String name, ContextType type) {
+    @SuppressWarnings("UnreacahbleCode")
+    private static ContextType register(String name, ContextParameter<?> required, ContextParameter<?> allowed) {
         Identifier id = Harmony.id(name);
+
+        ContextType type = new ContextType.Builder().require(required).allow(allowed).build();
         LootContextTypesAccessor.getMap().put(id, type);
 
         return type;
