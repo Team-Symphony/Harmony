@@ -16,7 +16,7 @@ public class SitOnOwnerShoulderGoalMixin {
         if (!HarmonyConfig.permissiveParrotPerching)
             return original;
 
-        return serverPlayerEntity.isFallFlying();
+        return serverPlayerEntity.isGliding();
     }
 
 }
