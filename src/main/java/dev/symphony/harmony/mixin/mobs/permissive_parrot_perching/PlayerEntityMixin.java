@@ -40,7 +40,7 @@ public abstract class PlayerEntityMixin extends EntityImplMixin {
         return !HarmonyConfig.permissiveParrotPerching && original;
     }
 
-    @Inject(method = "startFallFlying", at = @At("HEAD"))
+    @Inject(method = "startGliding", at = @At("HEAD"))
     private void dropOnStartedFallFlying(CallbackInfo ci) {
         World world = this.asLivingEntity.getWorld();
 
