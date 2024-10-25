@@ -11,10 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import org.spongepowered.asm.mixin.Final;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Mutable;
-import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 
 import java.util.Map;
@@ -26,10 +23,7 @@ public class HorseArmorPreventsBucking {
     // AUTHORS: KikuGie, Flatkat
     @Unique
     private static final Map<Item, Float> preventBuckingChance = new Object2FloatArrayMap<>();
-
-    @Unique
-    @Mutable
-    @Final private Inventory armorinventory;
+    @Shadow @Final private Inventory armorInventory;
 
     static {
         // TODO: Make preventBuckingChance for every type of armor configurable
@@ -41,7 +35,7 @@ public class HorseArmorPreventsBucking {
     }
 
     public HorseArmorPreventsBucking(Inventory armorinventory) {
-        this.armorinventory = armorinventory;
+        this.armorInventory.getStack(0);
     }
 
     @ModifyExpressionValue(method = "updateAnger", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;shouldAmbientStand()Z"))
@@ -53,7 +47,7 @@ public class HorseArmorPreventsBucking {
                 // Yes, this is kind of a crappy workaround, but as stated earlier, its temporary
                 preventBuckingChance.put(Registries.ITEM.get(Identifier.of("melody:netherite_horse_armor")), 1F);
             }
-            ItemStack armor = this.armorinventory.getStack(0);
+            ItemStack armor = this.armorInventory.getStack(0);
             float chance = preventBuckingChance.getOrDefault(armor.getItem(), 0F);
             System.out.println(preventBuckingChance);
             if (chance > 0 && chance < 1 || Math.random() <= chance) return false;
