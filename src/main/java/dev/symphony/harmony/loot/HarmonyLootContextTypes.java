@@ -14,12 +14,11 @@ public class HarmonyLootContextTypes {
             LootContextParameters.THIS_ENTITY
     );
 
-    @SuppressWarnings("UnreacahbleCode")
-    private static ContextType register(String name, ContextParameter<?> required, ContextParameter<?> allowed) {
-        Identifier id = Harmony.id(name);
+    @SuppressWarnings("UnreachableCode")
+    private static ContextType register(String conversion, ContextParameter<?> require, ContextParameter<?> allow) {
 
-        ContextType type = new ContextType.Builder().require(required).allow(allowed).build();
-        LootContextTypesAccessor.getMap().put(id, type);
+        ContextType type = new ContextType.Builder().require(require).allow(allow).build();
+        LootContextTypesAccessor.getMap().put(Harmony.id(conversion), type);
 
         return type;
     }
