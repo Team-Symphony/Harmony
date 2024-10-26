@@ -7,7 +7,6 @@ import dev.symphony.harmony.Harmony;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditionType;
 import net.minecraft.registry.RegistryOps;
-import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
@@ -66,12 +65,6 @@ public record HarmonyConfigCondition(String config_name) implements ResourceCond
 
     @Override
     public boolean test(@Nullable RegistryOps.RegistryInfoGetter registryInfo) {
-        return false;
-    }
-
-
-
-    public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup) {
         return resourceMap.getOrDefault(config_name, false);
     }
 
