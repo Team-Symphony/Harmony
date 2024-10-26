@@ -3,7 +3,6 @@ package dev.symphony.harmony.loot;
 import dev.symphony.harmony.Harmony;
 import dev.symphony.harmony.mixin.accessor.LootContextTypesAccessor;
 import net.minecraft.loot.context.LootContextParameters;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.context.ContextParameter;
 import net.minecraft.util.context.ContextType;
 
