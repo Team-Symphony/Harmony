@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 
 @Mixin(TridentItem.class)
@@ -60,7 +60,7 @@ public abstract class TridentItemMixin extends Item {
      **/
     // Adds a cooldown to tridents with riptide of the length of the riptide effect, to avoid acceleration stacking
     @Inject(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"))
-    public void addCooldown(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo ci) {
+    public void addCooldown(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfoReturnable<Boolean> cir) {
         if(HarmonyConfig.riptideAccelerationOnWater!=0){
             RegistryEntry<Enchantment> entry = stack.getEnchantments().getEnchantments().stream()
                     .filter(act -> act.matchesId(Identifier.ofVanilla("riptide")))
@@ -71,7 +71,7 @@ public abstract class TridentItemMixin extends Item {
 
             if(user instanceof PlayerEntity && level > 0){
                 System.out.println(((LivingEntityAccessor) user).getRiptideTicks());
-                ((PlayerEntity) user).getItemCooldownManager().set(this, ((LivingEntityAccessor) user).getRiptideTicks());
+                ((PlayerEntity) user).getItemCooldownManager().set(this.getDefaultStack(), ((LivingEntityAccessor) user).getRiptideTicks());
             }
         }
     }
