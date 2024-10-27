@@ -57,11 +57,7 @@ public class HuskEntityMixin extends ZombieEntity {
             .build(HarmonyLootContextTypes.CONVERSION);
 
         for (ItemStack itemStack : lootTable.generateLoot(lootContextParameterSet))
-            this.dropStack(itemStack, this.getHeight());
-    }
-
-    @Unique
-    private void dropStack(ItemStack itemStack, float height) {
+            this.dropStack(world, itemStack);
     }
 
 }
