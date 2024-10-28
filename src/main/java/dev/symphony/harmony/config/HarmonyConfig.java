@@ -35,6 +35,8 @@ public class HarmonyConfig extends MidnightConfig {
 
     // Combat
     public static final String COMBAT = "combat";
+    @Entry(category = COMBAT) public static boolean changeItemDespawnTime = true;
+
     private static final int ONE_HOUR = 60 * 60;
 
     @Entry(category = COMBAT, isSlider = true, min = 0, max = ONE_HOUR) public static int
@@ -44,5 +46,8 @@ public class HarmonyConfig extends MidnightConfig {
 
     // Mobs
     public static final String MOBS = "mobs";
+    @Entry(category = MOBS) public static boolean wolvesGrowlAtMonsters = true;
+    @Entry(category = MOBS) public static boolean mismatchedMobArmor = true;
+    @Entry(category = MOBS) public static boolean permissiveParrotPerching = true;
     @Entry(category = MOBS) public static boolean husksDropSandOnConvert = true;
 }
