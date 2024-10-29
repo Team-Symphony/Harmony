@@ -9,10 +9,10 @@ import net.minecraft.util.Identifier;
 
 public class HarmonyLootTables {
 
-    public static final RegistryKey<LootTable> HUSK_CONVERSION = register();
+    public static final RegistryKey<LootTable> HUSK_CONVERSION = register("conversion/husk");
 
-    private static RegistryKey<LootTable> register() {
-        Identifier id = Harmony.id("conversion/husk");
+    private static RegistryKey<LootTable> register(String name) {
+        Identifier id = Harmony.id(name);
         RegistryKey<LootTable> registryKey = RegistryKey.of(RegistryKeys.LOOT_TABLE, id);
 
         return LootTablesAccessor.invokeRegisterLootTable(registryKey);
