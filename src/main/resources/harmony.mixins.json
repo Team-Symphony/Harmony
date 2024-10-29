@@ -17,6 +17,8 @@
     "potions.BeaconBlockEntityMixin",
     "redstone.AbstractBlockImplMixin",
     "redstone.OneTickCopperBulbDelay",
+    "redstone.RemoveRedstoneLampDelay",
+    "food.GlowBerryMixin",
     "transportation.ExitVehicleOnDamage",
     "transportation.HorseArmorPreventsBucking"
   ],
