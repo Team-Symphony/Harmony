@@ -28,7 +28,7 @@ public abstract class WolfEntityMixin extends TameableEntity {
 
     @Unique
     private List<HostileEntity> getNearbyMonsters() {
-        double d = this.getAttributeValue(EntityAttributes.GENERIC_FOLLOW_RANGE);
+        double d = this.getAttributeValue(EntityAttributes.FOLLOW_RANGE);
         return this.getWorld().getEntitiesByClass(HostileEntity.class, this.getBoundingBox().expand(d, 4.0, d), hostileEntity -> true);
     }
 
