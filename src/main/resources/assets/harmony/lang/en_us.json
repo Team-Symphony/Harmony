@@ -16,6 +16,9 @@
     "harmony.midnightconfig.glowBerryEffect":"Glowberry effect",
     "harmony.midnightconfig.glowBerryEffect.tooltip":"How long the effect should last in seconds, 0 disables it",
 
+    "harmony.midnightconfig.category.enchanting": "Enchanting",
+    "harmony.midnightconfig.grindstoneRepairsWithMaterials": "Grindstones can repair using materials, similar to anvils",
+
     "harmony.midnightconfig.category.building": "Building",
     "harmony.midnightconfig.armorStandStickArms": "Armor Stands can be equipped with arms using a Stick",
         "harmony.midnightconfig.armorStandStickArms.tooltip": "Arms can be removed with shears",
