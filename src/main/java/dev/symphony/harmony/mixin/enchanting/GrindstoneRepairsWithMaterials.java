@@ -54,7 +54,7 @@ public class GrindstoneRepairsWithMaterials {
         }
         else
             return;
-        if(itemToRepair.getItem().canRepair(itemToRepair, material)){
+        if(itemToRepair.canRepairWith(material)){
             //it's the same code as the anvil repairing mechanic, each material repairs at most 25% of the item's durability. If the item that can be repaired is already at full durability, don't return any output item
             int k = Math.min(itemToRepair.getDamage(), itemToRepair.getMaxDamage() / 4);
             if(k <= 0)
