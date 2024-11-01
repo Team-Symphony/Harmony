@@ -5,8 +5,6 @@ import dev.symphony.harmony.config.HarmonyConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,7 +12,6 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntity.class)
@@ -23,7 +20,8 @@ abstract public class LivingEntityMixin extends Entity {
      * FEATURE: Using riptide trident enchant underwater makes the player gain acceleration during its effect.
      * @author Kiku
      * @author Flatkat
-     **/
+     */
+    @SuppressWarnings("JavadocDeclaration")
     @Unique
     private static final float MODIFIER = HarmonyConfig.riptideAccelerationOnWater;
     @Unique
@@ -68,10 +66,9 @@ abstract public class LivingEntityMixin extends Entity {
      * @author Flatkat
      **/
     @ModifyExpressionValue(
-            method = "travel", at = @At(
+            method = "travelInFluid", at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z",
-            ordinal = 1
+            target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"
     )
     )
     private boolean boostWhenRiptide(boolean original) {
@@ -88,10 +85,10 @@ abstract public class LivingEntityMixin extends Entity {
      * @author Kiku
      * @author Flatkat
      */
-    @Redirect(method = "tickGliding", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"))
-    private boolean cancelElytraInLiquid(LivingEntity instance, RegistryEntry<StatusEffect> effect) {
+    @ModifyExpressionValue(method = "canGlide", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"))
+    private boolean cancelElytraInLiquid(boolean original) {
         if(HarmonyConfig.liquidsDeactivateElytra){
-            if (instance.hasStatusEffect(effect) || instance.isSubmergedInWater() || instance.isInLava()){
+            if (original || this.isSubmergedInWater() || this.isInLava()) {
                 setSprinting(true);
                 return true;
             }
