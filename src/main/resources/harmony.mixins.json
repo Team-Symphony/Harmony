@@ -8,20 +8,21 @@
     "building.ArmorStandStickArms",
     "combat.ItemEntityMixin",
     "food.GlowBerryMixin",
+    "mobs.HuskEntityMixin",
+    "mobs.mismatched_mob_armor.MobEntityMixin",
     "mobs.permissive_parrot_perching.EntityImplMixin",
     "mobs.permissive_parrot_perching.PlayerEntityMixin",
     "mobs.permissive_parrot_perching.SitOnOwnerShoulderGoalMixin",
-    "mobs.mismatched_mob_armor.MobEntityMixin",
     "mobs.wolves_growl_at_monsters.WolfEntityMixin",
-    "mobs.HuskEntityMixin",
     "potions.BeaconBlockEntityMixin",
     "redstone.AbstractBlockImplMixin",
     "redstone.OneTickCopperBulbDelay",
     "transportation.ExitVehicleOnDamage",
     "transportation.HorseArmorPreventsBucking",
-    "transportation.TridentItemMixin",
     "transportation.LivingEntityMixin",
-    "transportation.LivingEntityAccessor"
+    "transportation.riptide.LivingEntityAccessor",
+    "transportation.riptide.LivingEntityMixin",
+    "transportation.riptide.TridentItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

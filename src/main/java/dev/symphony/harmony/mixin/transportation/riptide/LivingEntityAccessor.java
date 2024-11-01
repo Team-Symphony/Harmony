@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.transportation;
+package dev.symphony.harmony.mixin.transportation.riptide;
 
 import net.minecraft.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;

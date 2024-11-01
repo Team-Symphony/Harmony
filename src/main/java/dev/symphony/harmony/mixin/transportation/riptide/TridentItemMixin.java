@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.transportation;
+package dev.symphony.harmony.mixin.transportation.riptide;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import dev.symphony.harmony.config.HarmonyConfig;
