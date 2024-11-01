@@ -88,7 +88,7 @@ abstract public class LivingEntityMixin extends Entity {
      * @author Kiku
      * @author Flatkat
      */
-    @Redirect(method = "tickFallFlying", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"))
+    @Redirect(method = "tickGliding", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"))
     private boolean cancelElytraInLiquid(LivingEntity instance, RegistryEntry<StatusEffect> effect) {
         if(HarmonyConfig.liquidsDeactivateElytra){
             if (instance.hasStatusEffect(effect) || instance.isSubmergedInWater() || instance.isInLava()){
