@@ -19,8 +19,11 @@ import java.util.Map;
 @Mixin (AbstractHorseEntity.class)
 public class HorseArmorPreventsBucking {
 
-    // FEATURE:
-    // AUTHORS: KikuGie, Flatkat
+    /**
+     * FEATURE: Horse armor has a chance to prevent the horse from bucking, with the chance depending on the tier of armor
+     * @author KikuGie
+     * @author Flatkat
+     */
     @Unique
     private static final Map<Item, Float> preventBuckingChance = new Object2FloatArrayMap<>();
     @Shadow @Final private Inventory armorInventory;

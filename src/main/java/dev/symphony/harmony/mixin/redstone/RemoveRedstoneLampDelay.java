@@ -12,8 +12,10 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 
-// FEATURE: Removed Redstone Lamp delay
-// AUTHORS: Randomvideos
+/**
+ * FEATURE: Removed Redstone Lamp delay
+ * @author Randomvideos
+*/
 @Mixin(RedstoneLampBlock.class)
 public class RemoveRedstoneLampDelay extends Block  {
 

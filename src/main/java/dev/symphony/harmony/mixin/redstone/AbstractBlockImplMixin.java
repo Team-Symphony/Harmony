@@ -9,10 +9,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import org.spongepowered.asm.mixin.Mixin;
 
-// Extending + overriding super methods is not great for inter-mod compatibility.
-// Luckily, it's easily resolvable by mixing into the super class, overriding the handler method from this class instead.
-// Now the changes will stack, rather than crashing whenever another modder touches the same bit of code!
-// AUTHOR: axialeaa
+/**
+ * Extending + overriding super methods is not great for inter-mod compatibility.
+ * Luckily, it's easily resolvable by mixing into the super class, overriding the handler method from this class instead.
+ * Now the changes will stack, rather than crashing whenever another modder touches the same bit of code!
+ * @author axialeaa
+*/
 @Mixin(AbstractBlock.class)
 public class AbstractBlockImplMixin {
 

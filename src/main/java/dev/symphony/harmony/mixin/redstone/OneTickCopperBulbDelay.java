@@ -12,8 +12,11 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
-// FEATURE: Added back 1 tick Copper Bulb delay
-// AUTHORS: Randomvideos, axialeaa
+/**
+ * FEATURE: Added back 1 tick Copper Bulb delay
+ * @author Randomvideos
+ * @author axialeaa
+*/
 @Mixin(BulbBlock.class)
 public class OneTickCopperBulbDelay extends AbstractBlockImplMixin {
 
