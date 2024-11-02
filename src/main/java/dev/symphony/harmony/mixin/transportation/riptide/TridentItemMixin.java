@@ -2,7 +2,6 @@ package dev.symphony.harmony.mixin.transportation.riptide;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import dev.symphony.harmony.config.HarmonyConfig;
-import dev.symphony.harmony.mixin.accessor.LivingEntityAccessor;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
