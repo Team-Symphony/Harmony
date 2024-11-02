@@ -2,6 +2,7 @@ package dev.symphony.harmony.mixin.transportation.riptide;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.mixin.accessor.LivingEntityAccessor;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
@@ -40,13 +41,12 @@ public abstract class TridentItemMixin extends Item {
     @ModifyArg(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"), index = 0)
     private int modifyRiptideTicks(int riptideTicks, @Local(argsOnly = true) ItemStack stack) {
 
-        if(HarmonyConfig.riptideTimeMultiplier != 0){
+        if(HarmonyConfig.riptideCooldown){
             RegistryEntry<Enchantment> entry = stack.getEnchantments().getEnchantments().stream()
                     .filter(act -> act.matchesId(Identifier.ofVanilla("riptide")))
                     .findFirst()
                     .orElse(null);
             int level = EnchantmentHelper.getLevel(entry, stack);
-
             return 15 + level*HarmonyConfig.riptideTimeMultiplier;
         }
         return riptideTicks;
@@ -68,10 +68,8 @@ public abstract class TridentItemMixin extends Item {
                     .orElse(null);
             int level = EnchantmentHelper.getLevel(entry, stack);
 
-
             if(user instanceof PlayerEntity && level > 0){
-                System.out.println(((LivingEntityAccessor) user).getRiptideTicks());
-                ((PlayerEntity) user).getItemCooldownManager().set(this.getDefaultStack(), ((LivingEntityAccessor) user).getRiptideTicks());
+                ((PlayerEntity) user).getItemCooldownManager().set(this.getDefaultStack(), 15+level*HarmonyConfig.riptideTimeMultiplier);
             }
         }
     }
