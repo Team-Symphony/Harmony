@@ -40,7 +40,7 @@ public abstract class TridentItemMixin extends Item {
     @ModifyArg(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"), index = 0)
     private int modifyRiptideTicks(int riptideTicks, @Local(argsOnly = true) ItemStack stack) {
 
-        if(HarmonyConfig.riptideCooldown){
+        if(HarmonyConfig.riptideTimeMultiplier!=0){
             RegistryEntry<Enchantment> entry = stack.getEnchantments().getEnchantments().stream()
                     .filter(act -> act.matchesId(Identifier.ofVanilla("riptide")))
                     .findFirst()
@@ -60,7 +60,7 @@ public abstract class TridentItemMixin extends Item {
     // Adds a cooldown to tridents with riptide of the length of the riptide effect, to avoid acceleration stacking
     @Inject(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"))
     public void addCooldown(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfoReturnable<Boolean> cir) {
-        if(HarmonyConfig.riptideAccelerationOnWater!=0){
+        if(HarmonyConfig.riptideCooldown){
             RegistryEntry<Enchantment> entry = stack.getEnchantments().getEnchantments().stream()
                     .filter(act -> act.matchesId(Identifier.ofVanilla("riptide")))
                     .findFirst()
