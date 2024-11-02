@@ -20,7 +20,7 @@
     "transportation.ExitVehicleOnDamage",
     "transportation.HorseArmorPreventsBucking",
     "transportation.LivingEntityMixin",
-    "transportation.riptide.LivingEntityAccessor",
+    "accessor.LivingEntityAccessor",
     "transportation.riptide.LivingEntityMixin",
     "transportation.riptide.TridentItemMixin"
   ],
