@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.transportation;
+package dev.symphony.harmony.mixin.transportation.elytra;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import dev.symphony.harmony.config.HarmonyConfig;

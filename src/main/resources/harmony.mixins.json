@@ -19,7 +19,7 @@
     "redstone.OneTickCopperBulbDelay",
     "transportation.ExitVehicleOnDamage",
     "transportation.HorseArmorPreventsBucking",
-    "transportation.LivingEntityMixin",
+    "transportation.elytra.LivingEntityMixin",
     "transportation.riptide.LivingEntityMixin",
     "transportation.riptide.TridentItemMixin"
   ],
