@@ -27,6 +27,7 @@ public class HarmonyConfig extends MidnightConfig {
     // Redstone
     public static final String REDSTONE = "redstone";
     @Entry(category = REDSTONE) public static boolean oneTickCopperBulbDelay = true;
+    @Entry(category = REDSTONE) public static boolean removeRedstoneLampDelay = true;
 
     // Potions
     public static final String POTIONS = "potions";
@@ -45,5 +46,8 @@ public class HarmonyConfig extends MidnightConfig {
 
     // Mobs
     public static final String MOBS = "mobs";
+    @Entry(category = MOBS) public static boolean wolvesGrowlAtMonsters = true;
+    @Entry(category = MOBS) public static boolean mismatchedMobArmor = true;
+    @Entry(category = MOBS) public static boolean permissiveParrotPerching = true;
     @Entry(category = MOBS) public static boolean husksDropSandOnConvert = true;
 }

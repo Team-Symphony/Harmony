@@ -7,8 +7,8 @@ import net.minecraft.entity.mob.HuskEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.LootTable;
-import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.loot.context.LootContextParameters;
+import net.minecraft.loot.context.LootWorldContext;
 import net.minecraft.registry.ReloadableRegistries;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
@@ -51,13 +51,13 @@ public class HuskEntityMixin extends ZombieEntity {
 
         LootTable lootTable = registries.getLootTable(HarmonyLootTables.HUSK_CONVERSION);
 
-        LootContextParameterSet lootContextParameterSet = new LootContextParameterSet.Builder(world)
+        LootWorldContext lootContextParameterSet = new LootWorldContext.Builder(world)
             .add(LootContextParameters.ORIGIN, this.getPos())
             .add(LootContextParameters.THIS_ENTITY, this)
             .build(HarmonyLootContextTypes.CONVERSION);
 
         for (ItemStack itemStack : lootTable.generateLoot(lootContextParameterSet))
-            this.dropStack(itemStack, this.getHeight());
+            this.dropStack(world, itemStack);
     }
 
 }
