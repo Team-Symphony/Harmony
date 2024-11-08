@@ -1,0 +1,43 @@
+{
+    "symphony.feature_tracker": "Rastreador de Recursos",
+
+    "harmony.midnightconfig.title": "Configurações do Harmony",
+    "harmony.midnightconfig.reloadWarning": "Algumas configurações precisam que o jogo seja reiniciado para serem aplicadas!",
+    "harmony.midnightconfig.category.harmony": "Harmony",
+
+    "harmony.midnightconfig.category.transportation": "Transporte",
+    "harmony.midnightconfig.exitVehicleOnDamage": "Mobs vão sair de veículos quando receberem dano",
+    "harmony.midnightconfig.saddleRecipe": "Sela Fabricável",
+    "harmony.midnightconfig.horseArmorPreventsBucking": "Armadura de cavalo diminui a chance dos cavalos empinarem",
+    "harmony.midnightconfig.horseArmorPreventsBucking.tooltip": "Armadura de Cavalo tem a capacidade de diminuir a chance dos cavalos empinarem, dependendo do material: \n \n-Couro: 45% \n-Ouro: 60% \n-Ferrp: 75% \n-Diamante: 90% \n-Netherita (Integração com o Melody): 100% ",
+
+    "harmony.midnightconfig.category.food": "Comida",
+    "harmony.midnightconfig.stewStackSize": "Tamanho de stack de sopas/ensopados",
+    "harmony.midnightconfig.glowBerryEffect":"Efeito das Bagas brilhantes",
+    "harmony.midnightconfig.glowBerryEffect.tooltip":"Quanto tempo o efeito deve durar, 0 desativa a função",
+
+    "harmony.midnightconfig.category.building": "Construção",
+    "harmony.midnightconfig.armorStandStickArms": "Suportes de Armaduras podem ser equipados com braços usando Gravetos",
+        "harmony.midnightconfig.armorStandStickArms.tooltip": "Braços podem ser removidos com Tesouras",
+    "harmony.midnightconfig.armorStandSticks": "Número de Gravetos necessários para equipar Suportes de Armaduras com braços",
+
+    "harmony.midnightconfig.category.redstone": "Redstone",
+    "harmony.midnightconfig.oneTickCopperBulbDelay": "Lâmpadas de Cobre tem um atraso de 1 tick",
+    "harmony.midnightconfig.removeRedstoneLampDelay": "Remove o atraso de 4 ticks para desligar as Lâmpadas de Cobre",
+  
+    "harmony.midnightconfig.category.potions": "Poções",
+    "harmony.midnightconfig.beaconsAffectTamedMobs": "Poderes do sinalizador afetam animais domados assim como jogadores.",
+
+    "harmony.midnightconfig.category.combat": "Combate",
+    "harmony.midnightconfig.changeItemDespawnTime": "Mudar o tempo de desaparecimento dos itens dependendo da dificuldade",
+    "harmony.midnightconfig.itemDespawnTimeEasy": "Tempo para desaparecimento dos itens no modo pacífico/fácil.",
+    "harmony.midnightconfig.itemDespawnTimeNormal": "Tempo para desaparecimento dos itens no modo normal.",
+    "harmony.midnightconfig.itemDespawnTimeHard": "Tempo para desaparecimento dos itens no modo difícil.",
+
+    "harmony.midnightconfig.category.mobs": "Mobs",
+    "harmony.midnightconfig.wolvesGrowlAtMonsters": "Lobos domados irão rosnar para monstros por perto",
+    "harmony.midnightconfig.permissiveParrotPerching": "Papagaios irão sair de seu ombro com menos restrições",
+        "harmony.midnightconfig.permissiveParrotPerching.tooltip": "Se agache e desagache rápidamente para que seu papagaio voe de seu obro.",
+    "harmony.midnightconfig.mismatchedMobArmor": "Mobs podem aparecer com materiais de armadura mistos.",
+    "harmony.midnightconfig.husksDropSandOnConvert": "Zumbis-múmia largam areia quando convertidos em Zumbis."
+}
