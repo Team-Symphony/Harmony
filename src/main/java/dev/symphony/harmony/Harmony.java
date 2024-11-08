@@ -32,7 +32,7 @@ public class Harmony implements ModInitializer {
 		ResourceConditions.register(conditionType);
 
 
-		// gay shit
+		// gay stuff
 		ModifyItems.init();
 
 		HarmonyLootTables.noop();
