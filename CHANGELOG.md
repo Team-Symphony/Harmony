@@ -27,6 +27,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+#### General
+
+- TRANSLATION: Portuguese from Brazil (pt_br)
+
 #### Trans🏳️‍⚧️portation
 
 - FEATURE: Elytra deactivates when going underwater or inside of lava (and automatically changes to swimming mode)
