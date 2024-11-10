@@ -18,6 +18,7 @@
 
     "harmony.midnightconfig.category.enchanting": "Enchanting",
     "harmony.midnightconfig.grindstoneRepairsWithMaterials": "Grindstones can repair using materials, similar to anvils",
+    "harmony.midnightconfig.grindstoneDamagesEnchantedTools": "Grindstones damage tools when disenchanting by 25% of the maximum durability",
 
     "harmony.midnightconfig.category.building": "Building",
     "harmony.midnightconfig.armorStandStickArms": "Armor Stands can be equipped with arms using a Stick",

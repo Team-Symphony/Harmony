@@ -115,6 +115,15 @@ public class GrindstoneRepairsWithMaterials {
         return original.call(instance, slot);
     }
 
+    @Inject(method = "combineItems", at = @At("HEAD"))
+    private void fixCombiningToolsRepairing(ItemStack firstInput, ItemStack secondInput, CallbackInfoReturnable<ItemStack> cir){
+        //Fix a bug where combining 2 items with at least one having enchantments repairing at most only 75% of durability
+        if(HarmonyConfig.grindstoneDamagesEnchantedTools) {
+            firstInput = grind(firstInput.copy());
+            secondInput = grind(secondInput.copy());
+        }
+    }
+
     @Inject(method = "getOutputStack", at = @At("HEAD"), cancellable = true)
     private void makeMaterialsRepair(ItemStack firstInput, ItemStack secondInput, CallbackInfoReturnable<ItemStack> cir) {
         if(!HarmonyConfig.grindstoneRepairsWithMaterials)
@@ -136,18 +145,35 @@ public class GrindstoneRepairsWithMaterials {
         else
             return;
         if(itemToRepair.canRepairWith(material)){
+            itemToRepair = this.grind(itemToRepair);
             //it's the same code as the anvil repairing mechanic, each material repairs at most 25% of the item's durability. If the item that can be repaired is already at full durability, don't return any output item
             int k = Math.min(itemToRepair.getDamage(), itemToRepair.getMaxDamage() / 4);
             materialsUsed = 0;
-            if(k <= 0)
-                return;
             for(int m = 0; k > 0 && m < material.getCount(); ++m) {
                 int n = itemToRepair.getDamage() - k;
                 itemToRepair.setDamage(n);
                 k = Math.min(itemToRepair.getDamage(), itemToRepair.getMaxDamage() / 4);
                 materialsUsed++;
             }
-            cir.setReturnValue(this.grind(itemToRepair));
+            cir.setReturnValue(itemToRepair);
         }
+    }
+
+    @Inject(method = "grind", at = @At("HEAD"))
+    private void makeDisenchantingDamageTools(ItemStack item, CallbackInfoReturnable<ItemStack> cir){
+        //Check if the item has any enchantment that is not a curse
+        boolean hasEnchantment = false;
+        ItemEnchantmentsComponent itemEnchantmentsComponent = EnchantmentHelper.getEnchantments(item);
+        for (Object2IntMap.Entry<RegistryEntry<Enchantment>> entry : itemEnchantmentsComponent.getEnchantmentEntries()) {
+            RegistryEntry<Enchantment> registryEntry = (RegistryEntry<Enchantment>)entry.getKey();
+            if (!registryEntry.isIn(EnchantmentTags.CURSE)) {
+                hasEnchantment = true;
+                break;
+            }
+        }
+        //If it has(before removing them), reduce the durability of the item by 25% of the maximum durability
+        if(hasEnchantment && HarmonyConfig.grindstoneDamagesEnchantedTools)
+            item.setDamage(Math.min(item.getDamage() + item.getMaxDamage() / 4,item.getMaxDamage()-1));
+
     }
 }

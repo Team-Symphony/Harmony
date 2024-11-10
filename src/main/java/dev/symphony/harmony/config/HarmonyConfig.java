@@ -22,6 +22,7 @@ public class HarmonyConfig extends MidnightConfig {
     //Enchanting
     public static final String ENCHANT  = "enchanting";
     @Entry(category = ENCHANT) public static boolean grindstoneRepairsWithMaterials = true;
+    @Entry(category = ENCHANT) public static boolean grindstoneDamagesEnchantedTools = true;
 
     // Building
     public static final String BUILD = "building";
