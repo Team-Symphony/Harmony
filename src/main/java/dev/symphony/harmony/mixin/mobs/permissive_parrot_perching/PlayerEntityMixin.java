@@ -35,11 +35,6 @@ public abstract class PlayerEntityMixin extends EntityImplMixin {
         return Integer.MIN_VALUE;
     }
 
-    @ModifyExpressionValue(method = "tickMovement", slice = @Slice(from = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;updateShoulderEntity(Lnet/minecraft/nbt/NbtCompound;)V", ordinal = 0)), at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/PlayerAbilities;flying:Z"))
-    private boolean modifyIsFlying(boolean original) {
-        return !HarmonyConfig.permissiveParrotPerching && original;
-    }
-
     @Inject(method = "startGliding", at = @At("HEAD"))
     private void dropOnStartedFallFlying(CallbackInfo ci) {
         World world = this.asLivingEntity.getWorld();
