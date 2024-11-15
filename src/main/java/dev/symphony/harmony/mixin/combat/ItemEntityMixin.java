@@ -24,6 +24,11 @@ public abstract class ItemEntityMixin extends Entity {
 
     @ModifyConstant(method = "tick", constant = @Constant(intValue = 6000))
     private int modifyDespawnTime(int constant) {
+        if(!HarmonyConfig.changeItemDespawnTime){
+            return constant;
+        }
+
+
         int time = 20 * switch (this.getWorld().getDifficulty()) {
             case PEACEFUL, EASY -> HarmonyConfig.itemDespawnTimeEasy;
             case NORMAL -> HarmonyConfig.itemDespawnTimeNormal;

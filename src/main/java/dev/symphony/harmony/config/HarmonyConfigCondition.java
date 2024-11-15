@@ -6,7 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import dev.symphony.harmony.Harmony;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditionType;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.RegistryOps;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
@@ -16,9 +16,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.reflect.Field;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
 
 // FEATURE: Configurable Data-Driven Resources
 // AUTHORS: Flatkat, WheatFlour 
@@ -65,9 +63,8 @@ public record HarmonyConfigCondition(String config_name) implements ResourceCond
         return ResourceConditionType.create(Identifier.of(Harmony.MOD_ID, "config"), CODEC);
     }
 
-
     @Override
-    public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup) {
+    public boolean test(@Nullable RegistryOps.RegistryInfoGetter registryInfo) {
         return resourceMap.getOrDefault(config_name, false);
     }
 
