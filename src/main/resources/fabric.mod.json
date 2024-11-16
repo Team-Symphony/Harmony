@@ -30,13 +30,13 @@
 			"links": {
 				"modmenu.discord": "https://discord.gg/hTTPbbnRGG",
 				"modmenu.github_releases": "https://github.com/Team-Symphony/Harmony/releases",
-				"symphony.feature_tracker": "https://docs.google.com/spreadsheets/d/196sVDUJELCznO_RF7vib9-2uMkRaHFwVG9ogDHR1CBU/edit"
+				"symphony.feature_tracker": "https://github.com/orgs/Team-Symphony/projects/1/views/1"
 			}
 		}
 	},
 
 	"license": "MIT",
-	"environment": "*",
+	"environment": "server",
 	"entrypoints": {
 		"main": [
 			"dev.symphony.harmony.Harmony"
