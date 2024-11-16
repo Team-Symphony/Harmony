@@ -36,7 +36,7 @@
 	},
 
 	"license": "MIT",
-	"environment": "server",
+	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"dev.symphony.harmony.Harmony"
