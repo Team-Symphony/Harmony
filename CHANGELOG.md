@@ -18,11 +18,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Sometimes using /give command may create a copy of the given item that cant be picked up. This bug hasnt been able to be consistently reproduced and debugged yet.
     - Current workarounds: Disable the "Change items despawn time depending on difficulty" feature.
 
-#### Mobs
-
-- Parrots become invisible for vanilla clients if the player starts flying on creative mode with parrots on their shoulders until client reconnects or the parrots fly off of the player.
-    - Current workaround: Install Harmony on the client or disable "Parrots dismount under fewer restrictions"
-
 ## [Unreleased]
 
 ### Added
