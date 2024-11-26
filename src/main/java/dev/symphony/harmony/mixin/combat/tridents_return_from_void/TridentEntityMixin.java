@@ -1,5 +1,6 @@
 package dev.symphony.harmony.mixin.combat.tridents_return_from_void;
 
+import dev.symphony.harmony.config.HarmonyConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.ProjectileEntity;
@@ -22,10 +23,12 @@ public abstract class TridentEntityMixin extends Entity {
 
     @Inject(method = "tick", at = @At("HEAD"))
     private void tickMixin(CallbackInfo ci) {
-        if (!this.getWorld().isClient) {
-            if (!this.dealtDamage && this.getBlockPos().getY() < 1 && this.getWorld().getDimensionEntry().getKey().get().getValue().toString().contains("minecraft:the_end")) {
-                this.dealtDamage = true;
-                this.returnTimer = 0;
+        if(HarmonyConfig.tridentsReturnFromVoid){
+            if (!this.getWorld().isClient) {
+                if (!this.dealtDamage && this.getBlockPos().getY() < 1 && this.getWorld().getDimensionEntry().getKey().get().getValue().toString().contains("minecraft:the_end")) {
+                    this.dealtDamage = true;
+                    this.returnTimer = 0;
+                }
             }
         }
     }

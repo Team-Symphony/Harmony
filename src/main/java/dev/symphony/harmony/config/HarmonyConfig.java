@@ -40,6 +40,8 @@ public class HarmonyConfig extends MidnightConfig {
 
     // Combat
     public static final String COMBAT = "combat";
+
+    @Entry(category = COMBAT) public static boolean tridentsReturnFromVoid = true;
     @Entry(category = COMBAT) public static boolean changeItemDespawnTime = true;
 
     private static final int ONE_HOUR = 60 * 60;
