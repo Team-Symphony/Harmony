@@ -7,6 +7,8 @@
     "accessor.LootTablesAccessor",
     "building.ArmorStandStickArms",
     "combat.ItemEntityMixin",
+    "combat.tridents_return_from_void.TridentEntityMixin",
+    "combat.tridents_return_from_void.TridentEntityMixin",
     "food.GlowBerryMixin",
     "mobs.HuskEntityMixin",
     "mobs.mismatched_mob_armor.MobEntityMixin",
