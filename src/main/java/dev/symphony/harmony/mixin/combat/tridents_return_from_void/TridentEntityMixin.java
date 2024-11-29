@@ -25,7 +25,7 @@ public abstract class TridentEntityMixin extends Entity {
     private void tickMixin(CallbackInfo ci) {
         if(HarmonyConfig.tridentsReturnFromVoid){
             if (!this.getWorld().isClient) {
-                if (!this.dealtDamage && this.getBlockPos().getY() < 1 && this.getWorld().getDimensionEntry().getKey().get().getValue().toString().contains("minecraft:the_end")) {
+                if (!this.dealtDamage && this.getBlockPos().getY() < 1) {
                     this.dealtDamage = true;
                     this.returnTimer = 0;
                 }
