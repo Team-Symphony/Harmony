@@ -48,6 +48,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - FEATURE: Removed turning off Redstone Lamp delay
 
+
+### Changed
+
+#### Mobs
+
+- Removed parrot perching on creative flight (Fixes vanilla client desync issues w Better Parrot Perching on)
+
 ### Deprecated
 
 #### General
