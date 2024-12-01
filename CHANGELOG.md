@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Known Issues
 
+#### Trans🏳️‍⚧️portation
+
+- Trident Riptide acceleration doesn't workon vanilla clients.
+  - Current workarounds: Install Harmony on the client or disable "Riptide acceleration on water".
+
 #### Food
 
 - Bundles not showing correct stew amount on vanilla clients ([#28](https://github.com/Team-Symphony/Harmony/issues/28))
@@ -29,10 +34,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### Trans🏳️‍⚧️portation
 
 - FEATURE: Elytra deactivates when going underwater or inside of lava (and automatically changes to swimming mode)
-- FEATURE: Tridents with Riptide gain acceleration underwater (during its animation)
-- FEATURE: Longer Riptide animation
-- FEATURE: Tridents with riptide cant be used until riptide animation has finished
-- FEATURE: Reduced water drag while using Riptide underwater
+- FEATURE: Riptide Buff, with the following options:
+  - Tridents with Riptide gain acceleration underwater (during its animation)
+  - Longer Riptide animation
+  - Tridents with riptide cant be used until riptide animation has finished
+  - Reduced water drag while using Riptide underwater
 
 #### Exploration
 
