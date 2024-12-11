@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### Trans🏳️‍⚧️portation
 
-- Trident Riptide acceleration doesn't workon vanilla clients.
+- Trident Riptide acceleration doesn't work on vanilla clients.
   - Current workarounds: Install Harmony on the client or disable "Riptide acceleration on water".
 
 #### Food
@@ -40,26 +40,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Tridents with riptide cant be used until riptide animation has finished
   - Reduced water drag while using Riptide underwater
 
-#### Exploration
-
-- FEATURE: Eye of Ender can locate end cities
-
 #### Redstone
 
 - FEATURE: Removed turning off Redstone Lamp delay
-
 
 ### Changed
 
 #### Mobs
 
 - Removed parrot perching on creative flight (Fixes vanilla client desync issues w Better Parrot Perching on)
-
-### Deprecated
-
-#### General
-
-- MidnightLib will be replaced by a different config lib
 
 ## [0.0.1-alpha+mc1.21.3] - 2024-10-29
 
