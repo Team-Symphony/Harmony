@@ -6,10 +6,18 @@
     "harmony.midnightconfig.category.harmony": "Harmony",
 
     "harmony.midnightconfig.category.transportation": "Transporte",
+    "harmony.midnightconfig.liquidsDeactivateElytra": "Voar através de líquidos desativa os Élitros",
+        "harmony.midnightconfig.liquidsDeactivateElytra.tooltip": "(Não é afetado pela chuva) \nQuando entrar na água, você vai automáticamente entrar no modo de nado.",
     "harmony.midnightconfig.exitVehicleOnDamage": "Mobs vão sair de veículos quando receberem dano",
     "harmony.midnightconfig.saddleRecipe": "Sela Fabricável",
     "harmony.midnightconfig.horseArmorPreventsBucking": "Armadura de cavalo diminui a chance dos cavalos empinarem",
     "harmony.midnightconfig.horseArmorPreventsBucking.tooltip": "Armadura de Cavalo tem a capacidade de diminuir a chance dos cavalos empinarem, dependendo do material: \n \n-Couro: 45% \n-Ouro: 60% \n-Ferrp: 75% \n-Diamante: 90% \n-Netherita (Integração com o Melody): 100% ",
+    "harmony.midnightconfig.riptideAccelerationOnWater": "Aceleração de Correnteza na Água",
+    "harmony.midnightconfig.riptideCooldown": "Tridentes com Correnteza têm um atraso de ativação",
+        "harmony.midnightconfig.riptideCooldown.tooltip": "Tridentes encantados com Correnteza não podem ser utilizados novamente até que sua animação termine.\nIsso evita que o jogador acumule aceleração quando estiver usando a função de  \"Aceleração de Correnteza na Água\"",
+    "harmony.midnightconfig.riptideTimeMultiplier": "Multiplicador de tempo do efeito de Correnteza",
+        "harmony.midnightconfig.riptideTimeMultiplier.tooltip": "Aumenta o tempo de de animação do efeito de Correnteza, o que te faz ganhar aceleração caso a função \"Aceleração de Correnteza na Água\" esteja ativada. \n\nThe time is calculated the following way: 15+level*multiplier \n\nSet it to 0 to disable the feature.",
+    "harmony.midnightconfig.reduceRiptideWaterDrag": "Reduz o atrito da Água quando estiver usando um Tridente encantado com Correnteza",
 
     "harmony.midnightconfig.category.food": "Comida",
     "harmony.midnightconfig.stewStackSize": "Tamanho de stack de sopas/ensopados",
@@ -29,10 +37,11 @@
     "harmony.midnightconfig.beaconsAffectTamedMobs": "Poderes do sinalizador afetam animais domados assim como jogadores.",
 
     "harmony.midnightconfig.category.combat": "Combate",
+    "harmony.midnightconfig.tridentsReturnFromVoid": "Tridentes encantados com Lealdade voltam do Vazio.",
     "harmony.midnightconfig.changeItemDespawnTime": "Mudar o tempo de desaparecimento dos itens dependendo da dificuldade",
-    "harmony.midnightconfig.itemDespawnTimeEasy": "Tempo para desaparecimento dos itens no modo pacífico/fácil.",
-    "harmony.midnightconfig.itemDespawnTimeNormal": "Tempo para desaparecimento dos itens no modo normal.",
-    "harmony.midnightconfig.itemDespawnTimeHard": "Tempo para desaparecimento dos itens no modo difícil.",
+        "harmony.midnightconfig.itemDespawnTimeEasy": "Tempo para desaparecimento dos itens no modo pacífico/fácil.",
+        "harmony.midnightconfig.itemDespawnTimeNormal": "Tempo para desaparecimento dos itens no modo normal.",
+        "harmony.midnightconfig.itemDespawnTimeHard": "Tempo para desaparecimento dos itens no modo difícil.",
 
     "harmony.midnightconfig.category.mobs": "Mobs",
     "harmony.midnightconfig.wolvesGrowlAtMonsters": "Lobos domados irão rosnar para monstros por perto",
