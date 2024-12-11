@@ -29,7 +29,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### General
 
-- TRANSLATION: Portuguese from Brazil (pt_br)
+- TRANSLATION: Portuguese from Brazil (pt_br) 🇧🇷
 
 #### Trans🏳️‍⚧️portation
 
@@ -39,6 +39,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Longer Riptide animation
   - Tridents with riptide cant be used until riptide animation has finished
   - Reduced water drag while using Riptide underwater
+
+#### Combat
+
+- FEATURE: Tridents with Loyalty now return from the void (like in the Combat Snapshots)
 
 #### Redstone
 
