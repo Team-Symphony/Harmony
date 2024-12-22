@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Known Issues
 
+#### Trans🏳️‍⚧️portation
+
+- Trident Riptide acceleration doesn't work on vanilla clients.
+  - Current workarounds: Install Harmony on the client or disable "Riptide acceleration on water".
+
 #### Food
 
 - Bundles not showing correct stew amount on vanilla clients ([#28](https://github.com/Team-Symphony/Harmony/issues/28))
@@ -18,40 +23,46 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Sometimes using /give command may create a copy of the given item that cant be picked up. This bug hasnt been able to be consistently reproduced and debugged yet.
     - Current workarounds: Disable the "Change items despawn time depending on difficulty" feature.
 
-#### Mobs
-
-- Parrots become invisible for vanilla clients if the player starts flying on creative mode with parrots on their shoulders until client reconnects or the parrots fly off of the player.
-    - Current workaround: Install Harmony on the client or disable "Parrots dismount under fewer restrictions"
-
 ## [Unreleased]
+
+## [0.0.2-alpha+mc1.21.4] - 2024-12-11
+
+### Changed
+
+#### General
+
+- "Ported" to 1.21.4
+
+## [0.0.2-alpha+mc1.21.3] - 2024-12-11
 
 ### Added
 
 #### General
 
-- TRANSLATION: Portuguese from Brazil (pt_br)
+- TRANSLATION: Portuguese from Brazil (pt_br) 🇧🇷
 
 #### Trans🏳️‍⚧️portation
 
 - FEATURE: Elytra deactivates when going underwater or inside of lava (and automatically changes to swimming mode)
-- FEATURE: Tridents with Riptide gain acceleration underwater (during its animation)
-- FEATURE: Longer Riptide animation
-- FEATURE: Tridents with riptide cant be used until riptide animation has finished
-- FEATURE: Reduced water drag while using Riptide underwater
+- FEATURE: Riptide Buff, with the following options:
+  - Tridents with Riptide gain acceleration underwater (during its animation)
+  - Longer Riptide animation
+  - Tridents with riptide cant be used until riptide animation has finished
+  - Reduced water drag while using Riptide underwater
 
-#### Exploration
+#### Combat
 
-- FEATURE: Eye of Ender can locate end cities
+- FEATURE: Tridents with Loyalty now return from the void (like in the Combat Snapshots)
 
 #### Redstone
 
 - FEATURE: Removed turning off Redstone Lamp delay
 
-### Deprecated
+### Changed
 
-#### General
+#### Mobs
 
-- MidnightLib will be replaced by a different config lib
+- Removed parrot perching on creative flight (Fixes vanilla client desync issues w Better Parrot Perching on)
 
 ## [0.0.1-alpha+mc1.21.3] - 2024-10-29
 
