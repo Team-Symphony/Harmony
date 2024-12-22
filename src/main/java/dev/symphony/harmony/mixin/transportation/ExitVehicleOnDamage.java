@@ -32,6 +32,7 @@ public abstract class ExitVehicleOnDamage extends Entity {
         if(HarmonyConfig.exitVehicleOnDamage) {
             if (amount <= 0) return;
             if (this.isPlayer()) return;
+            if (source == getDamageSources().enderPearl()) return;
 
             Entity vehicle = this.getVehicle();
 

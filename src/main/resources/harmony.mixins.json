@@ -20,7 +20,8 @@
     "redstone.RemoveRedstoneLampDelay",
     "food.GlowBerryMixin",
     "transportation.ExitVehicleOnDamage",
-    "transportation.HorseArmorPreventsBucking"
+    "transportation.HorseArmorPreventsBucking",
+    "transportation.EnderPearlsDontDismount"
   ],
   "injectors": {
     "defaultRequire": 1

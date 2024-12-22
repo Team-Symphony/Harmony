@@ -13,6 +13,8 @@ public class HarmonyConfig extends MidnightConfig {
     @Entry(category = TRANS) public static boolean exitVehicleOnDamage = true;
     @HarmonyConfigCondition.ResourceConfigName(config_name = "recipe/saddle") @Entry(category = TRANS) public static boolean saddleRecipe = true;
     @Entry(category = TRANS) public static boolean horseArmorPreventsBucking = true;
+    @Entry(category = TRANS) public static boolean enderPearlsTeleportVehicles = true;
+    @Entry(category = TRANS) public static boolean enderPearlsDamageVehicles = true;
 
     // Food
     public static final String FOOD = "food";
