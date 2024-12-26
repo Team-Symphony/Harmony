@@ -1,0 +1,43 @@
+{
+  "symphony.feature_tracker": "Lista Modificărilor",
+
+  "harmony.midnightconfig.title": "Configurările pentru Harmony",
+  "harmony.midnightconfig.reloadWarning": "Unele opțiuni vor necesita o repornire a jocului pentru a avea efect!",
+  "harmony.midnightconfig.category.harmony": "Harmony",
+
+  "harmony.midnightconfig.category.transportation": "Transportare",
+  "harmony.midnightconfig.exitVehicleOnDamage": "Creaturile ies din vehicule când sunt rănite",
+  "harmony.midnightconfig.saddleRecipe": "Șa fabricabilă",
+  "harmony.midnightconfig.horseArmorPreventsBucking": "Armura calului scade șansele de zdruncinare când este rănit",
+  "harmony.midnightconfig.horseArmorPreventsBucking.tooltip": "Armura calului are șansa de a împiedica calul să se zdruncine, în funcție de material: \n \n-Piele: 45% \n-Aur: 60% \n-Fier: 75% \n-Diamant: 90% \n-Netherit (Integrare cu Melody): 100%",
+
+  "harmony.midnightconfig.category.food": "Mâncare",
+  "harmony.midnightconfig.stewStackSize": "Dimensiunea grămezii de tocană/supă",
+  "harmony.midnightconfig.glowBerryEffect":"Efectul fructelor de pădure strălucitoare",
+  "harmony.midnightconfig.glowBerryEffect.tooltip":"Cât timp ar trebui să dureze efectul în secunde, 0 îl dezactivează",
+
+  "harmony.midnightconfig.category.building": "Construcție",
+  "harmony.midnightconfig.armorStandStickArms": "Suporturile de armură pot fi echipate cu brațe folosind un băț",
+  "harmony.midnightconfig.armorStandStickArms.tooltip": "Brațele pot fi îndepărtate cu foarfece",
+  "harmony.midnightconfig.armorStandSticks": "Numărul de bețe necesare pentru echiparea suporturilor de armură cu arme",
+
+  "harmony.midnightconfig.category.redstone": "Redstone",
+  "harmony.midnightconfig.oneTickCopperBulbDelay": "Becurile de Cupru au o întârziere de 1 tic",
+  "harmony.midnightconfig.removeRedstoneLampDelay": "Eliminați întârzierea de 4 ticuri pentru stingerea Lămpilor de Redstone",
+
+  "harmony.midnightconfig.category.potions": "Poțiuni",
+  "harmony.midnightconfig.beaconsAffectTamedMobs": "Efectele Farului se aplică și animalelor îmblânzite, cât și jucătorilor.",
+
+  "harmony.midnightconfig.category.combat": "Luptă",
+  "harmony.midnightconfig.changeItemDespawnTime": "Modificați timpul de dispariție a obiectelor aruncate în funcție de dificultate",
+  "harmony.midnightconfig.itemDespawnTimeEasy": "Timpul de dispariție a obiectelor aruncate în dificultatea Ușoară/Pașnică.",
+  "harmony.midnightconfig.itemDespawnTimeNormal": "Timpul de dispariție a obiectelor aruncate în dificultatea Normală.",
+  "harmony.midnightconfig.itemDespawnTimeHard": "Timpul de dispariție a obiectelor aruncate în dificultatea Grea.",
+
+  "harmony.midnightconfig.category.mobs": "Creaturi",
+  "harmony.midnightconfig.wolvesGrowlAtMonsters": "Lupii îmblânziți mârâie la monștrii din jur.",
+  "harmony.midnightconfig.permissiveParrotPerching": "Papagalii zboară de pe jucător cu mai puține restricții.",
+  "harmony.midnightconfig.permissiveParrotPerching.tooltip": "Furișează-te și ieși din furiș rapid pentru ca papagalul tău să zboare de pe tine.",
+  "harmony.midnightconfig.mismatchedMobArmor": "Monștrii se pot genera cu materiale de armură necorespunzătoare.",
+  "harmony.midnightconfig.husksDropSandOnConvert": "Momâile aruncă nisip atunci când se transformă în zombi."
+}
