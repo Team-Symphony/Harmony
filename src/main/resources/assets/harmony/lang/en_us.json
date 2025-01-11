@@ -14,7 +14,7 @@
     "harmony.midnightconfig.horseArmorPreventsBucking.tooltip": "Horse armor has a chance from preventing the horse from bucking, depending of material: \n \n-Leather: 45% \n-Gold: 60% \n-Iron: 75% \n-Diamond: 90% \n-Netherite (Melody Integration): 100% ",
     "harmony.midnightconfig.enderPearlsTeleportVehicles": "Ender Pearls teleport the entity the player is riding",
     "harmony.midnightconfig.enderPearlsDamageVehicles": "Ender Pearls damage mounts when teleporting",
-    "harmony.midnightconfig.enderPearlsDamageVehicles.tooltip": "All entities teleported(passengers and mounts) using an Ender Pearl receive half of the damage the player normally would",
+    "harmony.midnightconfig.enderPearlsDamageVehicles.tooltip": "All entities teleported (passengers and mounts) using an Ender Pearl receive half of the damage the player normally would",
     "harmony.midnightconfig.furnaceMinecartSpeed": "Minecart with Furnace speed",
     "harmony.midnightconfig.furnaceMinecartSpeed.tooltip": "The speed is relative to the max Minecart speed(2 being 200%, 0.5 being 50% etc.)\nThe vanilla value is 0.75",
     "harmony.midnightconfig.furnaceMinecartSpeedInWater": "Minecart with Furnace speed in water",
