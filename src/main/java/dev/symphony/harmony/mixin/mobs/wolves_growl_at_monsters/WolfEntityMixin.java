@@ -1,7 +1,7 @@
 package dev.symphony.harmony.mixin.mobs.wolves_growl_at_monsters;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.HostileEntity;
@@ -23,7 +23,7 @@ public abstract class WolfEntityMixin extends TameableEntity {
 
     @ModifyExpressionValue(method = "getAmbientSound", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/WolfEntity;hasAngerTime()Z"))
     private boolean shouldGrowl(boolean original) {
-        return original || (HarmonyConfig.wolvesGrowlAtMonsters && this.isTamed() && !this.getNearbyMonsters().isEmpty());
+        return original || (Harmony.CONFIG.wolvesGrowlAtMonsters() && this.isTamed() && !this.getNearbyMonsters().isEmpty());
     }
 
     @Unique

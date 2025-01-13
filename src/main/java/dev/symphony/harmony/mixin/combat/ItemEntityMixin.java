@@ -1,6 +1,6 @@
 package dev.symphony.harmony.mixin.combat;
 
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
@@ -24,15 +24,15 @@ public abstract class ItemEntityMixin extends Entity {
 
     @ModifyConstant(method = "tick", constant = @Constant(intValue = 6000))
     private int modifyDespawnTime(int constant) {
-        if(!HarmonyConfig.changeItemDespawnTime){
+        if(!Harmony.CONFIG.changeItemDespawnTime()){
             return constant;
         }
 
 
         int time = 20 * switch (this.getWorld().getDifficulty()) {
-            case PEACEFUL, EASY -> HarmonyConfig.itemDespawnTimeEasy;
-            case NORMAL -> HarmonyConfig.itemDespawnTimeNormal;
-            case HARD -> HarmonyConfig.itemDespawnTimeHard;
+            case PEACEFUL, EASY -> Harmony.CONFIG.itemDespawnTimeEasy();
+            case NORMAL -> Harmony.CONFIG.itemDespawnTimeNormal();
+            case HARD -> Harmony.CONFIG.itemDespawnTimeHard();
         };
 
         return time == 0 ? NEVER_DESPAWN_AGE : time;

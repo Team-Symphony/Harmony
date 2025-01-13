@@ -1,7 +1,7 @@
 package dev.symphony.harmony.mixin.transportation;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import it.unimi.dsi.fastutil.objects.Object2FloatArrayMap;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.passive.AbstractHorseEntity;
@@ -40,7 +40,7 @@ public class HorseArmorPreventsBucking {
 
     @ModifyExpressionValue(method = "updateAnger", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;shouldAmbientStand()Z"))
     private boolean rejectAngryWhenDrip(boolean original) {
-        if(HarmonyConfig.horseArmorPreventsBucking){
+        if(Harmony.CONFIG.horseArmorPreventsBucking()){
             if(FabricLoader.getInstance().isModLoaded("melody") && preventBuckingChance.get(Registries.ITEM.get(Identifier.of("melody:netherite_horse_armor"))) == null) {
                 // Temporary solution until we move this to a better, configurable system
                 // This is inside rejectAngryWhenDrip because if not it gets called too early, so it cant detect Melody nor is the armor item registered yet, so it doesnt work.

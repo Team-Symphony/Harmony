@@ -5,7 +5,6 @@ import dev.symphony.harmony.config.HarmonyConfigCondition;
 import dev.symphony.harmony.item.ModifyItems;
 import dev.symphony.harmony.loot.HarmonyLootContextTypes;
 import dev.symphony.harmony.loot.HarmonyLootTables;
-import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditionType;
@@ -22,11 +21,13 @@ public class Harmony implements ModInitializer {
 		return Identifier.of(Harmony.MOD_ID, path);
 	}
 
+	public static final HarmonyConfig CONFIG = HarmonyConfig.createAndLoad();
+
+
 	@Override
 	public void onInitialize() {
 		// Config
-		MidnightConfig.init(MOD_ID, HarmonyConfig.class);
-		HarmonyConfigCondition.init();
+		HarmonyConfigCondition.init(CONFIG);
 
 		ResourceConditionType<HarmonyConfigCondition> conditionType = ResourceConditionType.create(Identifier.of(Harmony.MOD_ID, "config"), HarmonyConfigCondition.CODEC);
 		ResourceConditions.register(conditionType);

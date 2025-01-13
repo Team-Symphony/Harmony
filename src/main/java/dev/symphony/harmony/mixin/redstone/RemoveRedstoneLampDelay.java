@@ -2,7 +2,7 @@ package dev.symphony.harmony.mixin.redstone;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.block.Block;
 import net.minecraft.block.RedstoneLampBlock;
 import net.minecraft.server.world.ServerWorld;
@@ -22,7 +22,7 @@ public class RemoveRedstoneLampDelay extends Block  {
     //Replaced calling scheduleBlockTick with calling scheduledTick
     @WrapOperation(method = "neighborUpdate",at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;scheduleBlockTick(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/Block;I)V"))
     protected void addDelay(World instance, BlockPos blockPos, Block block, int i, Operation<Void> original) {
-        if(!HarmonyConfig.removeRedstoneLampDelay) {
+        if(!Harmony.CONFIG.removeRedstoneLampDelay()) {
             original.call(instance, blockPos, block, i);
             return;
         }

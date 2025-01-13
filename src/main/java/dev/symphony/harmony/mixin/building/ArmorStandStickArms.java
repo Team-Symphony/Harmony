@@ -1,7 +1,7 @@
 package dev.symphony.harmony.mixin.building;
 
 
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -41,12 +41,12 @@ public abstract class ArmorStandStickArms extends Entity {
 
     @Inject(method = "interactAt", at = @At( value = "HEAD" ), cancellable = true)
     public void stickArms(PlayerEntity player, Vec3d hitPos, Hand hand, CallbackInfoReturnable<ActionResult> callback) {
-        if (isMarker() || !HarmonyConfig.armorStandStickArms) return;
+        if (isMarker() || !Harmony.CONFIG.armorStandStickArms()) return;
         if (player.isSneaking()) return;
 
         ItemStack heldItem = player.getStackInHand(hand);
         // Add arms
-        if (heldItem.getItem().equals(Items.STICK) && heldItem.getCount() >= HarmonyConfig.armorStandSticks && !shouldShowArms()) {
+        if (heldItem.getItem().equals(Items.STICK) && heldItem.getCount() >= Harmony.CONFIG.armorStandSticks() && !shouldShowArms()) {
             equipArms(player, heldItem);
 
             callback.setReturnValue(ActionResult.SUCCESS);
@@ -61,7 +61,7 @@ public abstract class ArmorStandStickArms extends Entity {
     @Unique
     public void equipArms(PlayerEntity player, ItemStack stickStack) {
         setShowArms(true);
-        stickStack.decrementUnlessCreative(HarmonyConfig.armorStandSticks, player);
+        stickStack.decrementUnlessCreative(Harmony.CONFIG.armorStandSticks(), player);
 
         player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_GENERIC.value(), 1F, 1F);
     }
@@ -72,7 +72,7 @@ public abstract class ArmorStandStickArms extends Entity {
         shearStack.damage(1, player, LivingEntity.getSlotForHand(hand));
 
         ItemStack sticksDrop = Items.STICK.getDefaultStack();
-        sticksDrop.setCount(HarmonyConfig.armorStandSticks);
+        sticksDrop.setCount(Harmony.CONFIG.armorStandSticks());
 
         World world = this.getWorld();
         BlockPos blockPos = this.getBlockPos().up();

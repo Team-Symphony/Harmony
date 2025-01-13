@@ -1,6 +1,6 @@
 package dev.symphony.harmony.mixin.food;
 
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -23,11 +23,11 @@ public class GlowBerryMixin {
 
     private void glowBerryGlowEffect(ItemStack stack, World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir) {
         // Checks if its not done on the client and if the glowberry effect isnt 0, if its zero it wont do anything
-        if(!world.isClient && HarmonyConfig.glowBerryEffect != 0) {
+        if(!world.isClient && Harmony.CONFIG.glowBerryEffect() != 0) {
             // Checks if the item the person is holding is a glowberry
             if (stack.getItem() == Items.GLOW_BERRIES) {
                 // Convert the input from ticks to seconds as 20 ticks is 1 second
-                int glowduration = HarmonyConfig.glowBerryEffect * 20;
+                int glowduration = Harmony.CONFIG.glowBerryEffect() * 20;
                 // Apply the effect using the glowduration above
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, glowduration, 0, true, true));
             }

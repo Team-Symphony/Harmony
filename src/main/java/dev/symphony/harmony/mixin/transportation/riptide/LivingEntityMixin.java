@@ -1,7 +1,7 @@
 package dev.symphony.harmony.mixin.transportation.riptide;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -23,7 +23,7 @@ public abstract class LivingEntityMixin extends Entity {
      */
     @SuppressWarnings("JavadocDeclaration")
     @Unique
-    private static final float MODIFIER = HarmonyConfig.riptideAccelerationOnWater;
+    private static final float MODIFIER = Harmony.CONFIG.riptideAccelerationOnWater();
     @Unique
     private static final float DEG = (float) (Math.PI / 180F);
 
@@ -44,7 +44,7 @@ public abstract class LivingEntityMixin extends Entity {
     )
     )
     private void accelerateWhenRiptide(CallbackInfo ci) {
-        if(HarmonyConfig.riptideAccelerationOnWater != 0){
+        if(Harmony.CONFIG.riptideAccelerationOnWater() != 0){
             if (!this.isTouchingWater()) return;
             float f = getYaw();
             float g = getPitch();
@@ -72,7 +72,7 @@ public abstract class LivingEntityMixin extends Entity {
     )
     )
     private boolean boostWhenRiptide(boolean original) {
-        if(HarmonyConfig.reduceRiptideWaterDrag){
+        if(Harmony.CONFIG.reduceRiptideWaterDrag()){
             return original || this.riptideTicks>0;
         }
         return original;

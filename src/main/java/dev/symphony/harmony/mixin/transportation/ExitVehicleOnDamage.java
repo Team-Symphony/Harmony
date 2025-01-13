@@ -1,6 +1,6 @@
 package dev.symphony.harmony.mixin.transportation;
 
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -29,7 +29,7 @@ public abstract class ExitVehicleOnDamage extends Entity {
             at = @At( value = "TAIL" )
     )
     private void exitVehicleOnDamage(ServerWorld world, DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if(HarmonyConfig.exitVehicleOnDamage) {
+        if(Harmony.CONFIG.exitVehicleOnDamage()) {
             if (amount <= 0) return;
             if (this.isPlayer()) return;
             if (source == getDamageSources().enderPearl()) return;

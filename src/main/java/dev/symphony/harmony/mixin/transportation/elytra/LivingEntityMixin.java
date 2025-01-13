@@ -1,7 +1,7 @@
 package dev.symphony.harmony.mixin.transportation.elytra;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -22,7 +22,7 @@ public abstract class LivingEntityMixin extends Entity {
      */
     @ModifyExpressionValue(method = "canGlide", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"))
     private boolean cancelElytraInLiquid(boolean original) {
-        if(HarmonyConfig.liquidsDeactivateElytra){
+        if(Harmony.CONFIG.liquidsDeactivateElytra()){
             if (original || this.isSubmergedInWater() || this.isInLava()) {
                 setSprinting(true);
                 return true;
