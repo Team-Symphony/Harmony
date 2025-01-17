@@ -8,8 +8,12 @@ import net.minecraft.item.Items;
 public class ModifyItems {
 
     public static void init() {
-        // FEATURE: Change stew/soup stack sizes
-        // AUTHORS: Flatkat, Trigam
+        /**
+         * FEATURE: Change stew/soup stack sizes.
+         * @author Flatkat
+         * @author Trigam
+         */
+
         if (HarmonyConfig.stewStackSize != 1) {
             DefaultItemComponentEvents.MODIFY.register(context -> {
                 // Ok so, can't use an item tag since tags only exist

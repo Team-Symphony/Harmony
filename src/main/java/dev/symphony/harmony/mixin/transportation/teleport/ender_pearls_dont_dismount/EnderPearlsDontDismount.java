@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.transportation;
+package dev.symphony.harmony.mixin.transportation.teleport.ender_pearls_dont_dismount;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
@@ -12,17 +12,13 @@ import net.minecraft.world.TeleportTarget;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
-/**
- * FEATURE: Allowed Ender Pearls to teleport all riders and passengers, all taking damage.
- * @author RandomVideos
- */
 @Mixin(EnderPearlEntity.class)
 public class EnderPearlsDontDismount {
 
     @WrapOperation(method = "onCollision",at= @At(value = "INVOKE", target = "Lnet/minecraft/server/network/ServerPlayerEntity;teleportTo(Lnet/minecraft/world/TeleportTarget;)Lnet/minecraft/server/network/ServerPlayerEntity;"))
     ServerPlayerEntity TeleportMount(ServerPlayerEntity instance, TeleportTarget teleportTarget, Operation<ServerPlayerEntity> original){
         if(instance.hasVehicle() && HarmonyConfig.enderPearlsTeleportVehicles){
-            //Find the mount that isnt riding any other mount and teleport it instead of the player
+            // Find the mount that isn't riding any other mount and teleport it instead of the player
             Entity vehicle = instance.getVehicle();
             while(vehicle.hasVehicle()) {
                 vehicle = vehicle.getVehicle();
@@ -38,7 +34,7 @@ public class EnderPearlsDontDismount {
         if(instance.hasVehicle() && HarmonyConfig.enderPearlsDamageVehicles && HarmonyConfig.enderPearlsTeleportVehicles) {
             //The damage each entity takes from teleporting is halved to be consistent with horses taking fall damage
             amount /= 2;
-            //Find the mount that isnt riding any other mount
+            //Find the mount that isn't riding any other mount
             Entity vehicle = instance.getVehicle();
             while (vehicle.hasVehicle()) {
                 vehicle = vehicle.getVehicle();

@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.transportation.elytra;
+package dev.symphony.harmony.mixin.transportation.elytra.liquids_deactivate_elytra;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import dev.symphony.harmony.config.HarmonyConfig;
@@ -10,16 +10,12 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(LivingEntity.class)
-public abstract class LivingEntityMixin extends Entity {
-    public LivingEntityMixin(EntityType<?> type, World world) {
+public abstract class LiquidsDeactivateElytra extends Entity {
+
+    public LiquidsDeactivateElytra(EntityType<?> type, World world) {
         super(type, world);
     }
 
-    /**
-     * FEATURE: Flying through liquids deactivates the Elytra
-     * @author Kiku
-     * @author Flatkat
-     */
     @ModifyExpressionValue(method = "canGlide", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"))
     private boolean cancelElytraInLiquid(boolean original) {
         if(HarmonyConfig.liquidsDeactivateElytra){

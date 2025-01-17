@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.food;
+package dev.symphony.harmony.mixin.food.glow_berries_apply_glowing;
 
 import dev.symphony.harmony.config.HarmonyConfig;
 import net.minecraft.entity.LivingEntity;
@@ -13,23 +13,17 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-// FEATURE: When Glowberries are eaten, they give the glowing effect for a configurable amount of time
-// AUTHORS: Michiel1106
 @Mixin(Item.class)
-public class GlowBerryMixin {
+public class GlowBerriesApplyGlowing {
 
-    // Injects into the finishusing class, affecting every item.
     @Inject(method = "finishUsing", at = @At("HEAD"))
-
     private void glowBerryGlowEffect(ItemStack stack, World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir) {
-        // Checks if its not done on the client and if the glowberry effect isnt 0, if its zero it wont do anything
+
         if(!world.isClient && HarmonyConfig.glowBerryEffect != 0) {
-            // Checks if the item the person is holding is a glowberry
+            // If eating Glow Berry, apply glowing
             if (stack.getItem() == Items.GLOW_BERRIES) {
-                // Convert the input from ticks to seconds as 20 ticks is 1 second
-                int glowduration = HarmonyConfig.glowBerryEffect * 20;
-                // Apply the effect using the glowduration above
-                user.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, glowduration, 0, true, true));
+                int glowDuration = HarmonyConfig.glowBerryEffect * 20;
+                user.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, glowDuration, 0, true, true));
             }
         }
     }

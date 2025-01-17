@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.transportation;
+package dev.symphony.harmony.mixin.transportation.vehicle.exit_vehicle_on_damage;
 
 import dev.symphony.harmony.config.HarmonyConfig;
 import net.minecraft.entity.Entity;
@@ -14,8 +14,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-// FEATURE: Mobs exit vehicles when damaged (by default only the ones mobs can auto-mount on on vanilla, configurable via datapack)
-// AUTHORS: Trigam, Flatkat, axialeaa
 @Mixin(LivingEntity.class)
 public abstract class ExitVehicleOnDamage extends Entity {
     @Shadow public abstract void stopRiding();
@@ -25,11 +23,11 @@ public abstract class ExitVehicleOnDamage extends Entity {
     }
 
     @Inject(
-            method = "damage",
-            at = @At( value = "TAIL" )
+        method = "damage",
+        at = @At( value = "TAIL" )
     )
     private void exitVehicleOnDamage(ServerWorld world, DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if(HarmonyConfig.exitVehicleOnDamage) {
+        if (HarmonyConfig.exitVehicleOnDamage) {
             if (amount <= 0) return;
             if (this.isPlayer()) return;
             if (source == getDamageSources().enderPearl()) return;
