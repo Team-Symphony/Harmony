@@ -17,6 +17,10 @@ repositories {
 	}
 }
 
+loom {
+	accessWidenerPath = file("src/main/resources/harmony.accesswidener")
+}
+
 dependencies {
 	// Minecraft + Fabric
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
