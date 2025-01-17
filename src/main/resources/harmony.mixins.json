@@ -24,6 +24,7 @@
     "transportation.ExitVehicleOnDamage",
     "transportation.HorseArmorPreventsBucking",
     "transportation.EnderPearlsDontDismount",
+    "transportation.minecarts.FurnaceMinecartEntityMixin",
     "transportation.elytra.LivingEntityMixin",
     "transportation.riptide.LivingEntityMixin",
     "transportation.riptide.TridentItemMixin"

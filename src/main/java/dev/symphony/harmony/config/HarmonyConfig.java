@@ -16,6 +16,8 @@ public class HarmonyConfig extends MidnightConfig {
     @Entry(category = TRANS) public static boolean horseArmorPreventsBucking = true;
     @Entry(category = TRANS) public static boolean enderPearlsTeleportVehicles = true;
     @Entry(category = TRANS) public static boolean enderPearlsDamageVehicles = true;
+    @Entry(category = TRANS) public static float furnaceMinecartSpeed = 1f;
+    @Entry(category = TRANS) public static float furnaceMinecartSpeedInWater = 1f;
     @Entry(category = TRANS, isSlider = true, min = 0f, max = 1f) public static float riptideAccelerationOnWater = 0.1f;
     @Entry(category = TRANS) public static boolean riptideCooldown = true;
     @Entry(category = TRANS) public static int riptideTimeMultiplier = 5;
