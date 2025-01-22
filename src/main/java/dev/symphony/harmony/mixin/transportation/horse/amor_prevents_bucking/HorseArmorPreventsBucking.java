@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.transportation;
+package dev.symphony.harmony.mixin.transportation.horse.amor_prevents_bucking;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import dev.symphony.harmony.Harmony;
@@ -19,8 +19,6 @@ import java.util.Map;
 @Mixin (AbstractHorseEntity.class)
 public class HorseArmorPreventsBucking {
 
-    // FEATURE:
-    // AUTHORS: KikuGie, Flatkat
     @Unique
     private static final Map<Item, Float> preventBuckingChance = new Object2FloatArrayMap<>();
     @Shadow @Final private Inventory armorInventory;

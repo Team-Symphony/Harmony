@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.mobs;
+package dev.symphony.harmony.mixin.mobs.husks_drop_sand;
 
 import dev.symphony.harmony.Harmony;
 import dev.symphony.harmony.loot.HarmonyLootContextTypes;
@@ -20,16 +20,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/**
- * Husks drop sand when they convert into zombies in water.
- * @author axialeaa
- * @see HarmonyLootTables
- * @see HarmonyLootContextTypes
- */
 @Mixin(HuskEntity.class)
-public class HuskEntityMixin extends ZombieEntity {
+public class HusksDropSandOnConversion extends ZombieEntity {
 
-    public HuskEntityMixin(World world) {
+    public HusksDropSandOnConversion(World world) {
         super(world);
     }
 

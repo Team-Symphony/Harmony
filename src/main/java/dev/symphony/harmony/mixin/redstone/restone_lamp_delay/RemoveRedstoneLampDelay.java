@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.redstone;
+package dev.symphony.harmony.mixin.redstone.restone_lamp_delay;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
@@ -11,9 +11,6 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
-
-// FEATURE: Removed Redstone Lamp delay
-// AUTHORS: Randomvideos
 @Mixin(RedstoneLampBlock.class)
 public class RemoveRedstoneLampDelay extends Block  {
 

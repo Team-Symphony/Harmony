@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.potions;
+package dev.symphony.harmony.mixin.potions.apply_beacon_buff_to_tamed_mobs;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import dev.symphony.harmony.Harmony;
@@ -19,10 +19,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 import java.util.Objects;
 
-// FEATURE: Gives the beacon's effect to tamed entities as well as players.
-// AUTHOR: axialeaa
 @Mixin(BeaconBlockEntity.class)
-public class BeaconBlockEntityMixin {
+public class ApplyBeaconBuffToTamedMobs {
 
     @Inject(method = "applyPlayerEffects", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getNonSpectatingEntities(Ljava/lang/Class;Lnet/minecraft/util/math/Box;)Ljava/util/List;"))
     private static void applyTamedEntityEffects(World world, BlockPos pos, int beaconLevel, @Nullable RegistryEntry<StatusEffect> primaryEffect, @Nullable RegistryEntry<StatusEffect> secondaryEffect, CallbackInfo ci,

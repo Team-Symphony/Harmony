@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.combat;
+package dev.symphony.harmony.mixin.combat.slower_item_despawn;
 
 import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.Entity;
@@ -11,14 +11,12 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
-// FEATURE: Make items despawn slower on lower difficulties
-// AUTHOR: axialeaa
 @Mixin(ItemEntity.class)
-public abstract class ItemEntityMixin extends Entity {
+public abstract class ModifyItemDespawnTimes extends Entity {
 
     @Shadow @Final private static int NEVER_DESPAWN_AGE;
 
-    public ItemEntityMixin(EntityType<?> type, World world) {
+    public ModifyItemDespawnTimes(EntityType<?> type, World world) {
         super(type, world);
     }
 
