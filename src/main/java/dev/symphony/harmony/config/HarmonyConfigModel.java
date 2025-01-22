@@ -22,6 +22,8 @@ public class HarmonyConfigModel {
     public boolean horseArmorPreventsBucking = true;
     public boolean enderPearlsTeleportVehicles = true;
     public boolean enderPearlsDamageVehicles = true;
+    public float furnaceMinecartSpeed = 1f;
+    public float furnaceMinecartSpeedInWater = 1f;
     @RangeConstraint(min = 0f, max = 1f)
     public float riptideAccelerationOnWater = 0.1f;
     public boolean riptideCooldown = true;

@@ -19,14 +19,15 @@
     "redstone.AbstractBlockImplMixin",
     "redstone.copper_bulb_delay.OneTickCopperBulbDelay",
     "redstone.restone_lamp_delay.RemoveRedstoneLampDelay",
-    "transportation.teleport.ender_pearls_dont_dismount.EnderPearlsDontDismount",
-    "transportation.vehicle.exit_vehicle_on_damage.ExitVehicleOnDamage",
-    "transportation.horse.amor_prevents_bucking.HorseArmorPreventsBucking",
     "transportation.elytra.liquids_deactivate_elytra.LiquidsDeactivateElytra",
+    "transportation.horse.amor_prevents_bucking.HorseArmorPreventsBucking",
     "transportation.minecart.customizable_furnace_minecart_speed.FurnaceMinecartEntityMixin",
+    "transportation.teleport.ender_pearls_dont_dismount.EnderPearlsDontDismount",
     "transportation.trident.riptide_accceleration.RiptideAcceleration",
+    "transportation.trident.riptide_cooldown.RiptideCooldown",
     "transportation.trident.riptide_reduced_drag.RiptideReducedDrag",
-    "transportation.trident.variable_riptide_duration.VariableRiptideDuration"
+    "transportation.trident.variable_riptide_duration.VariableRiptideDuration",
+    "transportation.vehicle.exit_vehicle_on_damage.ExitVehicleOnDamage"
   ],
   "injectors": {
     "defaultRequire": 1

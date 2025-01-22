@@ -1,6 +1,6 @@
 package dev.symphony.harmony.mixin.transportation.minecart.customizable_furnace_minecart_speed;
 
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
@@ -30,9 +30,9 @@ public class FurnaceMinecartEntityMixin extends AbstractMinecartEntity {
     @Inject(method = "getMaxSpeed",at= @At("RETURN"), cancellable = true)
     void ChangeFurnaceMinecartSpeed(ServerWorld world, CallbackInfoReturnable<Double> cir){
         if(super.isTouchingWater())
-            cir.setReturnValue(super.getMaxSpeed(world) * HarmonyConfig.furnaceMinecartSpeedInWater);
+            cir.setReturnValue(super.getMaxSpeed(world) * Harmony.CONFIG.furnaceMinecartSpeedInWater());
         else
-            cir.setReturnValue(super.getMaxSpeed(world) * HarmonyConfig.furnaceMinecartSpeed);
+            cir.setReturnValue(super.getMaxSpeed(world) * Harmony.CONFIG.furnaceMinecartSpeed());
     }
 
     @Inject(method = "interact",at= @At(value = "HEAD"), cancellable = true)

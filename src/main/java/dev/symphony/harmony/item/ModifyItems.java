@@ -14,7 +14,7 @@ public class ModifyItems {
          * @author Trigam
          */
 
-        if (HarmonyConfig.stewStackSize != 1) {
+        if (Harmony.CONFIG.stewStackSize() != 1) {
             DefaultItemComponentEvents.MODIFY.register(context -> {
                 // Ok so, can't use an item tag since tags only exist
                 // on world load, while this is run on mod init

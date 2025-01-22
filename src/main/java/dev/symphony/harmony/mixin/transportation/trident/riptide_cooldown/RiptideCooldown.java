@@ -1,6 +1,6 @@
 package dev.symphony.harmony.mixin.transportation.trident.riptide_cooldown;
 
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
@@ -25,7 +25,7 @@ public abstract class RiptideCooldown extends Item {
 
     @Inject(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"))
     public void addCooldown(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfoReturnable<Boolean> cir) {
-        if(HarmonyConfig.riptideCooldown){
+        if(Harmony.CONFIG.riptideCooldown()){
             RegistryEntry<Enchantment> entry = stack.getEnchantments().getEnchantments().stream()
                 .filter(act -> act.matchesId(Identifier.ofVanilla("riptide")))
                 .findFirst()
@@ -33,7 +33,7 @@ public abstract class RiptideCooldown extends Item {
             int level = EnchantmentHelper.getLevel(entry, stack);
 
             if(user instanceof PlayerEntity && level > 0){
-                ((PlayerEntity) user).getItemCooldownManager().set(this.getDefaultStack(), 15+level*HarmonyConfig.riptideTimeMultiplier);
+                ((PlayerEntity) user).getItemCooldownManager().set(this.getDefaultStack(), 15+level*Harmony.CONFIG.riptideTimeMultiplier());
             }
         }
     }

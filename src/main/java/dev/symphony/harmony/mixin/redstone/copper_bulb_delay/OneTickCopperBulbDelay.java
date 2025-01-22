@@ -2,7 +2,7 @@ package dev.symphony.harmony.mixin.redstone.copper_bulb_delay;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import dev.symphony.harmony.mixin.redstone.AbstractBlockImplMixin;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BulbBlock;
@@ -21,7 +21,7 @@ public class OneTickCopperBulbDelay extends AbstractBlockImplMixin {
     //Replaced calling update with calling scheduleBlockTick
     @WrapOperation(method = "neighborUpdate",at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BulbBlock;update(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)V"))
     protected void addDelay(BulbBlock instance, BlockState state, ServerWorld world, BlockPos pos, Operation<Void> original) {
-        if(!HarmonyConfig.oneTickCopperBulbDelay) {
+        if(!Harmony.CONFIG.oneTickCopperBulbDelay()) {
             original.call(instance, state, world, pos);
             return;
         }
