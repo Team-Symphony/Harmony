@@ -1,4 +1,4 @@
-package dev.symphony.harmony.mixin.transportation.minecarts;
+package dev.symphony.harmony.mixin.transportation.minecart.customizable_furnace_minecart_speed;
 
 import dev.symphony.harmony.config.HarmonyConfig;
 import net.minecraft.entity.EntityType;
@@ -20,10 +20,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/**
- * FEATURE: Made Furnace Minecart speeds customizable.
- * @author RandomVideos
- */
 @Mixin(FurnaceMinecartEntity.class)
 public class FurnaceMinecartEntityMixin extends AbstractMinecartEntity {
     @Shadow private int fuel;

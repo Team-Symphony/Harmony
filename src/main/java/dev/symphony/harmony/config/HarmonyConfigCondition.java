@@ -18,8 +18,12 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.HashMap;
 
-// FEATURE: Configurable Data-Driven Resources
-// AUTHORS: Flatkat, WheatFlour 
+/**
+ * FEATURE: Configurable data-driven resources.
+ * @author Flatkat
+ * @author WheatFlour
+ */
+
 public record HarmonyConfigCondition(String config_name) implements ResourceCondition {
 
     @Retention(RetentionPolicy.RUNTIME)

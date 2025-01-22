@@ -1,5 +1,4 @@
-package dev.symphony.harmony.mixin.building;
-
+package dev.symphony.harmony.mixin.building.armor_stand_arms;
 
 import dev.symphony.harmony.config.HarmonyConfig;
 import net.minecraft.block.Block;
@@ -25,12 +24,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-// FEATURE: Allow Armor stands to be given arms using a Stick, and removed using Shears
-// AUTHORS: WheatFlour, Trigam
 @Mixin(ArmorStandEntity.class)
-public abstract class ArmorStandStickArms extends Entity {
+public abstract class ToggleableArmorStandArms extends Entity {
 
-    public ArmorStandStickArms(EntityType<?> type, World world) {
+    public ToggleableArmorStandArms(EntityType<?> type, World world) {
         super(type, world);
     }
 
