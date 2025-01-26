@@ -3,7 +3,7 @@ package dev.symphony.harmony.mixin.mobs.mismatched_mob_armor;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -23,7 +23,7 @@ public abstract class MobEntityMixin extends Entity {
 
     @WrapOperation(method = "initEquipment", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/mob/MobEntity;getEquipmentForSlot(Lnet/minecraft/entity/EquipmentSlot;I)Lnet/minecraft/item/Item;"))
     private Item repeatRandomForEachSlot(EquipmentSlot equipmentSlot, int equipmentLevel, Operation<Item> original, @Local(argsOnly = true) Random random) {
-        if (!HarmonyConfig.mismatchedMobArmor)
+        if (!Harmony.CONFIG.mobsHostileCat.mismatchedMobArmor())
             return original.call(equipmentSlot, equipmentLevel);
 
         int level = random.nextInt(2);

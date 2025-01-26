@@ -1,59 +1,88 @@
 {
     "symphony.feature_tracker": "Feature Tracker",
 
-    "harmony.midnightconfig.title": "Harmony Config",
-    "harmony.midnightconfig.reloadWarning": "Some config options will require a game restart to take affect!",
-    "harmony.midnightconfig.category.harmony": "Harmony",
+    "text.config.harmony.title": "Harmony Config",
 
-    "harmony.midnightconfig.category.transportation": "Transportation",
-    "harmony.midnightconfig.liquidsDeactivateElytra": "Flying through liquids deactivates the Elytra",
-    "harmony.midnightconfig.liquidsDeactivateElytra.tooltip": "(Isn't affected by rain) \nWhen getting into the water, you will automatically get in swim mode",
-    "harmony.midnightconfig.exitVehicleOnDamage": "Mobs exit vehicles when taking damage",
-    "harmony.midnightconfig.saddleRecipe": "Craftable Saddle",
-    "harmony.midnightconfig.horseArmorPreventsBucking": "Horse armor decreases bucking chance on damage",
-    "harmony.midnightconfig.horseArmorPreventsBucking.tooltip": "Horse armor has a chance from preventing the horse from bucking, depending of material: \n \n-Leather: 45% \n-Gold: 60% \n-Iron: 75% \n-Diamond: 90% \n-Netherite (Melody Integration): 100% ",
-    "harmony.midnightconfig.enderPearlsTeleportVehicles": "Ender Pearls teleport the entity the player is riding",
-    "harmony.midnightconfig.enderPearlsDamageVehicles": "Ender Pearls damage mounts when teleporting",
-    "harmony.midnightconfig.enderPearlsDamageVehicles.tooltip": "All entities teleported (passengers and mounts) using an Ender Pearl receive half of the damage the player normally would",
-    "harmony.midnightconfig.furnaceMinecartSpeed": "Minecart with Furnace speed",
-    "harmony.midnightconfig.furnaceMinecartSpeed.tooltip": "The speed is relative to the max Minecart speed(2 being 200%, 0.5 being 50% etc.)\nThe vanilla value is 0.75",
-    "harmony.midnightconfig.furnaceMinecartSpeedInWater": "Minecart with Furnace speed in water",
-    "harmony.midnightconfig.furnaceMinecartSpeedInWater.tooltip": "The speed is relative to the max Minecart speed(2 being 200%, 0.5 being 50% etc.)\nThe vanilla value is 0.5",
-    "harmony.midnightconfig.riptideAccelerationOnWater": "Riptide acceleration on water",
-    "harmony.midnightconfig.riptideCooldown": "Tridents with riptide have cooldown",
-    "harmony.midnightconfig.riptideCooldown.tooltip": "Tridents with riptide cant be used until riptide animation has finished. \nThis prevents the player from accumulating acceleration when using the \"Riptide Acceleration on Water\" feature.",
-    "harmony.midnightconfig.riptideTimeMultiplier": "Riptide effect time multiplier",
-    "harmony.midnightconfig.riptideTimeMultiplier.tooltip": "Increases the time for the riptide animation, during which you will gain acceleration as long as the \"Riptide Acceleration on water\" feature is enabled. \n\nThe time is calculated the following way: 15+level*multiplier \n\nSet it to 0 to disable the feature.",
-    "harmony.midnightconfig.reduceRiptideWaterDrag": "Reduce water drag while using a Trident with Riptide",
 
-    "harmony.midnightconfig.category.food": "Food",
-    "harmony.midnightconfig.stewStackSize": "Stew/soup stack size",
-    "harmony.midnightconfig.glowBerryEffect":"Glowberry effect",
-        "harmony.midnightconfig.glowBerryEffect.tooltip":"How long the effect should last in seconds, 0 disables it",
+    "text.config.harmony.section.Trans": "Transportation",
 
-    "harmony.midnightconfig.category.building": "Building",
-    "harmony.midnightconfig.armorStandStickArms": "Armor Stands can be equipped with arms using a Stick",
-        "harmony.midnightconfig.armorStandStickArms.tooltip": "Arms can be removed with shears",
-    "harmony.midnightconfig.armorStandSticks": "Number of sticks required to equip Armor Stands with arms",
+        "text.config.harmony.option.exitVehicleOnDamage": "Mobs exit vehicles when taking damage",
 
-    "harmony.midnightconfig.category.redstone": "Redstone",
-    "harmony.midnightconfig.oneTickCopperBulbDelay": "Copper Bulbs have a 1 tick delay",
-    "harmony.midnightconfig.removeRedstoneLampDelay": "Removes the 4 tick delay for redstone lamps to turn off",
-  
-    "harmony.midnightconfig.category.potions": "Potions",
-    "harmony.midnightconfig.beaconsAffectTamedMobs": "Beacon effects apply to tamed animals as well as players.",
+        "text.config.harmony.category.transElytraCat": "Elytra",
+            "text.config.harmony.option.transElytraCat.liquidsDeactivateElytra": "Flying through liquids deactivates the Elytra",
+            "text.config.harmony.option.transElytraCat.liquidsDeactivateElytra.tooltip": "(Isn't affected by rain) \nWhen getting into the water, you will automatically get in swim mode",
 
-    "harmony.midnightconfig.category.combat": "Combat",
-    "harmony.midnightconfig.tridentsReturnFromVoid": "Tridents with Loyalty return from the void",
-    "harmony.midnightconfig.changeItemDespawnTime": "Change items despawn time depending on difficulty",
-        "harmony.midnightconfig.itemDespawnTimeEasy": "Time for dropped items to despawn in easy/peaceful.",
-        "harmony.midnightconfig.itemDespawnTimeNormal": "Time for dropped items to despawn in normal.",
-        "harmony.midnightconfig.itemDespawnTimeHard": "Time for dropped items to despawn in hard.",
+        "text.config.harmony.category.transMinecartCat": "Minecart",
+            "text.config.harmony.option.transMinecartCat.furnaceMinecartSpeed": "Minecart with Furnace speed",
+                "text.config.harmony.option.transMinecartCat.furnaceMinecartSpeed.tooltip": "The speed is relative to the max Minecart speed(2 being 200%, 0.5 being 50% etc.)\nThe vanilla value is 0.75",
+            "text.config.harmony.option.transMinecartCat.furnaceMinecartSpeedInWater": "Minecart with Furnace speed in water",
+                "text.config.harmony.option.transMinecartCat.furnaceMinecartSpeedInWater.tooltip": "The speed is relative to the max Minecart speed(2 being 200%, 0.5 being 50% etc.)\nThe vanilla value is 0.5",
 
-    "harmony.midnightconfig.category.mobs": "Mobs",
-    "harmony.midnightconfig.wolvesGrowlAtMonsters": "Tamed wolves growl at nearby monsters.",
-    "harmony.midnightconfig.permissiveParrotPerching": "Parrots dismount under fewer restrictions.",
-        "harmony.midnightconfig.permissiveParrotPerching.tooltip": "Sneak and unsneak quickly for your parrot to fly off of you.",
-    "harmony.midnightconfig.mismatchedMobArmor": "Mobs can spawn with mismatched armor materials.",
-    "harmony.midnightconfig.husksDropSandOnConvert": "Husks drop sand when converting into zombies."
+        "text.config.harmony.category.transSaddledCat": "Saddled Mobs",
+            "text.config.harmony.option.transSaddledCat.saddleRecipe": "Craftable Saddle",
+            "text.config.harmony.option.transSaddledCat.horseArmorPreventsBucking": "Horse armor decreases bucking chance on damage",
+                "text.config.harmony.option.transSaddledCat.horseArmorPreventsBucking.tooltip": "Horse armor has a chance from preventing the horse from bucking, depending of material: \n \n-Leather: 45% \n-Gold: 60% \n-Iron: 75% \n-Diamond: 90% \n-Netherite (Melody Integration): 100% ",
+            "text.config.harmony.option.transSaddledCat.enderPearlsTeleportVehicles": "Ender Pearls teleport the entity the player is riding",
+            "text.config.harmony.option.transSaddledCat.enderPearlsDamageVehicles": "Ender Pearls damage mounts when teleporting",
+                "text.config.harmony.option.transSaddledCat.enderPearlsDamageVehicles.tooltip": "All entities teleported(passengers and mounts) using an Ender Pearl receive half of the damage the player normally would",
+
+        "text.config.harmony.category.transRiptideCat": "Riptide Enchantment (Tridents)",
+            "text.config.harmony.option.transRiptideCat.riptideAccelerationOnWater": "Riptide acceleration on water",
+            "text.config.harmony.option.transRiptideCat.riptideCooldown": "Tridents with riptide have cooldown",
+                "text.config.harmony.option.transRiptideCat.riptideCooldown.tooltip": "Tridents with riptide cant be used until riptide animation has finished. \nThis prevents the player from accumulating acceleration when using the \"Riptide Acceleration on Water\" feature.",
+            "text.config.harmony.option.transRiptideCat.riptideTimeMultiplier": "Riptide effect time multiplier",
+                "text.config.harmony.option.transRiptideCat.riptideTimeMultiplier.tooltip": "Increases the time for the riptide animation, during which you will gain acceleration as long as the \"Riptide Acceleration on water\" feature is enabled. \n\nThe time is calculated the following way: 15+level*multiplier \n\nSet it to 0 to disable the feature.",
+            "text.config.harmony.option.transRiptideCat.reduceRiptideWaterDrag": "Reduce water drag while using a Trident with Riptide",
+
+
+    "text.config.harmony.section.Food": "Food",
+
+        "text.config.harmony.option.stewStackSize": "Stew/soup stack size",
+        "text.config.harmony.option.glowBerryEffect":"Glowberry effect",
+            "text.config.harmony.option.glowBerryEffect.tooltip":"How long the effect should last in seconds, 0 disables it",
+
+
+    "text.config.harmony.section.Building": "Building",
+
+        "text.config.harmony.option.armorStandStickArms": "Armor Stands can be equipped with arms using a Stick",
+            "text.config.harmony.option.armorStandStickArms.tooltip": "Arms can be removed with shears",
+        "text.config.harmony.option.armorStandSticks": "Number of sticks required to equip Armor Stands with arms",
+
+
+    "text.config.harmony.section.Redstone": "Redstone",
+
+        "text.config.harmony.option.oneTickCopperBulbDelay": "Copper Bulbs have a 1 tick delay",
+        "text.config.harmony.option.removeRedstoneLampDelay": "Removes the 4 tick delay for redstone lamps to turn off",
+
+
+    "text.config.harmony.section.Potions": "Potions",
+
+        "text.config.harmony.option.beaconsAffectTamedMobs": "Beacon effects apply to tamed animals as well as players.",
+
+
+    "text.config.harmony.section.Combat": "Combat",
+
+        "text.config.harmony.option.tridentsReturnFromVoid": "Tridents with Loyalty return from the void",
+        "text.config.harmony.option.changeItemDespawnTime": "Change items despawn time depending on difficulty",
+            "text.config.harmony.option.changeItemDespawnTime.tooltip": "Change the time per difficulty with the options on the dropdown below",
+        "text.config.harmony.category.itemDespawnTimeCat": "Item despawn time per difficulty",
+            "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeEasy": "Easy/Peaceful",
+                "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeEasy.tooltip": "In seconds",
+            "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeNormal": "Normal",
+                "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeNormal.tooltip": "In seconds",
+            "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeHard": "Hard",
+                "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeHard.tooltip": "In seconds",
+
+
+    "text.config.harmony.section.Mobs": "Mobs",
+
+        "text.config.harmony.option.husksDropSandOnConvert": "Husks drop sand when converting into zombies.",
+
+        "text.config.harmony.category.mobsHostileCat": "Hostile Mobs",
+            "text.config.harmony.option.mobsHostileCat.mismatchedMobArmor": "Mobs can spawn with mismatched armor materials.",
+
+        "text.config.harmony.category.mobsPetsCat": "Pets",
+            "text.config.harmony.option.mobsPetsCat.wolvesGrowlAtMonsters": "Tamed wolves growl at nearby monsters.",
+            "text.config.harmony.option.mobsPetsCat.permissiveParrotPerching": "Parrots dismount under fewer restrictions.",
+                "text.config.harmony.option.mobsPetsCat.permissiveParrotPerching.tooltip": "Sneak and unsneak quickly for your parrot to fly off of you."
 }

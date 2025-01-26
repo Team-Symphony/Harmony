@@ -1,16 +1,14 @@
 package dev.symphony.harmony.mixin.transportation.trident.variable_riptide_duration;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.TridentItem;
 import net.minecraft.item.consume.UseAction;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -31,19 +29,14 @@ public abstract class VariableRiptideDuration extends Item {
     @ModifyArg(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"), index = 0)
     private int modifyRiptideTicks(int riptideTicks, @Local(argsOnly = true) ItemStack stack) {
 
-        if(HarmonyConfig.riptideTimeMultiplier!=0){
+        if(Harmony.CONFIG.transRiptideCat.riptideTimeMultiplier()!=0){
             RegistryEntry<Enchantment> entry = stack.getEnchantments().getEnchantments().stream()
                 .filter(act -> act.matchesId(Identifier.ofVanilla("riptide")))
                 .findFirst()
                 .orElse(null);
             int level = EnchantmentHelper.getLevel(entry, stack);
-            return 15 + level*HarmonyConfig.riptideTimeMultiplier;
+            return 15 + level*Harmony.CONFIG.transRiptideCat.riptideTimeMultiplier();
         }
         return riptideTicks;
-    }
-
-    @Override
-    public boolean allowComponentsUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {
-        return super.allowComponentsUpdateAnimation(player, hand, oldStack, newStack);
     }
 }

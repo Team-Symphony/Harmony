@@ -1,7 +1,7 @@
 package dev.symphony.harmony.mixin.transportation.trident.riptide_reduced_drag;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -27,7 +27,7 @@ public abstract class RiptideReducedDrag extends Entity {
         )
     )
     private boolean boostWhenRiptide(boolean original) {
-        if (HarmonyConfig.reduceRiptideWaterDrag) {
+        if (Harmony.CONFIG.transRiptideCat.reduceRiptideWaterDrag()) {
             return original || this.riptideTicks > 0;
         }
         return original;

@@ -1,6 +1,6 @@
 package dev.symphony.harmony.mixin.transportation.trident.riptide_accceleration;
 
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(LivingEntity.class)
 public abstract class RiptideAcceleration extends Entity {
 
-    @Unique private static final float MODIFIER = HarmonyConfig.riptideAccelerationOnWater;
+    @Unique private static final float MODIFIER = Harmony.CONFIG.transRiptideCat.riptideAccelerationOnWater();
     @Unique private static final float DEG = (float) (Math.PI / 180F);
 
     @Shadow public abstract void setSprinting(boolean sprinting);
@@ -34,7 +34,7 @@ public abstract class RiptideAcceleration extends Entity {
         )
     )
     private void accelerateWhenRiptide(CallbackInfo ci) {
-        if (HarmonyConfig.riptideAccelerationOnWater != 0) {
+        if (Harmony.CONFIG.transRiptideCat.riptideAccelerationOnWater() != 0) {
             if (!this.isTouchingWater()) return;
             float f = getYaw();
             float g = getPitch();

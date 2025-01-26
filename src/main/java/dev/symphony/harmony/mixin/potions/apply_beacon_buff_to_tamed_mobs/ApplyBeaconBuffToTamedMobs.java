@@ -1,7 +1,7 @@
 package dev.symphony.harmony.mixin.potions.apply_beacon_buff_to_tamed_mobs;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.block.entity.BeaconBlockEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -26,7 +26,7 @@ public class ApplyBeaconBuffToTamedMobs {
     private static void applyTamedEntityEffects(World world, BlockPos pos, int beaconLevel, @Nullable RegistryEntry<StatusEffect> primaryEffect, @Nullable RegistryEntry<StatusEffect> secondaryEffect, CallbackInfo ci,
         @Local Box box, @Local(ordinal = 1) int amplifier, @Local(ordinal = 2) int duration
     ) {
-        if (!HarmonyConfig.beaconsAffectTamedMobs)
+        if (!Harmony.CONFIG.beaconsAffectTamedMobs())
             return;
 
         List<TameableEntity> tameableEntities = world.getEntitiesByClass(TameableEntity.class, box, TameableEntity::isTamed);

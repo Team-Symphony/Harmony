@@ -32,34 +32,28 @@ public record HarmonyConfigCondition(String config_name) implements ResourceCond
         String config_name();
     }
 
-    public static void init() {
-        Field[] fields = HarmonyConfig.class.getDeclaredFields();
-        HashMap<String, Boolean> map = new HashMap<>();
+    public static void init(dev.symphony.harmony.config.HarmonyConfig config) {
+        Field[] fields = HarmonyConfigModel.class.getDeclaredFields();
         for (Field field : fields) {
-            if (java.lang.reflect.Modifier.isStatic(field.getModifiers())) {
-                if (field.isAnnotationPresent(ResourceConfigName.class)) {
-
-                    ResourceConfigName configName = field.getAnnotation(ResourceConfigName.class);
-
-                    try {
-                        map.put(configName.config_name(), (Boolean) field.get(null));
-                    } catch (IllegalAccessException e) {
-                        Harmony.LOGGER.error("Failed to get resource config condition value for field {}", field.getName());
-                        Harmony.LOGGER.error(Arrays.toString(e.getStackTrace()));
-                    }
+            if (field.isAnnotationPresent(ResourceConfigName.class)) {
+                ResourceConfigName configName = field.getAnnotation(ResourceConfigName.class);
+                try {
+                    // Because of owo lib config model, we use reflection to call the method of the same name as the field from model
+                    // as owo lib doesn't copy annotations to the generated class
+                    resourceMap.put(configName.config_name(), (Boolean) config.getClass().getDeclaredMethod(field.getName()).invoke(config));
+                } catch (Exception e) {
+                    Harmony.LOGGER.error("Failed to get resource config condition value for field {}", field.getName());
+                    Harmony.LOGGER.error(Arrays.toString(e.getStackTrace()));
                 }
             }
         }
-        resourceMap = map;
     }
 
-    public static HashMap<String, Boolean> resourceMap = null;
+    public static HashMap<String, Boolean> resourceMap = new HashMap<>();
 
     public static final MapCodec<HarmonyConfigCondition> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
             Codec.STRING.fieldOf("config_name").forGetter(condition -> condition.config_name)
     ).apply(instance, HarmonyConfigCondition::new));
-
-
 
 
     @Override

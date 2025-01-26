@@ -1,6 +1,6 @@
 package dev.symphony.harmony.mixin.mobs.husks_drop_sand;
 
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import dev.symphony.harmony.loot.HarmonyLootContextTypes;
 import dev.symphony.harmony.loot.HarmonyLootTables;
 import net.minecraft.entity.mob.HuskEntity;
@@ -29,7 +29,7 @@ public class HusksDropSandOnConversion extends ZombieEntity {
 
     @Inject(method = "convertInWater", at = @At("HEAD"))
     private void dropLootOnConvert(CallbackInfo info) {
-        if (!HarmonyConfig.husksDropSandOnConvert || !(this.getWorld() instanceof ServerWorld serverWorld))
+        if (!Harmony.CONFIG.husksDropSandOnConvert() || !(this.getWorld() instanceof ServerWorld serverWorld))
             return;
 
         GameRules gameRules = serverWorld.getGameRules();

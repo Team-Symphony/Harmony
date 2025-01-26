@@ -1,6 +1,6 @@
 package dev.symphony.harmony.mixin.combat.slower_item_despawn;
 
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
@@ -22,15 +22,15 @@ public abstract class ModifyItemDespawnTimes extends Entity {
 
     @ModifyConstant(method = "tick", constant = @Constant(intValue = 6000))
     private int modifyDespawnTime(int constant) {
-        if(!HarmonyConfig.changeItemDespawnTime){
+        if(!Harmony.CONFIG.changeItemDespawnTime()){
             return constant;
         }
 
 
         int time = 20 * switch (this.getWorld().getDifficulty()) {
-            case PEACEFUL, EASY -> HarmonyConfig.itemDespawnTimeEasy;
-            case NORMAL -> HarmonyConfig.itemDespawnTimeNormal;
-            case HARD -> HarmonyConfig.itemDespawnTimeHard;
+            case PEACEFUL, EASY -> Harmony.CONFIG.itemDespawnTimeCat.itemDespawnTimeEasy();
+            case NORMAL -> Harmony.CONFIG.itemDespawnTimeCat.itemDespawnTimeNormal();
+            case HARD -> Harmony.CONFIG.itemDespawnTimeCat.itemDespawnTimeHard();
         };
 
         return time == 0 ? NEVER_DESPAWN_AGE : time;

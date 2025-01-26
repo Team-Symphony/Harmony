@@ -2,7 +2,7 @@ package dev.symphony.harmony.mixin.mobs.permissive_parrot_perching;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import dev.symphony.harmony.config.HarmonyConfig;
+import dev.symphony.harmony.Harmony;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerAbilities;
 import net.minecraft.entity.player.PlayerEntity;
@@ -29,7 +29,7 @@ public abstract class PlayerEntityMixin extends EntityImplMixin {
 
     @ModifyExpressionValue(method = "tickMovement", slice = @Slice(from = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;updateShoulderEntity(Lnet/minecraft/nbt/NbtCompound;)V", ordinal = 0)), at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/PlayerEntity;fallDistance:F"))
     private float removeFallCheck(float original) {
-        if (!HarmonyConfig.permissiveParrotPerching)
+        if (!Harmony.CONFIG.mobsPetsCat.permissiveParrotPerching())
             return original;
 
         return Integer.MIN_VALUE;
