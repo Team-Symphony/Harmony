@@ -3,55 +3,86 @@
 
   "text.config.harmony.title": "Configurările pentru Harmony",
 
-  "text.config.harmony.section.Transportation": "Transportare",
-  "text.config.harmony.option.liquidsDeactivateElytra": "Zborul prin lichide dezactivează Elitre",
-  "text.config.harmony.option.liquidsDeactivateElytra.tooltip": "(Nu este afectat de ploaie) \nCând intrați în apă, veți intra automat în modul de înot",
+
+  "text.config.harmony.section.Trans": "Transportare",
+
   "text.config.harmony.option.exitVehicleOnDamage": "Creaturile ies din vehicule când sunt rănite",
-  "text.config.harmony.option.saddleRecipe": "Șa fabricabilă",
-  "text.config.harmony.option.horseArmorPreventsBucking": "Armura calului scade șansele de zdruncinare când este rănit",
-  "text.config.harmony.option.horseArmorPreventsBucking.tooltip": "Armura calului are șansa de a împiedica calul din zdruncinare, în funcție de material: \n \n-Piele: 45% \n-Aur: 60% \n-Fier: 75% \n-Diamant: 90% \n-Netherit (Integrare cu Melody): 100%",
-  "text.config.harmony.option.enderPearlsTeleportVehicles": "Perlele de Ender teleportează entitatea călărită de jucător",
-  "text.config.harmony.option.enderPearlsDamageVehicles": "Perlele de Ender rănește entitatea călărită după teleportare",
-  "text.config.harmony.option.enderPearlsDamageVehicles.tooltip": "Toate entitățile teleportate (pasageri și vehicule) folosind o Perlă de Ender primesc jumătate din rănile pe care le-ar primi în mod normal jucătorul",
-  "text.config.harmony.option.furnaceMinecartSpeed": "Viteza cuptorului în vagonet",
-  "text.config.harmony.option.furnaceMinecartSpeed.tooltip": "Viteza este proporțională cu viteza maximă a vagonetului(2 fiind 200%, 0.5 fiind 50% etc.)\nValoarea obișnuită este 0.75",
-  "text.config.harmony.option.furnaceMinecartSpeedInWater": "Viteza cuptorului în vagonet în apă",
-  "text.config.harmony.option.furnaceMinecartSpeedInWater.tooltip": "Viteza este proporțională cu viteza maximă a vagonetului(2 fiind 200%, 0.5 fiind 50% etc.)\nValoarea obișnuită este 0.5",
-  "text.config.harmony.option.riptideAccelerationOnWater": "Accelerația Contracurentului pe apă",
-  "text.config.harmony.option.riptideCooldown": "Tridentele cu farmecul Contracurent au o durată de așteptare",
-  "text.config.harmony.option.riptideCooldown.tooltip": "Tridentele cu farmecul Contracurent nu pot fi utilizate înainte de terminarea animației. \nAcest lucru împiedică jucătorul să acumuleze accelerație când folosește opțiunea \"Accelerația Contracurentului pe apă\"",
-  "text.config.harmony.option.riptideTimeMultiplier": "Multiplicator de timp al efectului Contracurentului",
-  "text.config.harmony.option.riptideTimeMultiplier.tooltip": "Crește timpul pentru animația Contracurentului, în timpul căreia veți obține accelerație cât timp opțiunea \"Accelerația Contracurentului pe apă\" este activată. \n\nTimpul este calculat în felul următor: 15+nivel*multiplicator \n\n\nSetați-l la 0 pentru a dezactiva opțiunea.",
-  "text.config.harmony.option.reduceRiptideWaterDrag": "Reduceți rezistența la apă în timp ce utilizați un Trident cu farmecul Contracurent",
+
+  "text.config.harmony.category.transElytraCat": "Elitra",
+  "text.config.harmony.option.transElytraCat.liquidsDeactivateElytra": "Zborul prin lichide dezactivează Elitre",
+  "text.config.harmony.option.transElytraCat.liquidsDeactivateElytra.tooltip": "(Nu este afectat de ploaie) \nCând intrați în apă, veți intra automat în modul de înot",
+
+  "text.config.harmony.category.transMinecartCat": "Vagonet",
+  "text.config.harmony.option.transMinecartCat.furnaceMinecartSpeed": "Viteza cuptorului în vagonet",
+  "text.config.harmony.option.transMinecartCat.furnaceMinecartSpeed.tooltip": "Viteza este proporțională cu viteza maximă a vagonetului(2 fiind 200%, 0.5 fiind 50% etc.)\nValoarea obișnuită este 0.75",
+  "text.config.harmony.option.transMinecartCat.furnaceMinecartSpeedInWater": "Viteza cuptorului în vagonet în apă",
+  "text.config.harmony.option.transMinecartCat.furnaceMinecartSpeedInWater.tooltip": "Viteza este proporțională cu viteza maximă a vagonetului(2 fiind 200%, 0.5 fiind 50% etc.)\nValoarea obișnuită este 0.5",
+
+  "text.config.harmony.category.transSaddledCat": "Creaturi cu șa",
+  "text.config.harmony.option.transSaddledCat.saddleRecipe": "Șa fabricabilă",
+  "text.config.harmony.option.transSaddledCat.horseArmorPreventsBucking": "Armura calului scade șansele de zdruncinare când este rănit",
+  "text.config.harmony.option.transSaddledCat.horseArmorPreventsBucking.tooltip": "Armura calului are șansa de a împiedica calul din zdruncinare, în funcție de material: \n \n-Piele: 45% \n-Aur: 60% \n-Fier: 75% \n-Diamant: 90% \n-Netherit (Integrare cu Melody): 100% ",
+  "text.config.harmony.option.transSaddledCat.enderPearlsTeleportVehicles": "Perlele de Ender teleportează entitatea călărită de jucător",
+  "text.config.harmony.option.transSaddledCat.enderPearlsDamageVehicles": "Perlele de Ender rănește entitatea călărită după teleportare",
+  "text.config.harmony.option.transSaddledCat.enderPearlsDamageVehicles.tooltip": "Toate entitățile teleportate (pasageri și vehicule) folosind o Perlă de Ender primesc jumătate din rănile pe care le-ar primi în mod normal jucătorul",
+
+  "text.config.harmony.category.transRiptideCat": "Farmecul Contracurent (Tridente)",
+  "text.config.harmony.option.transRiptideCat.riptideAccelerationOnWater": "Accelerația Contracurentului pe apă",
+  "text.config.harmony.option.transRiptideCat.riptideCooldown": "Tridentele cu farmecul Contracurent au o durată de așteptare",
+  "text.config.harmony.option.transRiptideCat.riptideCooldown.tooltip": "Tridentele cu farmecul Contracurent nu pot fi utilizate înainte de terminarea animației. \nAcest lucru împiedică jucătorul să acumuleze accelerație când folosește opțiunea \"Accelerația Contracurentului pe apă\"",
+  "text.config.harmony.option.transRiptideCat.riptideTimeMultiplier": "Multiplicator de timp al efectului Contracurentului",
+  "text.config.harmony.option.transRiptideCat.riptideTimeMultiplier.tooltip": "Crește timpul pentru animația Contracurentului, în timpul căreia veți obține accelerație cât timp opțiunea \"Accelerația Contracurentului pe apă\" este activată. \n\nTimpul este calculat în felul următor: 15+nivel*multiplicator \n\n\nSetați-l la 0 pentru a dezactiva opțiunea.",
+  "text.config.harmony.option.transRiptideCat.reduceRiptideWaterDrag": "Reduceți rezistența la apă în timp ce utilizați un Trident cu farmecul Contracurent",
+
 
   "text.config.harmony.section.Food": "Mâncare",
+
   "text.config.harmony.option.stewStackSize": "Dimensiunea grămezii de tocană/supă",
   "text.config.harmony.option.glowBerryEffect":"Efectul fructelor de pădure strălucitoare",
   "text.config.harmony.option.glowBerryEffect.tooltip":"Cât timp ar trebui să dureze efectul în secunde, 0 îl dezactivează",
 
+
   "text.config.harmony.section.Building": "Construcție",
+
   "text.config.harmony.option.armorStandStickArms": "Suporturile de armură pot fi echipate cu brațe folosind un băț",
   "text.config.harmony.option.armorStandStickArms.tooltip": "Brațele pot fi îndepărtate cu foarfece",
-  "text.config.harmony.option.armorStandSticks": "Numărul de bețe necesare pentru echiparea suporturilor de armură cu arme",
+  "text.config.harmony.option.armorStandSticks": "Numărul de bețe necesare pentru echiparea suporturilor de armură cu mâini",
+
 
   "text.config.harmony.section.Redstone": "Redstone",
+
   "text.config.harmony.option.oneTickCopperBulbDelay": "Becurile de Cupru au o întârziere de 1 tic",
   "text.config.harmony.option.removeRedstoneLampDelay": "Eliminați întârzierea de 4 ticuri pentru stingerea Lămpilor de Redstone",
 
+
   "text.config.harmony.section.Potions": "Poțiuni",
+
   "text.config.harmony.option.beaconsAffectTamedMobs": "Efectele Farului se aplică și animalelor îmblânzite, cât și jucătorilor.",
 
+
   "text.config.harmony.section.Combat": "Luptă",
+
   "text.config.harmony.option.tridentsReturnFromVoid": "Tridentele cu loialitate revin din vid",
-  "text.config.harmony.option.changeItemDespawnTime": "Modificați timpul de dispariție a obiectelor aruncate în funcție de dificultate",
-  "text.config.harmony.option.itemDespawnTimeEasy": "Timpul de dispariție a obiectelor aruncate în dificultatea Ușoară/Pașnică.",
-  "text.config.harmony.option.itemDespawnTimeNormal": "Timpul de dispariție a obiectelor aruncate în dificultatea Normală.",
-  "text.config.harmony.option.itemDespawnTimeHard": "Timpul de dispariție a obiectelor aruncate în dificultatea Grea.",
+  "text.config.harmony.option.changeItemDespawnTime": "Modificarea timpului de dispariție a obiectelor aruncate în funcție de dificultate",
+  "text.config.harmony.option.changeItemDespawnTime.tooltip": "Modificați timpul în funcție de dificultate cu opțiunile din lista derulantă de mai jos",
+  "text.config.harmony.category.itemDespawnTimeCat": "Timpul de dispariție a obiectelor aruncate în funcție de dificultate",
+  "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeEasy": "Ușoară/Pașnică",
+  "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeEasy.tooltip": "În secunde",
+  "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeNormal": "Normală",
+  "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeNormal.tooltip": "În secunde",
+  "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeHard": "Grea",
+  "text.config.harmony.option.itemDespawnTimeCat.itemDespawnTimeHard.tooltip": "În secunde",
+
 
   "text.config.harmony.section.Mobs": "Creaturi",
-  "text.config.harmony.option.wolvesGrowlAtMonsters": "Lupii îmblânziți mârâie la monștrii din jur.",
-  "text.config.harmony.option.permissiveParrotPerching": "Papagalii zboară de pe jucător cu mai puține restricții.",
-  "text.config.harmony.option.permissiveParrotPerching.tooltip": "Furișează-te și ieși din furiș rapid pentru ca papagalul tău să zboare de pe tine.",
-  "text.config.harmony.option.mismatchedMobArmor": "Monștrii se pot genera cu materiale de armură necorespunzătoare.",
-  "text.config.harmony.option.husksDropSandOnConvert": "Momâile aruncă nisip atunci când se transformă în zombi."
+
+  "text.config.harmony.option.husksDropSandOnConvert": "Momâile aruncă nisip atunci când se transformă în zombi.",
+
+  "text.config.harmony.category.mobsHostileCat": "Monștrii",
+  "text.config.harmony.option.mobsHostileCat.mismatchedMobArmor": "Monștrii se pot genera cu materiale de armură necorespunzătoare.",
+
+  "text.config.harmony.category.mobsPetsCat": "Animale de companie",
+  "text.config.harmony.option.mobsPetsCat.wolvesGrowlAtMonsters": "Lupii îmblânziți mârâie la monștrii din jur.",
+  "text.config.harmony.option.mobsPetsCat.permissiveParrotPerching": "Papagalii zboară de pe jucător cu mai puține restricții.",
+  "text.config.harmony.option.mobsPetsCat.permissiveParrotPerching.tooltip": "Furișează-te și ieși din furiș rapid pentru ca papagalul tău să zboare de pe tine."
 }
