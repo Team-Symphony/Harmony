@@ -23,7 +23,7 @@ public abstract class MobEntityMixin extends Entity {
 
     @WrapOperation(method = "initEquipment", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/mob/MobEntity;getEquipmentForSlot(Lnet/minecraft/entity/EquipmentSlot;I)Lnet/minecraft/item/Item;"))
     private Item repeatRandomForEachSlot(EquipmentSlot equipmentSlot, int equipmentLevel, Operation<Item> original, @Local(argsOnly = true) Random random) {
-        if (!Harmony.CONFIG.mismatchedMobArmor())
+        if (!Harmony.CONFIG.mobsHostileCat.mismatchedMobArmor())
             return original.call(equipmentSlot, equipmentLevel);
 
         int level = random.nextInt(2);

@@ -28,9 +28,9 @@ public abstract class ModifyItemDespawnTimes extends Entity {
 
 
         int time = 20 * switch (this.getWorld().getDifficulty()) {
-            case PEACEFUL, EASY -> Harmony.CONFIG.itemDespawnTimeEasy();
-            case NORMAL -> Harmony.CONFIG.itemDespawnTimeNormal();
-            case HARD -> Harmony.CONFIG.itemDespawnTimeHard();
+            case PEACEFUL, EASY -> Harmony.CONFIG.itemDespawnTimeCat.itemDespawnTimeEasy();
+            case NORMAL -> Harmony.CONFIG.itemDespawnTimeCat.itemDespawnTimeNormal();
+            case HARD -> Harmony.CONFIG.itemDespawnTimeCat.itemDespawnTimeHard();
         };
 
         return time == 0 ? NEVER_DESPAWN_AGE : time;

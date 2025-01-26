@@ -13,7 +13,7 @@ public class SitOnOwnerShoulderGoalMixin {
 
     @ModifyExpressionValue(method = "canStart", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/PlayerAbilities;flying:Z"))
     private boolean modifyIsFlying(boolean original, @Local ServerPlayerEntity serverPlayerEntity) {
-        if (!Harmony.CONFIG.permissiveParrotPerching())
+        if (!Harmony.CONFIG.mobsPetsCat.permissiveParrotPerching())
             return original;
 
         return serverPlayerEntity.isGliding();

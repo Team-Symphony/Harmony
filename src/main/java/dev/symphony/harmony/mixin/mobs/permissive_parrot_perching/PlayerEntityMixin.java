@@ -29,7 +29,7 @@ public abstract class PlayerEntityMixin extends EntityImplMixin {
 
     @ModifyExpressionValue(method = "tickMovement", slice = @Slice(from = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;updateShoulderEntity(Lnet/minecraft/nbt/NbtCompound;)V", ordinal = 0)), at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/PlayerEntity;fallDistance:F"))
     private float removeFallCheck(float original) {
-        if (!Harmony.CONFIG.permissiveParrotPerching())
+        if (!Harmony.CONFIG.mobsPetsCat.permissiveParrotPerching())
             return original;
 
         return Integer.MIN_VALUE;

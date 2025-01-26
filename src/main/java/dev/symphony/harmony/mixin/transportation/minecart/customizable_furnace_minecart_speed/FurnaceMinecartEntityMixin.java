@@ -30,9 +30,9 @@ public class FurnaceMinecartEntityMixin extends AbstractMinecartEntity {
     @Inject(method = "getMaxSpeed",at= @At("RETURN"), cancellable = true)
     void ChangeFurnaceMinecartSpeed(ServerWorld world, CallbackInfoReturnable<Double> cir){
         if(super.isTouchingWater())
-            cir.setReturnValue(super.getMaxSpeed(world) * Harmony.CONFIG.furnaceMinecartSpeedInWater());
+            cir.setReturnValue(super.getMaxSpeed(world) * Harmony.CONFIG.transMinecartCat.furnaceMinecartSpeedInWater());
         else
-            cir.setReturnValue(super.getMaxSpeed(world) * Harmony.CONFIG.furnaceMinecartSpeed());
+            cir.setReturnValue(super.getMaxSpeed(world) * Harmony.CONFIG.transMinecartCat.furnaceMinecartSpeed());
     }
 
     @Inject(method = "interact",at= @At(value = "HEAD"), cancellable = true)

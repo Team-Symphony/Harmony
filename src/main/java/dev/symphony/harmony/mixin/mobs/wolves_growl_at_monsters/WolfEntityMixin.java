@@ -23,7 +23,7 @@ public abstract class WolfEntityMixin extends TameableEntity {
 
     @ModifyExpressionValue(method = "getAmbientSound", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/WolfEntity;hasAngerTime()Z"))
     private boolean shouldGrowl(boolean original) {
-        return original || (Harmony.CONFIG.wolvesGrowlAtMonsters() && this.isTamed() && !this.getNearbyMonsters().isEmpty());
+        return original || (Harmony.CONFIG.mobsPetsCat.wolvesGrowlAtMonsters() && this.isTamed() && !this.getNearbyMonsters().isEmpty());
     }
 
     @Unique

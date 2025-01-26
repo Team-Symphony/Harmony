@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(LivingEntity.class)
 public abstract class RiptideAcceleration extends Entity {
 
-    @Unique private static final float MODIFIER = Harmony.CONFIG.riptideAccelerationOnWater();
+    @Unique private static final float MODIFIER = Harmony.CONFIG.transRiptideCat.riptideAccelerationOnWater();
     @Unique private static final float DEG = (float) (Math.PI / 180F);
 
     @Shadow public abstract void setSprinting(boolean sprinting);
@@ -34,7 +34,7 @@ public abstract class RiptideAcceleration extends Entity {
         )
     )
     private void accelerateWhenRiptide(CallbackInfo ci) {
-        if (Harmony.CONFIG.riptideAccelerationOnWater() != 0) {
+        if (Harmony.CONFIG.transRiptideCat.riptideAccelerationOnWater() != 0) {
             if (!this.isTouchingWater()) return;
             float f = getYaw();
             float g = getPitch();

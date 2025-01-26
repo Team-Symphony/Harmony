@@ -18,7 +18,7 @@ public abstract class LiquidsDeactivateElytra extends Entity {
 
     @ModifyExpressionValue(method = "canGlide", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"))
     private boolean cancelElytraInLiquid(boolean original) {
-        if(Harmony.CONFIG.liquidsDeactivateElytra()){
+        if(Harmony.CONFIG.transElytraCat.liquidsDeactivateElytra()){
             if (original || this.isSubmergedInWater() || this.isInLava()) {
                 setSprinting(true);
                 return true;

@@ -29,13 +29,13 @@ public abstract class VariableRiptideDuration extends Item {
     @ModifyArg(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"), index = 0)
     private int modifyRiptideTicks(int riptideTicks, @Local(argsOnly = true) ItemStack stack) {
 
-        if(Harmony.CONFIG.riptideTimeMultiplier()!=0){
+        if(Harmony.CONFIG.transRiptideCat.riptideTimeMultiplier()!=0){
             RegistryEntry<Enchantment> entry = stack.getEnchantments().getEnchantments().stream()
                 .filter(act -> act.matchesId(Identifier.ofVanilla("riptide")))
                 .findFirst()
                 .orElse(null);
             int level = EnchantmentHelper.getLevel(entry, stack);
-            return 15 + level*Harmony.CONFIG.riptideTimeMultiplier();
+            return 15 + level*Harmony.CONFIG.transRiptideCat.riptideTimeMultiplier();
         }
         return riptideTicks;
     }

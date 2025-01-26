@@ -25,7 +25,7 @@ public abstract class RiptideCooldown extends Item {
 
     @Inject(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;useRiptide(IFLnet/minecraft/item/ItemStack;)V"))
     public void addCooldown(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfoReturnable<Boolean> cir) {
-        if(Harmony.CONFIG.riptideCooldown()){
+        if(Harmony.CONFIG.transRiptideCat.riptideCooldown()){
             RegistryEntry<Enchantment> entry = stack.getEnchantments().getEnchantments().stream()
                 .filter(act -> act.matchesId(Identifier.ofVanilla("riptide")))
                 .findFirst()
@@ -33,7 +33,7 @@ public abstract class RiptideCooldown extends Item {
             int level = EnchantmentHelper.getLevel(entry, stack);
 
             if(user instanceof PlayerEntity && level > 0){
-                ((PlayerEntity) user).getItemCooldownManager().set(this.getDefaultStack(), 15+level*Harmony.CONFIG.riptideTimeMultiplier());
+                ((PlayerEntity) user).getItemCooldownManager().set(this.getDefaultStack(), 15+level*Harmony.CONFIG.transRiptideCat.riptideTimeMultiplier());
             }
         }
     }

@@ -38,7 +38,7 @@ public class HorseArmorPreventsBucking {
 
     @ModifyExpressionValue(method = "updateAnger", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;shouldAmbientStand()Z"))
     private boolean rejectAngryWhenDrip(boolean original) {
-        if(Harmony.CONFIG.horseArmorPreventsBucking()){
+        if(Harmony.CONFIG.transSaddledCat.horseArmorPreventsBucking()){
             if(FabricLoader.getInstance().isModLoaded("melody") && preventBuckingChance.get(Registries.ITEM.get(Identifier.of("melody:netherite_horse_armor"))) == null) {
                 // Temporary solution until we move this to a better, configurable system
                 // This is inside rejectAngryWhenDrip because if not it gets called too early, so it cant detect Melody nor is the armor item registered yet, so it doesnt work.

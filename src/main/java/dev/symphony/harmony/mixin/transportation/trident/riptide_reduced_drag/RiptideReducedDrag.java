@@ -27,7 +27,7 @@ public abstract class RiptideReducedDrag extends Entity {
         )
     )
     private boolean boostWhenRiptide(boolean original) {
-        if (Harmony.CONFIG.reduceRiptideWaterDrag()) {
+        if (Harmony.CONFIG.transRiptideCat.reduceRiptideWaterDrag()) {
             return original || this.riptideTicks > 0;
         }
         return original;
