@@ -12,11 +12,7 @@ base {
 
 repositories {
 	mavenCentral()
-	maven {
-		url = "https://api.modrinth.com/maven"
-	}
 	maven { url 'https://maven.wispforest.io/releases/' }
-
 }
 
 dependencies {
@@ -30,8 +26,6 @@ dependencies {
 
 	// Dependencies
 	modImplementation "com.ptsmods:devlogin:3.5"
-
-	modImplementation include ("maven.modrinth:midnightlib:${project.midnightlib_version}")
 
 	annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
 	modImplementation "io.wispforest:owo-lib:${project.owo_version}"
