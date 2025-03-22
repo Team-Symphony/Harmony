@@ -27,8 +27,8 @@ public abstract class PlayerEntityMixin extends EntityImplMixin {
 
     @Unique private final LivingEntity asLivingEntity = (LivingEntity) (Object) this;
 
-    @ModifyExpressionValue(method = "tickMovement", slice = @Slice(from = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;updateShoulderEntity(Lnet/minecraft/nbt/NbtCompound;)V", ordinal = 0)), at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/PlayerEntity;fallDistance:F"))
-    private float removeFallCheck(float original) {
+    @ModifyExpressionValue(method = "tickMovement", slice = @Slice(from = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;updateShoulderEntity(Lnet/minecraft/nbt/NbtCompound;)V", ordinal = 0)), at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/PlayerEntity;fallDistance:D"))
+    private double removeFallCheck(double original) {
         if (!Harmony.CONFIG.mobsPetsCat.permissiveParrotPerching())
             return original;
 
