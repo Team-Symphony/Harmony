@@ -59,6 +59,9 @@
 
         "text.config.harmony.option.beaconsAffectTamedMobs": "Beacon effects apply to tamed animals as well as players.",
 
+    "text.config.harmony.section.Enchanting": "Enchanting",
+
+    "text.config.harmony.option.repairableTridents": "Tridents can be repaired using Prismarine Shards.",
 
     "text.config.harmony.section.Combat": "Combat",
 

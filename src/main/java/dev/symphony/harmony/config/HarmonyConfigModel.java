@@ -70,7 +70,9 @@ public class HarmonyConfigModel {
     @SectionHeader("Potions")
     public boolean beaconsAffectTamedMobs = true;
 
-
+    // Enchanting
+    @SectionHeader("Enchanting")
+    public boolean repairableTridents = true;
 
     // Combat
     @SectionHeader("Combat")
