@@ -103,5 +103,13 @@ public class HarmonyConfigModel {
         public boolean permissiveParrotPerching = true;
         public boolean wolvesGrowlAtMonsters = true;
     }
+
+    @Nest @Expanded public MobTrims mobTrims = new MobTrims();
+    public static class MobTrims {
+        public boolean mobTrims = true;
+        public float mobTrimChance = 0.2f;
+        public float mobExclusiveMaterialChance = 0.5f;
+        public float mobExclusiveTrimChance = 0.5f;
+    }
 }
 
